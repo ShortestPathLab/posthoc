@@ -2,7 +2,7 @@
 
 _Version 1.0.0_
 
-The Visualiser Adapter Protocol describes the way pathfinding visualisers communicate with pathfinding solvers to deliver an interactive experience.
+The Pathfinding Visualiser Protocol describes the way pathfinding visualisers communicate with pathfinding solvers to deliver an interactive experience.
 
 The protocol is transport-layer agnostic, and extends the [JSON-RPC 2.0 specifications](https://www.jsonrpc.org/specification).
 
