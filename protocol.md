@@ -1,6 +1,6 @@
 # Pathfinding Visualiser Protocol
 
-_Version 1.0.0_
+_Version 1.0.1_
 
 The Pathfinding Visualiser Protocol describes the way pathfinding visualisers communicate with pathfinding solvers to deliver an interactive experience.
 
@@ -40,9 +40,9 @@ Responses should contain a result property if the call succeeds, otherwise it sh
 
 ## Check Connection
 
-### `ping`
+### `info`
 
-Used to check that the server is alive. Returns the server time in milliseconds elapsed since January 1, 1970 00:00:00 UTC.
+Retrieves basic information about the server. Used to check that the server is alive.
 
 #### `request.params`
 
@@ -50,7 +50,13 @@ Used to check that the server is alive. Returns the server time in milliseconds 
 
 #### `response.result`
 
-`int`
+```ts
+{
+  name?: string;
+  description?: string;
+  version?: string;
+}
+```
 
 ## Feature Query
 
