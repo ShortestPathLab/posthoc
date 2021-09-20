@@ -78,9 +78,9 @@ Gets a list of map types supported by the solver.
 }[]
 ```
 
-### `features/map`
+### `features/maps`
 
-Gets a list of template maps offered by the solver.
+Gets a list of template map descriptors offered by the solver.
 
 #### `request.params`
 
@@ -93,9 +93,32 @@ Gets a list of template maps offered by the solver.
   id: string;
   name?: string;
   description?: string;
-  content?: string;
   type?: string;
 }[]
+```
+
+### `features/map`
+
+Gets a particular template map given its ID.
+
+#### `request.params`
+
+```ts
+{
+  id: string;
+}
+```
+
+#### `response.result`
+
+```ts
+{
+  id: string;
+  name?: string;
+  description?: string;
+  content?: string;
+  type?: string;
+}
 ```
 
 ### `features/algorithm`
