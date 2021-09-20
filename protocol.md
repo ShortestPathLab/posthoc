@@ -78,6 +78,26 @@ Gets a list of map types supported by the solver.
 }[]
 ```
 
+### `features/map`
+
+Gets a list of template maps offered by the solver.
+
+#### `request.params`
+
+`-`
+
+#### `response.result`
+
+```ts
+{
+  id: string;
+  name?: string;
+  description?: string;
+  content?: string;
+  type?: string;
+}[]
+```
+
 ### `features/algorithm`
 
 Gets a list of algorithms supported by the solver.
