@@ -145,11 +145,19 @@ Gets a list of algorithms supported by the solver.
 
 Requests a pathfinding solution for a given problem.
 
+The `mapURI` can contain a URI of one of the following formats, namely `scheme:content`. The content is a URI-encoded.
+
+| Scheme     | Content                                                              |
+| ---------- | -------------------------------------------------------------------- |
+| `resource` | Contents of a map file (operating environment).                      |
+| `hash`     | An MD5 hash that optionally points to an existing resource.          |
+| `trace`    | A pre-computed search trace. The server should return this verbatim. |
+
 #### `request.params`
 
 ```ts
 {
-  mapURI: string;
+  mapURI: `${"resource" | "hash" | "trace"}${string}`;
   algorithm: string;
   mapType: string;
   start: int;
@@ -159,4 +167,4 @@ Requests a pathfinding solution for a given problem.
 
 #### `response.result`
 
-`SearchTrace`
+`SearchTrace | undefined`
