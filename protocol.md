@@ -1,6 +1,6 @@
 # Pathfinding Visualiser Protocol
 
-_Version 1.0.1_
+_Version 1.0.2_
 
 The Pathfinding Visualiser Protocol describes the way pathfinding visualisers communicate with pathfinding solvers to deliver an interactive experience.
 
@@ -18,7 +18,7 @@ As per JSON-RPC specifications, requests specify a unique ID, method name, and a
   id: 0,
   method: "solve/pathfinding",
   params: {
-    mapType: "grid",
+    format: "grid",
     algorithm: "jps"
   }
 }
@@ -60,7 +60,7 @@ Retrieves basic information about the server. Used to check that the server is a
 
 ## Feature Query
 
-### `features/mapType`
+### `features/formats`
 
 Gets a list of map types supported by the solver.
 
@@ -93,7 +93,7 @@ Gets a list of template map descriptors offered by the solver.
   id: string;
   name?: string;
   description?: string;
-  type?: string;
+  format?: string;
 }[]
 ```
 
@@ -117,11 +117,11 @@ Gets a particular template map given its ID.
   name?: string;
   description?: string;
   content?: string;
-  type?: string;
+  format?: string;
 }
 ```
 
-### `features/algorithm`
+### `features/algorithms`
 
 Gets a list of algorithms supported by the solver.
 
@@ -159,9 +159,12 @@ The `mapURI` can contain a URI of one of the following formats, namely `scheme:c
 {
   mapURI: `${"resource" | "hash" | "trace"}${string}`;
   algorithm: string;
-  mapType: string;
-  start: int;
-  end: int;
+  format: string;
+  instances: {
+    start: int;
+    end: int;
+  }
+  [];
 }
 ```
 
