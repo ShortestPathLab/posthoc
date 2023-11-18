@@ -2,9 +2,10 @@
 
 _Version 1.0.1_
 
-This document defines all the standard renderers and details there main purposes/usages. All standard renderers will consist of a few intrinsic components which can be used by to user to visual the search traces. 
+This document defines all the standard renderers and details there main purposes/usages. All standard renderers will consist of a few intrinsic components which can be used by to user to visual the search traces.
 
 There are two types of intrinsic components,
+
 - `Primitives` which are foundational components which can be used to construct more complex components (eg. rects, circles)
 - `Inbuilts` these are predefined components for specific search formats like a `grid` or `tree` search view.
 
@@ -14,9 +15,9 @@ There is currently only one renderer implemented which is the 2D Renderer.
 
 ## 2D Renderer
 
-The 2D Renderer is used for the rendering of two dimensional components. It is comprises of 4 Primitive and 4 Inbuilt components, which are briefly outlined below. 
+The 2D Renderer is used for the rendering of two dimensional components. It is comprises of 4 Primitive and 4 Inbuilt components, which are briefly outlined below.
 
-Refer to [2D-renderer.md]() for more specific details.
+Refer to [2D-renderer.md](about:blank) for more specific details.
 
 ### Primitives
 

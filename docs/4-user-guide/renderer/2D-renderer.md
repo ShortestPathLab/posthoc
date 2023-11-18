@@ -1,9 +1,11 @@
 # 2D Renderer
+
 The 2D Renderer is used for the rendering of two dimensional components. This document covers the four primitive components that the 2D Renderer implements.
 
-To use any primities or inbuilts from the 2D renderer the [renderer]() property of the view must be set to "2d-pixi".
+To use any primities or inbuilts from the 2D renderer the [renderer](about:blank) property of the view must be set to "2d-pixi".
 
 ## Primitives
+
 Here are the structures/formats for the different primitives for the 2D renderer.
 
 ### General Types
@@ -38,7 +40,8 @@ type RectIntrinsicComponent = {
   $: "rect";
   width: number;
   height: number;
-} & Point & GenericInstrinsicComponent;
+} & Point &
+  GenericInstrinsicComponent;
 ```
 
 &nbsp;
@@ -47,12 +50,12 @@ type RectIntrinsicComponent = {
 
 The Circle primitive is a simple type with the radius property and a property of type [Point](#general-types) which is the center of the circle.
 
-
 ```ts
 type CircleIntrinsicComponent = {
   $: "circle";
   radius: number;
-} & Point & GenericInstrinsicComponent;
+} & Point &
+  GenericInstrinsicComponent;
 ```
 
 &nbsp;
@@ -74,7 +77,7 @@ type PolygonIntrinsicComponent = {
 
 ### Bezier Path Primitive
 
-The Path primitive is formatted in a general way which allows for extensibility, as it is implemented to also allow for the usage of Bezier paths. This means that the path can be straight and curved based on the user's needs. 
+The Path primitive is formatted in a general way which allows for extensibility, as it is implemented to also allow for the usage of Bezier paths. This means that the path can be straight and curved based on the user's needs.
 Note: The actual usage of Bezier Paths (straight paths are fine) has not be extensively tested and may have potential bugs.
 
 ```ts

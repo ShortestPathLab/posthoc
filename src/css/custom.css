@@ -125,7 +125,8 @@ header > p {
 }
 
 .theme-doc-sidebar-item-link-level-2,
-.theme-doc-sidebar-item-link-level-3 {
+.theme-doc-sidebar-item-link-level-3,
+.theme-doc-sidebar-item-category-level-2 .menu__link--sublist {
   --ifm-menu-color: var(--ifm-color-gray-600);
 }
 
