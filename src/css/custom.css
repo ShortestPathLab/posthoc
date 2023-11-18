@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Mono:wght@400;500;600;700&display=swap");
+
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --aa-primary-color-rgb: 52, 109, 219 !important;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-code-font-size: 95%;
+  --ifm-color-black: #000000;
+  --ifm-color-gray-0: var(--ifm-color-white);
+  --ifm-color-gray-100: #f5f6f7;
+  --ifm-color-gray-1000: var(--ifm-color-black);
+  --ifm-color-gray-200: #eceff1;
+  --ifm-color-gray-300: #e3e8ed;
+  --ifm-color-gray-400: #ccd0d5;
+  --ifm-color-gray-500: #bec3c9;
+  --ifm-color-gray-600: #8899a8;
+  --ifm-color-gray-700: #606770;
+  --ifm-color-gray-800: #444950;
+  --ifm-color-gray-900: #3b454e;
+  --ifm-color-primary-dark: #2572ff;
+  --ifm-color-primary-darker: #1567ff;
+  --ifm-color-primary-darkest: #0050e4;
+  --ifm-color-primary-light: #669cff;
+  --ifm-color-primary-lighter: #77a7ff;
+  --ifm-color-primary-lightest: #a7c6ff;
+  --ifm-color-primary: #346ddb;
+  --ifm-color-primary: #4687ff;
+  --ifm-color-white: #ffffff;
+  --ifm-font-family-base: Inter, system-ui, -apple-system, Segoe UI, Roboto,
+    Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  --ifm-font-weight-black: 700;
+  --ifm-font-weight-bold: 600;
+  --ifm-font-weight-light: 300;
+  --ifm-font-weight-normal: 400;
+  --ifm-font-weight-semibold: 400;
+  --ifm-global-shadow-lw: 0 1px 2px 0 rgba(0, 0, 0, 0.08);
+  --ifm-hover-overlay: #85a3e01a;
+  --ifm-menu-link-padding-vertical: 0.5rem;
+  --ifm-navbar-height: 4rem;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme="dark"] {
+  --ifm-color-primary: #648fe4;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+.menu__link {
+  font-size: 0.9rem;
+}
+
+.menu__link--active {
+  font-weight: var(--ifm-font-weight-bold);
+}
+
+.menu__caret {
+  transform: scale(0.75);
+  opacity: 0.6;
+}
+
+.theme-doc-toc-mobile > button::after {
+  opacity: 0.6;
+  background-size: 1.5rem;
+}
+
+.navbar__logo img,
+.navbar__toggle {
+  transform: scale(0.8);
+}
+
+.navbar__title {
+  font-weight: var(--ifm-font-weight-bold);
+}
+
+.markdown h1:first-child,
+header > h1 {
+  font-size: 2.5rem;
+  font-weight: var(--ifm-font-weight-black);
+  margin: calc(1.25 * var(--ifm-leading)) auto;
+}
+
+header > h1 {
+  margin-bottom: calc(0.75 * var(--ifm-leading)) !important;
+}
+header > p {
+  color: var(--ifm-color-gray-600);
+}
+
+.markdown > h2 {
+  --ifm-h2-font-size: 1.25rem;
+  font-weight: var(--ifm-font-weight-black);
+}
+
+.markdown > h3 {
+  --ifm-h3-font-size: 1rem;
+  font-weight: var(--ifm-font-weight-black);
+}
+.theme-doc-breadcrumbs {
+  margin-top: var(--ifm-leading) !important;
+  margin-bottom: 0 !important;
+}
+
+.theme-doc-toc-mobile {
+  margin-top: calc(var(--ifm-leading) * 2) !important;
+}
+
+.theme-doc-toc-mobile > button {
+  color: var(--ifm-color-gray-600);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.theme-doc-sidebar-item-link-level-2,
+.theme-doc-sidebar-item-link-level-3 {
+  --ifm-menu-color: var(--ifm-color-gray-600);
+}
+
+.card {
+  box-shadow: none !important;
+}
+
+/* .theme-doc-sidebar-item-link-level-1,
+.theme-doc-sidebar-item-category-level-1 {
+  margin-top: calc(0.5 * var(--ifm-leading)) !important;
+} */
+
+.footer__copyright {
+  color: var(--ifm-color-gray-600);
+  font-size: 0.9rem;
+}
+
+.dsla-search-field .aa-DetachedSearchButton {
+  background-color: var(--ifm-color-gray-200);
+  border: none;
+  font-size: 0.9rem;
+  color: var(--ifm-color-gray-800);
+  padding: var(--ifm-global-spacing);
+  border-radius: 0.25rem;
+  min-width: 180px;
+}
+
+.dsla-search-field .aa-DetachedSearchButtonIcon {
+  color: var(--ifm-color-gray-800);
+  margin-left: calc(-0.75 * var(--ifm-global-spacing));
+  transform: scale(0.85);
+}
