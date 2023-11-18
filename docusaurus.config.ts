@@ -63,6 +63,7 @@ const config: Config = {
     // Replace with your project's social card
     image: "img/social-card.jpg",
     navbar: {
+      hideOnScroll: true,
       title: "Visualiser",
       logo: {
         alt: "Visualiser Logo",
@@ -77,8 +78,17 @@ const config: Config = {
         },
         { to: "/blog", label: "Blog", position: "left" },
         {
+          href: "https://path-visualiser.github.io/app",
+          label: "App",
+          position: "right",
+        },
+        {
           href: "https://github.com/path-visualiser/app",
           label: "GitHub",
+          position: "right",
+        },
+        {
+          type: "search",
           position: "right",
         },
       ],

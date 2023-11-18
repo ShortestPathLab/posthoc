@@ -159,3 +159,7 @@ header > p {
   margin-left: calc(-0.75 * var(--ifm-global-spacing));
   transform: scale(0.85);
 }
+
+b {
+  font-weight: 600;
+}
