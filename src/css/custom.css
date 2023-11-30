@@ -109,13 +109,9 @@ header > p {
   --ifm-h3-font-size: 1rem;
   font-weight: var(--ifm-font-weight-black);
 }
-.theme-doc-breadcrumbs {
-  margin-top: var(--ifm-leading) !important;
-  margin-bottom: 0 !important;
-}
 
 .theme-doc-toc-mobile {
-  margin-top: calc(var(--ifm-leading) * 2) !important;
+  margin-bottom: calc(var(--ifm-leading) * 0) !important;
 }
 
 .theme-doc-toc-mobile > button {
@@ -162,4 +158,11 @@ header > p {
 
 b {
   font-weight: 600;
+}
+
+@media screen and (min-width: 996px) {
+  .theme-doc-breadcrumbs {
+    margin-top: var(--ifm-leading) !important;
+    margin-bottom: 0 !important;
+  }
 }
