@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_2=self.webpackChunkdocs_2||[]).push([[3237],{1620:(e,s,t)=>{t.r(s),t.d(s,{default:()=>r});var c=t(9962),i=t(1847),o=t(7294),n=t(5893);function r(){const{siteConfig:e}=(0,c.Z)();return(0,o.useEffect)((()=>location.replace("./docs/overview"))),(0,n.jsx)(i.Z,{title:`${e.title}`,description:"Visualiser"})}}}]);
