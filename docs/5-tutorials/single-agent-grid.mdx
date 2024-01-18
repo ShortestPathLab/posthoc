@@ -36,6 +36,9 @@ This should be the result:
 
 ![Loaded map](load-grid.png)
 
+Or an example can be downloaded [here](SmallMaze.GRID)
+
+
 ## Prepare the Search Trace
 
 You can generate the search trace in a number of ways depending on your solver.
@@ -43,54 +46,69 @@ You can generate the search trace in a number of ways depending on your solver.
 <Tabs>
   <TabItem value="raw" label="Demo Search Trace">
     Download [this](./cross-example.trace.yaml) pre-computed search trace.
+
+        
+    The file should start like this:
+
+    ```yaml title="example.trace.yaml"
+    render:
+      components:
+        tile:
+          - $: rect
+            width: 1
+            height: 1
+            x: "{{$.event.x}}"
+            y: "{{$.event.y}}"
+            fill: "{{$.color[$.event.type]}}"
+      views:
+        main:
+          components:
+            - $: tile
+      path:
+        pivot:
+          x: "{{$.event.x + 0.5}}"
+          y: "{{$.event.y + 0.5}}"
+        scale: 0.3
+    events:
+      - type: source
+        id: 96
+        x: 0
+        y: 0
+      - type: destination 
+        id: 228
+        x: 4
+        y: 4
+    ```
+
+    The search trace contains a record of the events that occured during the search and how to visualise them.
+
+    ## Load the Search Trace
+
+    - In the **Layer** panel, click **+ Layer** to add a new layer.
+    - Click the pencil icon to edit the layer.
+    - For **Type**, choose **Trace**.
+    - For **Trace**, choose **Choose File**, then pick the search trace from your system.
+    - Close the **Edit Layer** modal.
+    - In the **Viewport** panel, click **Fit** to fit the map to the viewport.
   </TabItem>
   <TabItem value="warthog" label="Warthog">
-    TODO.
+
+    ## Adding the Query
+
+    - In the **Layer** panel, click **+ Layer** to add a new layer.
+    - Click the pencil icon to edit the layer.
+    - For **Type**, choose **Query**.
+    - For **Algorithm**, choose the algorithm that you want to visualise.
+    - For **Map**, choose a map that you have chose.
+    - Close the **Edit Layer** modal.
+
+    ## Adding Source and Destination
+    - Left click on any part of the map that you wanted to be set as a source, then **Set as Source**
+    - Do the same for the destination click **Set as Destination**
+    - A green pixel will show up marking the source
   </TabItem>
 </Tabs>
 
-The file should start like this:
-
-```yaml title="example.trace.yaml"
-render:
-  components:
-    tile:
-      - $: rect
-        width: 1
-        height: 1
-        x: "{{$.event.x}}"
-        y: "{{$.event.y}}"
-        fill: "{{$.color[$.event.type]}}"
-  views:
-    main:
-      components:
-        - $: tile
-  path:
-    pivot:
-      x: "{{$.event.x + 0.5}}"
-      y: "{{$.event.y + 0.5}}"
-    scale: 0.3
-events:
-  - type: source
-    id: 96
-    x: 0
-    y: 0
-  - type: destination
-    id: 228
-    x: 4
-    y: 4
-```
-
-The search trace contains a record of the events that occured during the search and how to visualise them.
-
-## Load the Search Trace
-
-- In the **Layer** panel, click **+ Layer** to add a new layer.
-- Click the pencil icon to edit the layer.
-- For **Type**, choose **Trace**.
-- For **Trace**, choose **Choose File**, then pick the search trace from your system.
-- Close the **Edit Layer** modal.
-- In the **Viewport** panel, click **Fit** to fit the map to the viewport.
 
 ## Step through the Search Trace
 
