@@ -36,9 +36,6 @@ This should be the result:
 
 ![Loaded map](load-grid.png)
 
-Or an example can be downloaded [here](SmallMaze.GRID)
-
-
 ## Prepare the Search Trace
 
 You can generate the search trace in a number of ways depending on your solver.
@@ -47,7 +44,6 @@ You can generate the search trace in a number of ways depending on your solver.
   <TabItem value="raw" label="Demo Search Trace">
     Download [this](./cross-example.trace.yaml) pre-computed search trace.
 
-        
     The file should start like this:
 
     ```yaml title="example.trace.yaml"
@@ -74,7 +70,7 @@ You can generate the search trace in a number of ways depending on your solver.
         id: 96
         x: 0
         y: 0
-      - type: destination 
+      - type: destination
         id: 228
         x: 4
         y: 4
@@ -90,14 +86,20 @@ You can generate the search trace in a number of ways depending on your solver.
     - For **Trace**, choose **Choose File**, then pick the search trace from your system.
     - Close the **Edit Layer** modal.
     - In the **Viewport** panel, click **Fit** to fit the map to the viewport.
+
   </TabItem>
   <TabItem value="warthog" label="Warthog">
 
-    by default the solver(warthog) comes with a set of algorithms that users are able to choose 
-
     TODO: explain on how warthog can be download and used through the terminal and produce a search trace
+
   </TabItem>
   <TabItem value="query" label="Query">
+
+    By default, Visualiser is bundled with a WebAssembly version of Warthog, a solver for grid maps.
+
+    Check that **Warthog (WebAssembly)** is enabled in the **Settings** panel, in the **Connections** tab.
+
+    ![Alt text](image.png)
 
     ## Adding the Query
 
@@ -112,9 +114,9 @@ You can generate the search trace in a number of ways depending on your solver.
     - Left click on any part of the map that you wanted to be set as a source, then **Set as Source**
     - Do the same for the destination click **Set as Destination**
     - A green pixel will show up marking the source
+
   </TabItem>
 </Tabs>
-
 
 ## Step through the Search Trace
 
