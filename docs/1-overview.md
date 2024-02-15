@@ -14,15 +14,37 @@ What's more, Visualiser isn't just for pathfinding search. Visualiser is designe
 
 ## What Can I Use Visualiser For?
 
-### Insights
+### Educational
 
-[TODO]
+The Visualiser could be use as an learning tool in for learners' understanding of complex algorithms by providing a conducive environment for visualization. Consider the example of the weighted [A\* search](https://en.wikipedia.org/wiki/A*_search_algorithm) problem. Students often find it challenging to conceptualize how various weights assigned to different grid cells or walkable paths can influence the algorithm's decision-making process. The Visualiser bridges this gap, enabling learners to visually comprehend the impact of these weights on the algorithm's pathfinding capabilities.
 
-### Post-hoc Analysis
+![weighted a star](educational.png)
 
-[TODO]
+In the illustration provided, the map is designed to mimic a video game environment, depicting a desert interspersed with patches of forest. The intensity of the green color indicates the weight of the walkable paths, with darker shades representing heavier weights. Through this visualization, it becomes evident how the A\* algorithm strategically selects a path from the source to the target. It does so by navigating through areas with the least amount of green, effectively avoiding paths with heavier weights to find the shortest and most efficient route. This visual demonstration not only clarifies the concept of weighted pathfinding but also showcases the algorithm's adeptness at incorporating path weights into its calculations, leading to an optimized solution.
 
-### Demonstrations
+### Algorithm Comparison
+
+The Visualiser is able to visualise more than one trace at a time which enables users to be able to compare algorithms side by side which eases the users to see the difference between 2 or more algorithms or solutions.
+
+![comparison between JPS and JPS2+](comparison.png)
+
+In the illustration provided, we are able to see that Jump Point Search or JPS (left) for short is expands on more nodes compared to a newer version of it, JPS2+ (right).
+
+### Debugging Pathfinding Issues
+
+The Visualiser is able to set breakpoints and even allows users to code one within the visualiser! This simplifies identifying and solving problems in algorithm logic or execution. By visually representing each step an algorithm takes, learners can quickly pinpoint where things go wrong or see how an algorithm progresses.
+
+![A* debugging](debugging.png)
+
+In the illustration provided, using the built-in debugger, users are able to set breakpoints on certain conditions, there is even an advance option where it could be useful when the provided breakpoints scenarios does not cover the needs of our users.
+
+### Visualising Decisions
+
+The Visualiser has a built-in functionality which converts a trace into a decision tree!
+
+![decision tree and nine tile](decision.png)
+
+In the illustration provided, using the Tree panel, the visualiser is able to visualise the decisions made by the algorithm.
 
 Creating visualisations are the best way to get your point across.
 

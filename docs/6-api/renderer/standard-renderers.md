@@ -17,7 +17,7 @@ There is currently only one renderer implemented which is the 2D Renderer.
 
 The 2D Renderer is used for the rendering of two dimensional components. It is comprises of 4 Primitive and 4 Inbuilt components, which are briefly outlined below.
 
-Refer to [2D-renderer.md](about:blank) for more specific details.
+Refer to [2D-renderer.md](./2D-renderer.md) for more specific details.
 
 ### Primitives
 

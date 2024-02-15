@@ -2,7 +2,7 @@
 
 The 2D Renderer is used for the rendering of two dimensional components. This document covers the four primitive components that the 2D Renderer implements.
 
-To use any primities or inbuilts from the 2D renderer the [renderer](about:blank) property of the view must be set to "2d-pixi".
+To use any primities or inbuilts from the 2D renderer the [renderer](./2D-renderer.md) property of the view must be set to "2d-pixi".
 
 ## Primitives
 

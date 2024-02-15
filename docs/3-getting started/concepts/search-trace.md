@@ -1,8 +1,12 @@
+---
+sidebar_position: 1
+---
+
 # Search Trace
 
-_Version 1.0.4_
+_Version 1.0.5_
 
-The Search Trace is the input provided to the path finding visualizer in the form of a JSON file. It is a description file containing two parts the [render](#render-definition) and the _eventList_. The eventList is the results for each step of execution for the path finding algorithm. While the _render_ details how these events should be displayed.
+The Search Trace is the input provided to the path finding visualizer in the form of a JSON file. It is a description file containing two parts the [render](#render-definition) and the `events`. The events is the results for each step of execution for the path finding algorithm. While the _render_ details how these events should be displayed.
 
 The structure of the Search Trace is defined as below,
 
@@ -10,7 +14,7 @@ The structure of the Search Trace is defined as below,
 type Trace = {
   version: string;
   render: RenderDefinition;
-  eventList: Event[];
+  events: Event[];
 };
 ```
 
@@ -22,9 +26,9 @@ The Render Definition is a template syntax that offers a minimalistic way to det
 
 It comprises three properties.
 
-- _Views_ is a required property which contains information on the rendering processes of the individual views.
-- _Context_ is an optional property which can be used to provide additional information for the components.
-- _Components_ is optional property which can contain user defined visualization elements.
+- `views` is a required property which contains information on the rendering processes of the individual views.
+- `context` is an optional property which can be used to provide additional information for the components.
+- `components` is optional property which can contain user defined visualization elements.
 
 The structure for the `RenderDefinition` is defined below,
 
@@ -41,7 +45,7 @@ type RenderDefinition = {
 };
 ```
 
-### context property
+### `context` property
 
 The context property provides an additional variable environment for components. It can be used to provide new general values and override the default context variables (eg. Changing the colours for the different types of Events.)
 
@@ -51,11 +55,13 @@ Refer to [context.md](./context.md) for more `ContextDefinition` detail.
 
 The components property is a object of [Component](#components) definitions. The key is the name of the component and the value is list of [Component](#components) which are compose together. This is where the user can create custom element to render each of events. Custom components must be recurse back to inbuilts primitive components.
 
-Refer to [standard-renderers.md](./standard-renderers.md) for more detail.
+<!-- TODO -->
+
+Refer to [standard-renderers.md](../../4-user-guide/renderer/standard-renderers.md) for more detail.
 
 ### views property
 
-The views property which is a object of [View](#view) definitions. The key is the view name and the value is the view information object. Each view defines what component will be displayed in individual window which can be resized.
+The views property which is a object of view definitions. The key is the view name and the value is the view information object. Each view defines what component will be displayed in individual window which can be resized.
 
 A view consist a component (which can be comprise of many components) and the name of the renderer it will utilize to draw this component. This component can either be user defined component from the [components property](#components-property) or a prefined component from [renderer](#).
 
@@ -67,7 +73,7 @@ type RendererDefinition = {
 };
 ```
 
-Refer to [standard-renderers.md](./standard-renderers.md) for more detail on the usage of prefined components.
+Refer to [standard-renderers.md](../../4-user-guide/renderer/standard-renderers.md) for more detail on the usage of prefined components.
 
 &nbsp;
 
@@ -77,27 +83,25 @@ Below is an example renderer definition that specifies that each step in the sea
 
 ```ts
 const myTrace = {
-  "version": "1.0.4",
+  "version": "1.0.5",
   "render": {
-    "components": {
-      "node": [
-        {
-          "$": "rect",
-          "width": 1,
-          "height": 1,
-          "x": "{{x}}",
-          "y": "{{y}}",
-          "drawPath":true
-        }
-      ]
-    },
+    "components": {},
     "views": {
       "main": {
-          "renderer": "2d-pixi",
-          "component": { "$": "node" }
-      }}
+        "components": [
+          {
+            "$": "rect",
+            "fill": "{{$.color[$.event.type]}}",
+            "width": 1,
+            "height": 1,
+            "x": "{{'x' in $.event ? $.event.x : 0}}",
+            "y": "{{'y' in $.event ? $.event.y : 0}}"
+          }
+        ]
+      }
+    }
   },
-  "eventList": [
+  "events": [
     ...
     {
       "type": "generating",
@@ -117,9 +121,9 @@ const myTrace = {
 
 ## Event Record (Event List)
 
-The `eventList` is an array of objects each of which describes the state of a node at a particular stage in a search. Each object in this array is an `Event`.
+The `events` is an array of objects each of which describes the state of a node at a particular stage in a search. Each object in this array is an `Event`.
 
-Each of the events in the `eventList` can be rendered/animated to show the process of the search, this is done by providing the variables of the event to the respectives components. The rendering process will be follow linear progression through the `eventList`
+Each of the events in the `events` can be rendered/animated to show the process of the search, this is done by providing the variables of the event to the respectives components. The rendering process will be follow linear progression through the `events`
 
 ### Event
 

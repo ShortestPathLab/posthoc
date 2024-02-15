@@ -4,7 +4,7 @@ This document covers the four inbuilt components/views for that the 2D renderer 
 
 ## Inbuilt Views
 
-Here are the structures/formats for the different inbuilts for the 2D renderer. All primitives used by these Inbuilts are [2D renderer primitives](about:blank). To use any of these `Inbuilt Views` the [renderer](about:blank) property of the view must be set to "2d-pixi".
+Here are the structures/formats for the different inbuilts for the 2D renderer. All primitives used by these Inbuilts are [2D renderer primitives](./2D-renderer.md). To use any of these `Inbuilt Views` the [renderer](./2D-inbuilts.md) property of the view must be set to "2d-pixi".
 
 ### Grid View
 
