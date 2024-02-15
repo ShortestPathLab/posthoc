@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_2=self.webpackChunkdocs_2||[]).push([[8429],{229:e=>{e.exports=JSON.parse('{"title":"Renderer","slug":"/category/renderer","permalink":"/docs/category/renderer","navigation":{"previous":{"title":"API Reference","permalink":"/docs/category/api-reference"},"next":{"title":"2D Inbuilts","permalink":"/docs/api/renderer/2D-inbuilts"}}}')}}]);

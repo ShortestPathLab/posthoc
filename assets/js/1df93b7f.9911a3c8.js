@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_2=self.webpackChunkdocs_2||[]).push([[3237],{1620:(e,s,t)=>{t.r(s),t.d(s,{default:()=>o});var c=t(8067),i=t(7294),n=t(5893);function o(){return(0,i.useEffect)((()=>location.replace("./docs/overview"))),(0,n.jsx)(c.Z,{title:"Home",description:"Pathfinding Visualiser Documentation"})}}}]);
