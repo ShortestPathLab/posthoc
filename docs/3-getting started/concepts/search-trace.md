@@ -119,7 +119,7 @@ const myTrace = {
 
 &nbsp;
 
-## Event Record (Event List)
+## Event Record (Event List) {Event}
 
 The `events` is an array of objects each of which describes the state of a node at a particular stage in a search. Each object in this array is an `Event`.
 

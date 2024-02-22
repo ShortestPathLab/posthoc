@@ -1,3 +1,0 @@
-# Settings Panel
-
-[TODO]
