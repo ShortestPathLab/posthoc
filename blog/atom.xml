@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://path-visualiser.github.io/blog</id>
-    <title>Visualiser Blog</title>
+    <title>Posthoc Blog</title>
     <updated>2023-11-18T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://path-visualiser.github.io/blog"/>
-    <subtitle>Visualiser Blog</subtitle>
+    <subtitle>Posthoc Blog</subtitle>
     <icon>https://path-visualiser.github.io/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Todo]]></title>
