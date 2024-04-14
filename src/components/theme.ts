@@ -55,15 +55,15 @@ export const makeTheme = (mode: "light" | "dark", theme?: AccentColor) =>
         fontSize: 15,
       },
       h1: {
-        fontSize: 46,
+        fontSize: "max(32px, min(46px, 6vw))",
         fontWeight: 500,
       },
       h2: {
-        fontSize: 32,
+        fontSize: "max(22px, min(32px, 4vw))",
         fontWeight: 500,
       },
       h3: {
-        fontSize: 22,
+        fontSize: "max(18px, min(22px, 2vw))",
         fontWeight: 500,
       },
       button: {
