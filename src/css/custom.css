@@ -8,7 +8,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --aa-primary-color-rgb: 52, 109, 219 !important;
+  --aa-primary-color-rgb: 36, 138, 255 !important;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-code-font-size: 95%;
   --ifm-color-black: #000000;
@@ -22,7 +22,7 @@
   --ifm-color-gray-600: #8899a8;
   --ifm-color-gray-700: #606770;
   --ifm-color-gray-800: #444950;
-  --ifm-color-gray-900: #3b454e;
+  --ifm-color-gray-900: rgb(59, 69, 78, 1);
   --ifm-color-primary-dark: #2572ff;
   --ifm-color-primary-darker: #1567ff;
   --ifm-color-primary-darkest: #0050e4;
@@ -38,18 +38,19 @@
     "Segoe UI Symbol";
   --ifm-font-weight-black: 700;
   --ifm-font-weight-bold: 600;
-  --ifm-font-weight-light: 300;
+  --ifm-font-weight-semibold: 500;
   --ifm-font-weight-normal: 400;
-  --ifm-font-weight-semibold: 400;
+  --ifm-font-weight-light: 300;
   --ifm-global-shadow-lw: 0 1px 2px 0 rgba(0, 0, 0, 0.08);
-  --ifm-hover-overlay: #85a3e01a;
+  --ifm-hover-overlay: hsla(220, 59%, 70%, 0.102);
   --ifm-menu-link-padding-vertical: 0.5rem;
   --ifm-navbar-height: 4rem;
+  --ifm-menu-color-background-active: var(--ifm-menu-color-background-hover);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme="dark"] {
-  --ifm-color-primary: #648fe4;
+  --ifm-color-primary: #248aff;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
   --ifm-color-primary-darkest: #1a8870;
@@ -57,10 +58,61 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-background-color: #111317 !important;
+  --aa-background-color-rgb: 17, 19, 23 !important;
+  --ifm-background-surface-color: rgb(17 19 23 / 80%) !important;
+  --ifm-color-content: #b8b9ba !important;
+}
+
+.navbar__inner {
+  max-width: 1450px;
+  margin: 0 auto;
+}
+
+.theme-doc-sidebar-container {
+  border: none !important;
+}
+
+.navbar--fixed-top {
+  backdrop-filter: blur(32px);
+  /* background-image: url("/img/noise.png"); */
+  background-size: 64px 64px;
+  border-bottom: 1px solid var(--ifm-menu-color-background-hover);
+}
+
+.navbar--fixed-top.navbar-sidebar--show {
+  backdrop-filter: none;
+}
+
+.navbar-sidebar--show .navbar-sidebar {
+  backdrop-filter: blur(32px);
+  background-image: url("/img/noise.png");
+  background-size: 64px 64px;
+}
+
+.navbar__link,
+.navbar__title {
+  font-size: 15px;
+  margin-left: 6px;
+}
+
+.navbar__link > svg {
+  display: none;
+}
+
+.menu {
+  padding: 16px !important;
+  /* padding-left: 0 !important; */
+}
+
+.navbar-sidebar__back {
+  background-color: transparent;
 }
 
 .menu__link {
   font-size: 0.9rem;
+  padding: 12px;
+  padding-left: 16px;
 }
 
 .menu__link--active {
@@ -83,14 +135,14 @@
 }
 
 .navbar__title {
-  font-weight: var(--ifm-font-weight-bold);
+  font-weight: var(--ifm-font-weight-semibold);
 }
 
 .markdown h1:first-child,
 header > h1 {
   font-size: 2.5rem;
-  font-weight: var(--ifm-font-weight-black);
-  margin: calc(1.25 * var(--ifm-leading)) auto;
+  font-weight: var(--ifm-font-weight-bold);
+  padding-top: 4px;
 }
 
 header > h1 {
@@ -102,16 +154,12 @@ header > p {
 
 .markdown > h2 {
   --ifm-h2-font-size: 1.25rem;
-  font-weight: var(--ifm-font-weight-black);
+  font-weight: var(--ifm-font-weight-bold);
 }
 
 .markdown > h3 {
   --ifm-h3-font-size: 1rem;
-  font-weight: var(--ifm-font-weight-black);
-}
-
-.theme-doc-toc-mobile {
-  margin-bottom: calc(var(--ifm-leading) * 0) !important;
+  font-weight: var(--ifm-font-weight-bold);
 }
 
 .theme-doc-toc-mobile > button {
@@ -130,23 +178,51 @@ header > p {
   box-shadow: none !important;
 }
 
+.menu__link,
+.menu__caret,
+.menu__list-item-collapsible {
+  border-radius: 12px;
+}
+
 /* .theme-doc-sidebar-item-link-level-1,
 .theme-doc-sidebar-item-category-level-1 {
   margin-top: calc(0.5 * var(--ifm-leading)) !important;
 } */
 
-.footer__copyright {
-  color: var(--ifm-color-gray-600);
+.footer {
+  background-color: transparent;
+  border-top: 1px solid var(--ifm-hover-overlay);
   font-size: 0.9rem;
+  color: var(--ifm-color-gray-600);
+}
+
+.table-of-contents__left-border {
+  border-left: 0px solid var(--ifm-hover-overlay) !important;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.table-of-contents__left-border .table-of-contents__link {
+  padding: 4px 0;
+}
+.table-of-contents__left-border
+  .table-of-contents__link:not(.table-of-contents__link--active) {
+  color: var(--ifm --ifm-color-content);
+}
+.table-of-contents__left-border
+  li
+  ul
+  li
+  .table-of-contents__link:not(.table-of-contents__link--active) {
+  color: var(--ifm-color-gray-600);
 }
 
 .dsla-search-field .aa-DetachedSearchButton {
-  background-color: var(--ifm-color-gray-200);
+  background-color: var(--ifm-menu-color-background-hover);
   border: none;
   font-size: 0.9rem;
-  color: var(--ifm-color-gray-800);
+  color: var(--ifm-color-gray-700);
   padding: var(--ifm-global-spacing);
-  border-radius: 0.25rem;
+  border-radius: 12px;
   min-width: 180px;
 }
 
@@ -155,14 +231,36 @@ header > p {
   margin-left: calc(-0.75 * var(--ifm-global-spacing));
   transform: scale(0.85);
 }
+.theme-doc-toc-mobile {
+  background-color: var(--ifm-hover-overlay) !important;
+}
 
 b {
   font-weight: 600;
+}
+.theme-doc-breadcrumbs {
+  display: none;
+}
+
+.main-wrapper img {
+  border: 1px solid var(--ifm-menu-color-background-hover);
+  border-radius: 12px;
+  box-shadow: 0px 4px 9px -1px rgb(0 0 0 / 4%), 0px 5px 24px 0px rgb(0 0 0 / 4%),
+    0px 10px 48px 0px rgb(0 0 0 / 4%);
 }
 
 @media screen and (min-width: 996px) {
   .theme-doc-breadcrumbs {
     margin-top: var(--ifm-leading) !important;
     margin-bottom: 0 !important;
+  }
+  div.col.docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module {
+    padding: 0 64px;
+  }
+
+  .main-wrapper {
+    width: 1500px;
+    margin: 2vw auto;
+    max-width: 100%;
   }
 }

@@ -1,8 +1,8 @@
-# Pathfinding Visualiser Protocol
+# Pathfinding Posthoc Protocol
 
 _Version 1.0.3_
 
-The Pathfinding Visualiser Protocol describes the way pathfinding visualisers communicate with pathfinding solvers to deliver an interactive experience.
+The Pathfinding Posthoc Protocol describes the way pathfinding visualisers communicate with pathfinding solvers to deliver an interactive experience.
 
 The protocol is transport-layer agnostic, and extends the [JSON-RPC 2.0 specifications](https://www.jsonrpc.org/specification).
 

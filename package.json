@@ -18,16 +18,23 @@
     "@cmfcmf/docusaurus-search-local": "^1.1.0",
     "@docusaurus/core": "^3.1.1",
     "@docusaurus/preset-classic": "^3.1.1",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "@mdx-js/react": "^3.0.0",
-    "clsx": "^1.2.1",
+    "@mui/icons-material": "^5.15.15",
+    "@mui/material": "^5.15.15",
+    "lodash": "^4.17.21",
+    "material-ui-popup-state": "^5.1.0",
     "prism-react-renderer": "^2.1.0",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "react-scroll-parallax": "^3.4.5"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.1.1",
     "@docusaurus/tsconfig": "^3.1.1",
     "@docusaurus/types": "^3.1.1",
+    "@types/lodash": "^4.17.0",
     "typescript": "~5.2.2"
   },
   "browserslist": {

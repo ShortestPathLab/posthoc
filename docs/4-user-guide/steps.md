@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # Steps Panel
 
-Visualiser's steps panel shows a list of steps of the current chosen trace.
+Posthoc's steps panel shows a list of steps of the current chosen trace.
 ![Alt text](steps.png)
 
 ## Navigating Through the Steps

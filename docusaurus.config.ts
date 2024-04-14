@@ -3,7 +3,7 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: "Visualiser",
+  title: "Posthoc",
   tagline: "Visualiser and Debugger for Pathfinding Search",
   favicon: "img/favicon.ico",
   titleDelimiter: "-",
@@ -38,13 +38,15 @@ const config: Config = {
           sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/path-visualiser/docs/tree/master",
+          editUrl:
+            "https://github.com/path-visualiser/path-visualiser.github.io/tree/master",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/path-visualiser/docs/tree/master",
+          editUrl:
+            "https://github.com/path-visualiser/path-visualiser.github.io/tree/master",
         },
         // blog: {
         //   showReadingTime: true,
@@ -63,10 +65,9 @@ const config: Config = {
     // Replace with your project's social card
     image: "img/social-card.jpg",
     navbar: {
-      hideOnScroll: true,
-      title: "Visualiser",
+      title: "Posthoc",
       logo: {
-        alt: "Visualiser Logo",
+        alt: "Posthoc Logo",
         src: "img/logo512.png",
       },
       items: [
@@ -79,13 +80,13 @@ const config: Config = {
         { to: "/blog", label: "Blog", position: "left" },
         {
           href: "https://path-visualiser.github.io/app",
-          label: "App",
+          label: "Open Posthoc",
           position: "right",
         },
         {
           href: "https://github.com/path-visualiser/app",
           label: "GitHub",
-          position: "right",
+          position: "left",
         },
         {
           type: "search",
@@ -94,7 +95,7 @@ const config: Config = {
       ],
     },
     footer: {
-      copyright: "2023 Monash University",
+      copyright: "Copyright © 2024 Monash University",
     },
     prism: {
       theme: prismThemes.github,

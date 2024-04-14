@@ -1,0 +1,93 @@
+{
+  "logoUrl": "img/logo192.png",
+  "closeVideo": "Close video",
+  "backdropVideoUrl": "media/clip.mp4",
+  "backdropVideoMime": "video/mp4",
+  "demoVideoUrl": "media/clip.mp4",
+  "demoVideoMime": "video/mp4",
+  "appUrl": "https://posthoc.pathfinding.ai",
+  "sections": [
+    { "key": "docs", "label": "Docs", "url": "./docs/overview" },
+    { "key": "blog", "label": "Blog", "url": "./blog" },
+    {
+      "key": "github",
+      "label": "Github",
+      "url": "https://github.com/shortestpathlab/posthoc"
+    }
+  ],
+  "heroTitle": "Understand your solver's decision-making process visually.",
+  "heroSubtitle": "Posthoc is zero-commitment and is useful from the get-go.",
+  "heroCallToAction": "Get started",
+  "demoSectionTitle": "demoSectionTitle",
+  "demoSectionSubtitle": "demoSectionSubtitle",
+  "featuresSectionTitle": "featuresSectionTitle",
+  "featuresSectionSubtitle": "featuresSectionSubtitle",
+  "teamSectionTitle": "teamSectionTitle",
+  "teamSectionSubtitle": "teamSectionSubtitle",
+  "features": [
+    {
+      "image": null,
+      "title": "",
+      "subtitle": ""
+    }
+  ],
+  "docsSectionTitle": "docsSectionTitle",
+  "docsSectionSubtitle": "docsSectionSubtitle",
+  "docsUrlGeneric": "./docs/overview",
+  "docs": [
+    {
+      "key": "os",
+      "label": "OS",
+      "options": [
+        { "key": "linux", "label": "Linux" },
+        { "key": "windows", "label": "Windows" },
+        { "key": "macos", "label": "MacOS" },
+        { "key": "other", "label": "Other" }
+      ]
+    },
+    {
+      "key": "lang",
+      "label": "Language",
+      "options": [
+        { "key": "cpp", "label": "C++" },
+        { "key": "python", "label": "Python" },
+        { "key": "rust", "label": "Rust" },
+        { "key": "other", "label": "Other" }
+      ]
+    }
+  ],
+  "docsCallToAction": "See Posthoc docs for %os in %lang",
+  "docsCallToActionGeneric": "See how Posthoc works for you",
+  "showVideo": "Show video",
+  "footerLinks": [
+    {
+      "title": "Posthoc",
+      "links": [
+        {
+          "label": "Open Posthoc",
+          "url": "https://posthoc.pathfinding.ai"
+        },
+        { "label": "Documentation", "url": "./docs/overview" },
+        {
+          "label": "Github",
+          "url": "https://github.com/shortestpathlab/posthoc"
+        }
+      ]
+    },
+    {
+      "title": "ShortestPathLab",
+      "links": [
+        {
+          "label": "Home",
+          "url": "https://pathfinding.ai/"
+        },
+        { "label": "Github", "url": "https://github.com/ShortestPathLab" }
+      ]
+    },
+    {
+      "title": "Monash Optimisation",
+      "links": [{ "label": "Home", "url": "https://www.monash.edu" }]
+    }
+  ],
+  "footerCopyright": "Copyright © 2024 Monash University"
+}

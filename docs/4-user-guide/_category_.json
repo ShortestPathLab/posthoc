@@ -1,7 +1,7 @@
 {
   "label": "User Guide",
   "position": 4,
-  "collapsed": false,
+  "collapsed": true,
   "link": {
     "type": "generated-index"
   }

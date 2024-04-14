@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # User Interface
 
-Visualiser's interface is made of composable panels. You can add, remove, and rearrange the UI to your desire. This allows Visualiser to support a range of tasks, whether you're using it to learn, showcase, or debug algorithms.
+Posthoc's interface is made of composable panels. You can add, remove, and rearrange the UI to your desire. This allows Posthoc to support a range of tasks, whether you're using it to learn, showcase, or debug algorithms.
 
 ![Alt text](interface.png)
 
@@ -12,7 +12,7 @@ Visualiser's interface is made of composable panels. You can add, remove, and re
 
 ## Core Panels
 
-When you first open Visualiser, it displays the following panels:
+When you first open Posthoc, it displays the following panels:
 
 ### Recipes
 
