@@ -1,10 +1,10 @@
 {
   "logoUrl": "img/logo192.png",
   "closeVideo": "Close video",
-  "backdropVideoUrl": "media/clip.mp4",
-  "backdropVideoMime": "video/mp4",
-  "demoVideoUrl": "media/clip.mp4",
-  "demoVideoMime": "video/mp4",
+  "backdropVideoUrl": "media/clip.webm",
+  "backdropVideoMime": "video/webm",
+  "demoVideoUrl": "media/clip.webm",
+  "demoVideoMime": "video/webm",
   "appUrl": "https://posthoc.pathfinding.ai",
   "sections": [
     { "key": "docs", "label": "Docs", "url": "./docs/overview" },
