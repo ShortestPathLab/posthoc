@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Search Trace
+# Search trace
 
 _Version 1.0.5_
 

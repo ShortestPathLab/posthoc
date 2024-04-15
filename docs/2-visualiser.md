@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Get Posthoc
+# Posthoc visualiser
 
 Open the visualiser [here](https://path-visualiser.github.io/app/).
 

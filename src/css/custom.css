@@ -19,9 +19,9 @@
   --ifm-color-gray-300: #e3e8ed;
   --ifm-color-gray-400: #ccd0d5;
   --ifm-color-gray-500: #bec3c9;
-  --ifm-color-gray-600: #8899a8;
-  --ifm-color-gray-700: #606770;
-  --ifm-color-gray-800: #444950;
+  --ifm-color-gray-600: #505c68;
+  --ifm-color-gray-700: #252d36;
+  --ifm-color-gray-800: #1d2229;
   --ifm-color-gray-900: rgb(59, 69, 78, 1);
   --ifm-color-primary-dark: #2572ff;
   --ifm-color-primary-darker: #1567ff;
@@ -29,8 +29,7 @@
   --ifm-color-primary-light: #669cff;
   --ifm-color-primary-lighter: #77a7ff;
   --ifm-color-primary-lightest: #a7c6ff;
-  --ifm-color-primary: #346ddb;
-  --ifm-color-primary: #4687ff;
+  --ifm-color-primary: #248aff;
   --ifm-color-white: #ffffff;
   --ifm-font-family-base: Inter, system-ui, -apple-system, Segoe UI, Roboto,
     Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI",
@@ -46,10 +45,14 @@
   --ifm-menu-link-padding-vertical: 0.5rem;
   --ifm-navbar-height: 4rem;
   --ifm-menu-color-background-active: transparent;
+  --ifm-color-content: hsl(240, 4%, 9%) !important;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme="dark"] {
+  --ifm-color-gray-600: #909dab;
+  --ifm-color-gray-700: #acb9c9;
+  --ifm-color-gray-800: #dbe4f0;
   --ifm-color-primary: #248aff;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
@@ -61,7 +64,7 @@
   --ifm-background-color: #111317 !important;
   --aa-background-color-rgb: 17, 19, 23 !important;
   --ifm-background-surface-color: rgb(17 19 23 / 80%) !important;
-  --ifm-color-content: #b8b9ba !important;
+  --ifm-color-content: hsl(210, 1%, 85%) !important;
 }
 
 .navbar__inner {
@@ -153,13 +156,27 @@ header > p {
 }
 
 .markdown > h2 {
-  --ifm-h2-font-size: 1.25rem;
-  font-weight: var(--ifm-font-weight-bold);
+  --ifm-h2-font-size: 1.5rem;
+  font-weight: var(--ifm-font-weight-semibold);
+  padding-top: 0.5em;
 }
 
 .markdown > h3 {
   --ifm-h3-font-size: 1rem;
-  font-weight: var(--ifm-font-weight-bold);
+  font-weight: var(--ifm-font-weight-semibold);
+  padding-top: 0.5em;
+  color: var(--ifm-color-gray-600);
+}
+
+.markdown > h4,
+.markdown > h5,
+.markdown > h6 {
+  --ifm-h4-font-size: 1rem;
+  --ifm-h5-font-size: 1rem;
+  --ifm-h6-font-size: 1rem;
+  font-weight: var(--ifm-font-weight-normal);
+  color: var(--ifm-color-gray-600);
+  padding-top: 1em;
 }
 
 .theme-doc-toc-mobile > button {
@@ -200,13 +217,14 @@ header > p {
   border-left: 0px solid var(--ifm-hover-overlay) !important;
   padding-top: 0;
   padding-bottom: 0;
+  font-weight: var(--ifm-font-weight-semibold);
 }
 .table-of-contents__left-border .table-of-contents__link {
   padding: 4px 0;
 }
 .table-of-contents__left-border
   .table-of-contents__link:not(.table-of-contents__link--active) {
-  color: var(--ifm --ifm-color-content);
+  color: var(--ifm-color-content);
 }
 .table-of-contents__left-border
   li
@@ -249,13 +267,29 @@ b {
     0px 10px 48px 0px rgb(0 0 0 / 4%);
 }
 
-@media screen and (min-width: 996px) {
+@media screen and (max-width: 997px) {
+  .navbar__title {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 997px) {
   .theme-doc-breadcrumbs {
     margin-top: var(--ifm-leading) !important;
     margin-bottom: 0 !important;
   }
   div.col.docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module {
     padding: 0 64px;
+  }
+
+  #__docusaurus_skipToContent_fallback
+    > div
+    > div
+    > main
+    > div
+    > div
+    > div.col.col--3 {
+    min-width: 240px;
   }
 
   .main-wrapper {
