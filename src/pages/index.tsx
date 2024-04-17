@@ -79,7 +79,7 @@ function AppBar({ showVideo }: SV) {
   const menu = l11n.sections.map(({ url, label }) => (
     <ButtonBase
       sx={{ py: 1, px: 2, borderRadius: 4, justifyContent: "flex-start" }}
-      onClick={() => open(url)}
+      onClick={() => location.replace(url)}
     >
       <Typography variant="body2" sx={{ fontWeight: 500 }}>
         {label}

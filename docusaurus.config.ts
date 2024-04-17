@@ -85,7 +85,7 @@ const config: Config = {
         },
         {
           href: "https://github.com/path-visualiser/app",
-          label: "GitHub",
+          label: "Github",
           position: "left",
         },
         {
@@ -98,8 +98,8 @@ const config: Config = {
       copyright: "Copyright © 2024 Monash University",
     },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: prismThemes.oneLight,
+      darkTheme: prismThemes.oneDark,
     },
   } satisfies Preset.ThemeConfig,
 };

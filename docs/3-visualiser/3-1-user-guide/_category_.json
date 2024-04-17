@@ -1,6 +1,6 @@
 {
-  "label": "API",
-  "position": 6,
+  "label": "User Guide",
+  "position": 5,
   "collapsed": true,
   "link": {
     "type": "generated-index"
