@@ -34,7 +34,7 @@ import {
   useRef,
   useState,
 } from "react";
-import l11n from "./en-au.json";
+import l10n from "./en-au.json";
 import { makeTheme, usePaper } from "../components/theme";
 
 const theme = makeTheme("dark");
@@ -76,7 +76,7 @@ function AppBar({ showVideo }: SV) {
   const paper = usePaper();
   const sm = useSm();
   const top = useScrollTrigger({ threshold: 0, disableHysteresis: true });
-  const menu = l11n.sections.map(({ url, label }) => (
+  const menu = l10n.sections.map(({ url, label }) => (
     <ButtonBase
       sx={{ py: 1, px: 2, borderRadius: 4, justifyContent: "flex-start" }}
       onClick={() => location.replace(url)}
@@ -90,7 +90,7 @@ function AppBar({ showVideo }: SV) {
     <Button
       variant="contained"
       sx={{ ...paper(1), py: 1.5, px: 4 }}
-      onClick={() => window.open(l11n.appUrl)}
+      onClick={() => window.open(l10n.appUrl)}
     >
       Open Posthoc
     </Button>
@@ -177,7 +177,7 @@ function AppBar({ showVideo }: SV) {
 }
 
 function Logo(props: ComponentProps<"img">) {
-  return <img src={l11n.logoUrl} width={32} height={32} {...props} />;
+  return <img src={l10n.logoUrl} width={32} height={32} {...props} />;
 }
 
 type SV = {
@@ -202,17 +202,17 @@ function Hero({ showVideo, onShowVideo }: SV) {
     >
       {space()}
       <Typography sx={{ zIndex: 1 }} variant="h1">
-        {l11n.heroTitle}
+        {l10n.heroTitle}
       </Typography>
       <Typography sx={{ zIndex: 1 }} variant="body2" color="text.secondary">
-        {l11n.heroSubtitle}
+        {l10n.heroSubtitle}
       </Typography>
       <Button
         sx={{ py: 2, px: 6 }}
         variant="contained"
         endIcon={<ArrowForward />}
       >
-        {l11n.heroCallToAction}
+        {l10n.heroCallToAction}
       </Button>
       {space()}
       <Button
@@ -224,7 +224,7 @@ function Hero({ showVideo, onShowVideo }: SV) {
           px: 6,
         }}
       >
-        {l11n.showVideo}
+        {l10n.showVideo}
       </Button>
       {space(2)}
     </Stack>
@@ -289,15 +289,15 @@ function Card({
 function DocSelector() {
   const [selection, reduce] = useReducer(
     (a: Dictionary<string>, b: Dictionary<string>) => ({ ...a, ...b }),
-    mapValues(keyBy(l11n.docs, "key"), (v) => first(v.options).key)
+    mapValues(keyBy(l10n.docs, "key"), (v) => first(v.options).key)
   );
   const paper = usePaper();
   const label = (k1: string, k2: string) =>
-    find(find(l11n.docs, { key: k1 }).options, { key: k2 }).label;
+    find(find(l10n.docs, { key: k1 }).options, { key: k2 }).label;
   return (
     <>
       <Stack alignItems="center" gap={6}>
-        {l11n.docs.map(({ label, options, key }) => (
+        {l10n.docs.map(({ label, options, key }) => (
           <Stack gap={4} width="100%" alignItems="center">
             <Typography variant="h3">{label}</Typography>
             <Stack gap={2} sx={grid(180)} width="90%">
@@ -320,11 +320,11 @@ function DocSelector() {
         <Button
           sx={{ py: 2, px: 6, mt: 4, borderRadius: 8 }}
           variant="contained"
-          onClick={() => open(l11n.docsUrlGeneric)}
+          onClick={() => open(l10n.docsUrlGeneric)}
         >
           {selection.lang === "other" || selection.os === "other"
-            ? l11n.docsCallToActionGeneric
-            : l11n.docsCallToAction
+            ? l10n.docsCallToActionGeneric
+            : l10n.docsCallToAction
                 .replace("%os", label("os", selection.os))
                 .replace("%lang", label("lang", selection.lang))}
         </Button>
@@ -377,7 +377,7 @@ function Background({ showVideo, onShowVideo }: SV) {
             objectFit: showVideo ? "contain" : "cover",
           }}
         >
-          <source src={l11n.backdropVideoUrl} type={l11n.backdropVideoMime} />
+          <source src={l10n.backdropVideoUrl} type={l10n.backdropVideoMime} />
         </video>
         <Box
           sx={{
@@ -413,7 +413,7 @@ function Background({ showVideo, onShowVideo }: SV) {
             startIcon={<ArrowBack />}
             onClick={() => onShowVideo(false)}
           >
-            {l11n.closeVideo}
+            {l10n.closeVideo}
           </Button>
         </Box>
       </Box>
@@ -439,7 +439,7 @@ function Footer() {
           <Stack direction="row" gap={8}>
             <Logo width={48} height={48} />
             <Stack sx={grid(180)} gap={8} flex={1}>
-              {l11n.footerLinks.map(({ title, links }) => (
+              {l10n.footerLinks.map(({ title, links }) => (
                 <Stack gap={1} sx={{ flex: 1 }}>
                   <Typography variant="body2" sx={{ pb: 2 }}>
                     {title}
@@ -469,7 +469,7 @@ function Footer() {
           {space()}
           <Divider sx={{ opacity: 0.25 }} />
           <Typography textAlign="right" color="text.secondary">
-            {l11n.footerCopyright}
+            {l10n.footerCopyright}
           </Typography>
         </Stack>
       </Box>
@@ -500,8 +500,8 @@ export default function Home() {
           <Box sx={{ pb: 9 }}>
             <Hero showVideo={showVideo} onShowVideo={setShowVideo} />
             <SectionTitle
-              title={l11n.demoSectionTitle}
-              subtitle={l11n.demoSectionSubtitle}
+              title={l10n.demoSectionTitle}
+              subtitle={l10n.demoSectionSubtitle}
             />
             <Box
               sx={{
@@ -519,13 +519,13 @@ export default function Home() {
                 height="100%"
                 style={{ borderRadius: 8, objectFit: "cover" }}
               >
-                <source src={l11n.demoVideoUrl} type={l11n.demoVideoMime} />
+                <source src={l10n.demoVideoUrl} type={l10n.demoVideoMime} />
               </video>
             </Box>
             <SectionTitle
               anchor="features"
-              title={l11n.featuresSectionTitle}
-              subtitle={l11n.featuresSectionSubtitle}
+              title={l10n.featuresSectionTitle}
+              subtitle={l10n.featuresSectionSubtitle}
             />
             <Stack gap={4} sx={grid(320)}>
               {times(6, () => (
@@ -534,14 +534,14 @@ export default function Home() {
             </Stack>
             <SectionTitle
               anchor="docs"
-              title={l11n.docsSectionTitle}
-              subtitle={l11n.docsSectionSubtitle}
+              title={l10n.docsSectionTitle}
+              subtitle={l10n.docsSectionSubtitle}
             />
             <DocSelector />
             <SectionTitle
               anchor="team"
-              title={l11n.teamSectionTitle}
-              subtitle={l11n.teamSectionSubtitle}
+              title={l10n.teamSectionTitle}
+              subtitle={l10n.teamSectionSubtitle}
             />
             <Stack gap={4} sx={grid(260)}>
               {times(3, () => (

@@ -32,16 +32,18 @@ The search trace is a YAML log of your algorithm's decisions. What, and how much
     - { type: raycast, id: 1, x: 1, y: 2, rayX: 1, rayY: 4 }
     - { type: expand, id: 2, x: 3, y: 4 }
   ```
-  <figcaption>Algorithm specific events</figcaption>
+  <figcaption>Algorithm-specific events</figcaption>
 </figure>
 
-Since YAML is a superset of JSON, your traces can be JSON too.
+Since YAML is a superset of JSON, your traces can be in JSON too.
 
 <figure>
   ```yaml title="single-agent-search.trace.json"
   {
     "events": [
-      { "type": "expand", "id": 0, "f": 0, "g": 0 }
+      { "type": "expand", "id": 0, "f": 0, "g": 0 },
+      { "type": "generate", "id": 1, "pId": 0, "f": 1, "g": 1 },
+      { "type": "close", "id": 0, "f": 0, "g": 0 }
     ]
   }
   ```
@@ -84,7 +86,7 @@ events:
   - { type: decision, id: c, x: 1, y: 5, pId: a }
 ```
 
-The `main` view acts as the entry-point.
+The `main` view acts as the entry-point, and `rect` is a primitive provided by the built-in 2D renderer.
 
 ![Simple view](simple-rendering.png)
 
@@ -93,6 +95,8 @@ It's that easy!
 Custom views get you quickly going to creating something useful, but its also a language that is powerful enough to let you express complex visualisations.
 
 ![Complex view](complex-view.png)
+
+See the [2D renderer API reference](category/renderer) for a list of primitives provided by the built-in renderer.
 
 ## Nested views
 
@@ -129,7 +133,27 @@ Nest views by referencing other views with the `$` property. You can also pass p
 
 ## Property expressions
 
-Properties can be
+You can write expressions inside `${{  }}` brackets to reference event information or values passed from a parent view.
+
+```yaml title="expression.trace.yaml
+views:
+  main:
+    - $: rect
+      width: 1
+      height: 1
+      // highlight-next-line
+      fill: ${{ $.event.color }}
+      $info:
+        // highlight-next-line
+        greeting: This rectangle is ${{ $.event.color }}
+
+events:
+  - { type: event, color: orange }
+```
+
+If a property is a single expression, the property's value and type is taken from the result of the expression. But, if the property contains multiple expressions, or if there's text around the expressions, it becomes a concatenated string instead.
+
+See the [search trace API reference](api/search-trace) for a list of properties available in expressions.
 
 ## Special properties
 
