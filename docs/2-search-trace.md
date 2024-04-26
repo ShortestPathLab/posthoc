@@ -180,7 +180,7 @@ views:
 events:
   - { type: open, id: 1 }
   - { type: generate, id: 1 }
-  - { type: close, id: 1, message: Open and close events should be cleared }
+  - { type: close, id: 1, message: Open and generate events should be cleared }
 ```
 
 ### `$for`
