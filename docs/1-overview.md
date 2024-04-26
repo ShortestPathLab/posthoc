@@ -40,15 +40,15 @@ Identify where your algorithm has deviated from a known good baseline by compari
 
 ### Discuss ideas with your team
 
+Present your ideas to your team and problem-solve together.
+
 ### Help students learn
 
-The Posthoc could be use as an learning tool in for learners' understanding of complex algorithms by providing a conducive environment for visualisation. Consider the example of the weighted [A\* search](https://en.wikipedia.org/wiki/A*_search_algorithm) problem. Students often find it challenging to conceptualize how various weights assigned to different grid cells or walkable paths can influence the algorithm's decision-making process. The Posthoc bridges this gap, enabling learners to visually comprehend the impact of these weights on the algorithm's pathfinding capabilities.
-
-![weighted a star](educational.png)
-
-In the illustration provided, the map is designed to mimic a video game environment, depicting a desert interspersed with patches of forest. The intensity of the green color indicates the weight of the walkable paths, with darker shades representing heavier weights. Through this visualization, it becomes evident how the A\* algorithm strategically selects a path from the source to the target. It does so by navigating through areas with the least amount of green, effectively avoiding paths with heavier weights to find the shortest and most efficient route. This visual demonstration not only clarifies the concept of weighted pathfinding but also showcases the algorithm's adeptness at incorporating path weights into its calculations, leading to an optimized solution.
+Walk through algorithms and techniques visually with students.
 
 ### Share your work
+
+Let the world discover your work.
 
 ## Why we built Posthoc
 

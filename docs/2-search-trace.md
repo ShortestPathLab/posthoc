@@ -8,6 +8,7 @@ The search trace is a YAML log of your algorithm's decisions. What, and how much
 
 <figure>
   ```yaml title="single-agent-search.trace.yaml"
+  version: 1.4.0
   events:
     - { type: expand, id: 0, f: 0, g: 0 }
     - { type: generate, id: 1, pId: 0, f: 1, g: 1 }
@@ -18,6 +19,7 @@ The search trace is a YAML log of your algorithm's decisions. What, and how much
 
 <figure>
   ```yaml title="agent-moves.trace.yaml"
+  version: 1.4.0
   events:
     - { type: move, agent: 47, id: 0, x: 0, y: 0 }
     - { type: move, agent: 18, id: 0, pId: 0, x: 5, y: 2 }
@@ -27,6 +29,7 @@ The search trace is a YAML log of your algorithm's decisions. What, and how much
 
 <figure>
   ```yaml title="rayscan.trace.yaml"
+  version: 1.4.0
   events:
     - { type: raycast, id: 1, x: 1, y: 2, rayX: 3, rayY: 4 }
     - { type: raycast, id: 1, x: 1, y: 2, rayX: 1, rayY: 4 }
@@ -39,6 +42,7 @@ Since YAML is a superset of JSON, your traces can be in JSON too.
 
 <figure>
   ```yaml title="single-agent-search.trace.json"
+  version: 1.4.0
   {
     "events": [
       { "type": "expand", "id": 0, "f": 0, "g": 0 },
@@ -50,13 +54,14 @@ Since YAML is a superset of JSON, your traces can be in JSON too.
   <figcaption>Generic search events (JSON)</figcaption>
 </figure>
 
-Search traces should have the extensions `.trace.yaml` or `.trace.json`.
+Search traces should have the extensions `.trace.yaml` or `.trace.json`. It's required to declare `version: 1.4.0`.
 
 ## Decision tree
 
 View your sequential decision-making processes as a tree or directed graph. Just provide `id` and `pId`(parent ID) properties in your log.
 
 ```yaml title="simple-tree.trace.yaml"
+version: 1.4.0
 events:
   - { type: decision, id: a, pId: null }
   - { type: decision, id: b, pId: a }
@@ -71,7 +76,8 @@ The `type` property is optional, but should be a descriptive name of the kind of
 
 Give your search trace a custom visual representation by adding a `views` section to it.
 
-```yaml {1-8} title="custom-view.trace.yaml"
+```yaml {2-9} title="custom-view.trace.yaml"
+version: 1.4.0
 views:
   main:
     - $: rect # Show a rectangle...
@@ -103,6 +109,7 @@ See the [2D renderer API reference](category/renderer) for a list of primitives 
 Nesting allows you to create copies of some element without having to repeat yourself.
 
 ```yaml title="nesting.trace.yaml
+version: 1.4.0
 views:
   // highlight-next-line
   marker: # A marker is defined here, which just draws a circle
@@ -136,6 +143,7 @@ Nest views by referencing other views with the `$` property. You can also pass p
 You can write expressions inside `${{  }}` brackets to reference event information or values passed from a parent view.
 
 ```yaml title="expression.trace.yaml
+version: 1.4.0
 views:
   main:
     - $: rect
@@ -161,13 +169,14 @@ See the [search trace API reference](api/search-trace) for a list of properties 
 
 Control when elements should be cleared.
 
-| Value             | Example          | Description                                                                |
-| ----------------- | ---------------- | -------------------------------------------------------------------------- |
-| `false` (default) | `clear: false`   | Elements will remain once drawn.                                           |
-| `true`            | `clear: true`    | Elements will clear immediately after the step they're drawn.              |
-| `string`          | `clear: closing` | Clear once the event of a particular type (e.g. `closing`) is encountered. |
+| Value             | Usage          | Description                                                                                              |
+| ----------------- | -------------- | -------------------------------------------------------------------------------------------------------- |
+| `false` (default) | `clear: false` | Event will remain once drawn.                                                                            |
+| `true`            | `clear: true`  | Event will clear immediately after the step they're drawn.                                               |
+| `string`          | `clear: close` | Event clears once another event of the same `id`, and the specified type (e.g. `close`), is encountered. |
 
 ```yaml title="clear.trace.yaml"
+version: 1.4.0
 views:
   main:
     - $: circle
@@ -187,7 +196,8 @@ events:
 
 Repeat a view based on a value.
 
-```yaml {10-14} title="loop.trace.yaml"
+```yaml {11-15} title="loop.trace.yaml"
+version: 1.4.0
 views:
   main:
     - $: circle
@@ -213,6 +223,7 @@ events:
 Conditionally render a view.
 
 ```yaml title="if.trace.yaml"
+version: 1.4.0
 views:
   main:
     - $: circle
@@ -239,7 +250,8 @@ events:
 
 By default, clicking on elements in the viewport will show you info about the event that rendered it. However, you can define information that will only be shown when a specific part of the event was clicked.
 
-```yaml {8-11,17-20} title="info.trace.yaml
+```yaml {9-11,17-19} title="info.trace.yaml
+version: 1.4.0
 views:
   main:
     - $: circle

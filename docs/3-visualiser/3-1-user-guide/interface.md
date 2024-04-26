@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# User Interface
+# UI
 
 Posthoc's interface is made of composable panels. You can add, remove, and rearrange the UI to your desire. This allows Posthoc to support a range of tasks, whether you're using it to learn, showcase, or debug algorithms.
 

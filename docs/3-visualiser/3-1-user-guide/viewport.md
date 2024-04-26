@@ -2,13 +2,13 @@
 sidebar_position: 3
 ---
 
-# Viewport Panel
+# Viewport
 
 [TODO]
 
 Pipe Adapter
 
-Weighted A*
+Weighted A\*
 -> Map support
 --> Edit Layer options to specify color of tile
 --> Make changes to grid parser

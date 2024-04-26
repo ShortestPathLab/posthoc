@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# Steps Panel
+# Steps
 
 Posthoc's steps panel shows a list of steps of the current chosen trace.
 ![Alt text](steps.png)
