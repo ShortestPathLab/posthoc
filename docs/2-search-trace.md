@@ -54,7 +54,7 @@ Search traces should have the extensions `.trace.yaml` or `.trace.json`.
 
 ## Decision tree
 
-View your sequential decision-making processes as a tree or directed graph. Just provide `id` and `pId` properties in your log.
+View your sequential decision-making processes as a tree or directed graph. Just provide `id` and `pId`(parent ID) properties in your log.
 
 ```yaml title="simple-tree.trace.yaml"
 events:
@@ -75,11 +75,11 @@ Give your search trace a custom visual representation by adding a `views` sectio
 views:
   main:
     - $: rect # Show a rectangle...
-      x: "{{ $.event.x }}" # at this coordinate...
-      y: "{{ $.event.y }}" # at this coordinate...
+      x: ${{ $.x }} # at this coordinate...
+      y: ${{ $.y }} # at this coordinate...
       width: 1
       height: 1
-      fill: "{{ $.theme.foreground }}" # with this colour 🎨
+      fill: ${{ theme.foreground }} # with this color 🎨
 events:
   - { type: decision, id: a, x: 1, y: 1, pId: null }
   - { type: decision, id: b, x: 1, y: 3, pId: a }
@@ -110,16 +110,16 @@ views:
       fill: ${{ $.color }}
       radius: 0.25
       x: ${{ $.x }}
-      y: ${{ $.event.step }}
+      y: ${{ $.step }}
   main:
     // highlight-next-line
     - $: marker # Render a red marker
       color: red
-      x: ${{ $.event.min }}
+      x: ${{ $.min }}
     // highlight-next-line
     - $: marker # Render a green marker
       color: green
-      x: ${{ $.event.max }}
+      x: ${{ $.max }}
 
 events:
   - { type: bound, step: 0, min: 1, max: 5 }
@@ -142,10 +142,10 @@ views:
       width: 1
       height: 1
       // highlight-next-line
-      fill: ${{ $.event.color }}
+      fill: ${{ $.color }}
       $info:
         // highlight-next-line
-        greeting: This rectangle is ${{ $.event.color }}
+        greeting: This rectangle is ${{ $.color }}
 
 events:
   - { type: event, color: orange }
@@ -157,6 +157,32 @@ See the [search trace API reference](api/search-trace) for a list of properties 
 
 ## Special properties
 
+### `clear`
+
+Control when elements should be cleared.
+
+| Value             | Example          | Description                                                                |
+| ----------------- | ---------------- | -------------------------------------------------------------------------- |
+| `false` (default) | `clear: false`   | Elements will remain once drawn.                                           |
+| `true`            | `clear: true`    | Elements will clear immediately after the step they're drawn.              |
+| `string`          | `clear: closing` | Clear once the event of a particular type (e.g. `closing`) is encountered. |
+
+```yaml title="clear.trace.yaml"
+views:
+  main:
+    - $: circle
+      x: ${{ $.step }}
+      y: 1
+      radius: 0.25
+      fill: ${{ colors.blue }}
+      // highlight-next-line
+      clear: close
+events:
+  - { type: open, id: 1 }
+  - { type: generate, id: 1 }
+  - { type: close, id: 1, message: Open and close events should be cleared }
+```
+
 ### `$for`
 
 Repeat a view based on a value.
@@ -165,17 +191,17 @@ Repeat a view based on a value.
 views:
   main:
     - $: circle
-      x: "{{ $.i }}"
+      x: ${{ $.i }}
       y: 1
       radius: 0.25
-      fill: "{{ $.colors[$.i] }}"
+      fill: ${{ $.colors[$.i] }}
       $info:
-        color: "{{ $.event.colors[$.i] }}"
+        color: ${{ $.colors[$.i] }}
       $for:
-        $i: i # Optional, default `i`
+        $let: i # Optional, default `i`
         $from: 0 # Optional, default 0
         $step: 1 # Optional, default 1
-        $to: "{{ $.numbers.length }}" # Required, number
+        $to: ${{ $.colors.length }} # Required, number
 events:
   - { type: event, colors: [red, green, blue, orange] }
 ```
@@ -195,7 +221,7 @@ views:
       y: 1
       fill: red
       // highlight-next-line
-      $if: "{{ $.event.direction == 'left' }}"
+      $if: ${{ $.direction == 'left' }}
     - $: rect
       width: 1
       height: 1
@@ -203,7 +229,7 @@ views:
       y: 1
       fill: red
       // highlight-next-line
-      $if: "{{ $.event.direction == 'right' }}"
+      $if: ${{ $.direction == 'right' }}
 events:
   - { type: event, direction: left }
   - { type: event, direction: right }
@@ -219,23 +245,21 @@ views:
     - $: circle
       fill: green
       radius: 0.25
-      x: "{{ $.event.x + $.event.left }}"
+      x: ${{ $.x + $.l }}
       y: 0
       $info:
-        message: "This is the left marker"
-        position: >
-          {{ $.event.x }} + {{ $.event.left }} = {{ $.event.x + $.event.left }}"
+        message: This is the left marker
+        position: ${{ $.x }} + ${{ $.l }} = ${{ $.x + $.l }}
     - $: circle
       fill: red
       radius: 0.25
-      x: "{{ $.event.x + $.event.right }}"
+      x: ${{ $.x + $.r }}
       y: 0
       $info:
-        message: "This is the right marker"
-        position: >
-          {{ $.event.x }} + {{ $.event.right }} = {{ $.event.x + $.event.right }}
+        message: This is the right marker
+        position: ${{ $.x }} + ${{ $.r }} = ${{ $.x + $.r }}
 events:
-  - { type: bound, x: 10, left: 2, right: 4 }
+  - { type: bound, x: 10, l: 2, r: 4 }
 ```
 
 ![Info](info.png)
@@ -246,4 +270,4 @@ The search trace API defines how you can write and structure your search trace. 
 
 The renderer specifies what primitives are available and how you can use them. For the built-in renderer, see the [2D renderer API here](category/renderer).
 
-Check out the [YAML 1.2.2 documentation](https://yaml.org/spec/1.2.2/) for all the ways you can write YAML. It's a very flexible language.
+Check out the [YAML 1.2.2 documentation](https://yaml.org/spec/1.2.2/) for all the ways you can write YAML.

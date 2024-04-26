@@ -3,10 +3,9 @@ import {
   ArrowForward,
   FilterTiltShiftOutlined,
   Menu,
-  PlayArrowOutlined,
-  SetMealSharp,
 } from "@mui/icons-material";
 import {
+  Fade,
   Box,
   Button,
   ButtonBase,
@@ -105,73 +104,75 @@ function AppBar({ showVideo }: SV) {
         ...getShowVideoOpacityStyle(showVideo),
       }}
     >
-      <Stack
-        gap={1}
-        alignItems="center"
-        direction="row"
-        sx={{
-          p: 1,
-          mx: "auto",
-          mt: sm ? 2 : 4,
-          transition: (t) =>
-            t.transitions.create(["background-color", "backdrop-filter"]),
-          ...(top
-            ? {
-                ...paper(1),
-              }
-            : {}),
-          width: 1000,
-          maxWidth: "100%",
-          height: 64,
-          borderRadius: 9,
-        }}
-      >
-        <Box sx={{ ml: 1, mr: 2, height: 32, minWidth: 32 }}>
-          <Logo />
-        </Box>
-        {sm ? (
-          <>
-            <Box sx={{ flex: 1 }}></Box>
-            {openPosthoc}
-            <PopupState variant="popover">
-              {(state) => (
-                <>
-                  <IconButton {...bindTrigger(state)}>
-                    <Menu />
-                  </IconButton>
-                  <Popover
-                    onClick={state.close}
-                    {...bindPopover(state)}
-                    anchorOrigin={{
-                      vertical: "bottom",
-                      horizontal: "right",
-                    }}
-                    slotProps={{
-                      paper: {
-                        sx: {
-                          ...paper(1),
-                          mt: 4,
-                          borderRadius: 8,
+      <Fade in>
+        <Stack
+          gap={1}
+          alignItems="center"
+          direction="row"
+          sx={{
+            p: 1,
+            mx: "auto",
+            mt: sm ? 2 : 4,
+            transition: (t) =>
+              t.transitions.create(["background-color", "backdrop-filter"]),
+            ...(top
+              ? {
+                  ...paper(1),
+                }
+              : {}),
+            width: 1000,
+            maxWidth: "100%",
+            height: 64,
+            borderRadius: 9,
+          }}
+        >
+          <Box sx={{ ml: 1, mr: 2, height: 32, minWidth: 32 }}>
+            <Logo />
+          </Box>
+          {sm ? (
+            <>
+              <Box sx={{ flex: 1 }}></Box>
+              {openPosthoc}
+              <PopupState variant="popover">
+                {(state) => (
+                  <>
+                    <IconButton {...bindTrigger(state)}>
+                      <Menu />
+                    </IconButton>
+                    <Popover
+                      onClick={state.close}
+                      {...bindPopover(state)}
+                      anchorOrigin={{
+                        vertical: "bottom",
+                        horizontal: "right",
+                      }}
+                      slotProps={{
+                        paper: {
+                          sx: {
+                            ...paper(1),
+                            mt: 4,
+                            borderRadius: 8,
+                          },
                         },
-                      },
-                    }}
-                  >
-                    <Stack gap={2} p={2}>
-                      {menu}
-                    </Stack>
-                  </Popover>
-                </>
-              )}
-            </PopupState>
-          </>
-        ) : (
-          <>
-            {menu}
-            {space()}
-            {openPosthoc}
-          </>
-        )}
-      </Stack>
+                      }}
+                    >
+                      <Stack gap={2} p={2}>
+                        {menu}
+                      </Stack>
+                    </Popover>
+                  </>
+                )}
+              </PopupState>
+            </>
+          ) : (
+            <>
+              {menu}
+              {space()}
+              {openPosthoc}
+            </>
+          )}
+        </Stack>
+      </Fade>
     </Box>
   );
 }
