@@ -4,18 +4,186 @@
         <title>Posthoc Blog</title>
         <link>https://path-visualiser.github.io/blog</link>
         <description>Posthoc Blog</description>
-        <lastBuildDate>Sat, 18 Nov 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 08 May 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <item>
-            <title><![CDATA[Todo]]></title>
-            <link>https://path-visualiser.github.io/blog/todo</link>
-            <guid>https://path-visualiser.github.io/blog/todo</guid>
-            <pubDate>Sat, 18 Nov 2023 00:00:00 GMT</pubDate>
-            <description><![CDATA[[TODO]]]></description>
-            <content:encoded><![CDATA[<p>[TODO]</p>]]></content:encoded>
-            <category>hello</category>
+            <title><![CDATA[Posthoc v1.2.4]]></title>
+            <link>https://path-visualiser.github.io/blog/1.2.4</link>
+            <guid>https://path-visualiser.github.io/blog/1.2.4</guid>
+            <pubDate>Wed, 08 May 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[[Todo]]]></description>
+            <content:encoded><![CDATA[<p>[Todo]</p>]]></content:encoded>
+            <category>changelog</category>
+            <category>v1.2.4</category>
+        </item>
+        <item>
+            <title><![CDATA[Posthoc v1.2.0]]></title>
+            <link>https://path-visualiser.github.io/blog/1.2.0</link>
+            <guid>https://path-visualiser.github.io/blog/1.2.0</guid>
+            <pubDate>Fri, 01 Mar 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[UI]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ui">UI<a href="https://path-visualiser.github.io/blog/1.2.0#ui" class="hash-link" aria-label="Direct link to UI" title="Direct link to UI">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="general-ui-improvements">General UI Improvements<a href="https://path-visualiser.github.io/blog/1.2.0#general-ui-improvements" class="hash-link" aria-label="Direct link to General UI Improvements" title="Direct link to General UI Improvements">​</a></h3>
+<p>We generally improved the UI, including the addition of a sidebar, to deliver a sleeker and more comfortable experience.</p>
+<p><img decoding="async" loading="lazy" alt="Alt text" src="https://path-visualiser.github.io/assets/images/improved-ui-94d4bbb32116521eb885e6bd9781d5b1.png" width="2560" height="1528" class="img_ev3q"></p>
+<p>We improved the usability of the UI under different conditions like when the window gets too small.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="empty-panel-copy">Empty Panel Copy<a href="https://path-visualiser.github.io/blog/1.2.0#empty-panel-copy" class="hash-link" aria-label="Direct link to Empty Panel Copy" title="Direct link to Empty Panel Copy">​</a></h3>
+<p>We added copy and a subtle design to panels that are empty to indicate that an action (like loading a trace) is required before they become active.</p>
+<p><a href="https://path-visualiser.github.io/assets/files/1.2.0-empty-panels-64bd243f0a00b93ee49e9d7764ec5bd5.mp4" target="_blank">Clip: Empty Panels</a></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="layer-editor-panel-redesign">Layer Editor Panel Redesign<a href="https://path-visualiser.github.io/blog/1.2.0#layer-editor-panel-redesign" class="hash-link" aria-label="Direct link to Layer Editor Panel Redesign" title="Direct link to Layer Editor Panel Redesign">​</a></h3>
+<p>Previously, the layer editor is presented as a modal. It required multiple clicks to load a file and the interface is a bit confusing. In this version, the layer editor is redesigned as a popover and is significantly more usable.</p>
+<p><a href="https://path-visualiser.github.io/assets/files/1.2.0-layer-panel-2e286bfed4aef2826332224c206b047c.mp4" target="_blank">Clip: Layer Editor</a></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="steps-panel-redesign">Steps Panel Redesign<a href="https://path-visualiser.github.io/blog/1.2.0#steps-panel-redesign" class="hash-link" aria-label="Direct link to Steps Panel Redesign" title="Direct link to Steps Panel Redesign">​</a></h3>
+<p>Previously, the playback controls tend to be hidden from immediate sight due to all controls being on the main toolbar. In this version, the playback controls are separated into their own island.</p>
+<p><img decoding="async" loading="lazy" alt="Steps Panel" src="https://path-visualiser.github.io/assets/images/steps-panel-77e03c7f98a264e1c714beb16c4c9573.png" width="367" height="154" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="event-properties-view">Event Properties View<a href="https://path-visualiser.github.io/blog/1.2.0#event-properties-view" class="hash-link" aria-label="Direct link to Event Properties View" title="Direct link to Event Properties View">​</a></h3>
+<p>We added a way to view all of the properties of an event. This can be opened through clicking on <strong>See All Properties</strong> of an event in the Steps panel.</p>
+<p><img decoding="async" loading="lazy" alt="Event Properties" src="https://path-visualiser.github.io/assets/images/event-properties-c5ebcb4e63c7fbf770fe90848d57f5e4.png" width="2560" height="1528" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="panel-management">Panel Management<a href="https://path-visualiser.github.io/blog/1.2.0#panel-management" class="hash-link" aria-label="Direct link to Panel Management" title="Direct link to Panel Management">​</a></h3>
+<p>We added the ability reorganise your panels by moving them around. You can do this by dragging the handle in the top left corner.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="system">System<a href="https://path-visualiser.github.io/blog/1.2.0#system" class="hash-link" aria-label="Direct link to System" title="Direct link to System">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="error-handling">Error Handling<a href="https://path-visualiser.github.io/blog/1.2.0#error-handling" class="hash-link" aria-label="Direct link to Error Handling" title="Direct link to Error Handling">​</a></h3>
+<p>We introduced a per-layer error API that displays an error label when a layer encounters a problem. For example, if a map couldn't load correctly.</p>
+<p><a href="https://path-visualiser.github.io/assets/files/1.2.0-error-handling-970133a3d5bd137d579f718d28573496.mp4" target="_blank">Clip: Error Handling</a></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="workspaces">Workspaces<a href="https://path-visualiser.github.io/blog/1.2.0#workspaces" class="hash-link" aria-label="Direct link to Workspaces" title="Direct link to Workspaces">​</a></h3>
+<p>We introduced a simple import/export mechanism for quickly sharing or restoring your work. This can be found in the title bar menu (<strong>Workspace</strong> &gt; <strong>Open Workspace</strong>, <strong>Workspace</strong> &gt; <strong>Save Workspace</strong>).</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="publish-workspaces">Publish Workspaces<a href="https://path-visualiser.github.io/blog/1.2.0#publish-workspaces" class="hash-link" aria-label="Direct link to Publish Workspaces" title="Direct link to Publish Workspaces">​</a></h3>
+<p>We designed a simple way to export your workspaces with metadata. In the future, you'll be able to upload these to a community repository.</p>
+<p><img decoding="async" loading="lazy" alt="Publish Workspace" src="https://path-visualiser.github.io/assets/images/publish-workspace-54ecb00dfd0aff32b8fb3b2f1d105e0c.png" width="2560" height="1528" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="drag-and-drop">Drag and Drop<a href="https://path-visualiser.github.io/blog/1.2.0#drag-and-drop" class="hash-link" aria-label="Direct link to Drag and Drop" title="Direct link to Drag and Drop">​</a></h3>
+<p>You can now drag and drop any assortment of files into the visualiser.</p>
+<p><a href="https://path-visualiser.github.io/assets/files/1.2.0-drag-and-drop-5658ebb79addb9f720fde567b493f522.mp4" target="_blank">Clip: Drag and Drop</a></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="filesystem-bridge-adapter-experimental">Filesystem Bridge Adapter (Experimental)<a href="https://path-visualiser.github.io/blog/1.2.0#filesystem-bridge-adapter-experimental" class="hash-link" aria-label="Direct link to Filesystem Bridge Adapter (Experimental)" title="Direct link to Filesystem Bridge Adapter (Experimental)">​</a></h3>
+<p>To help with development and debugging workflows, we provided a way to see live update of search traces. With the right tooling, you'll be able to make changes to your code and then immediately see its visualisation. We're still refining this feature.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="features">Features<a href="https://path-visualiser.github.io/blog/1.2.0#features" class="hash-link" aria-label="Direct link to Features" title="Direct link to Features">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="explore">Explore<a href="https://path-visualiser.github.io/blog/1.2.0#explore" class="hash-link" aria-label="Direct link to Explore" title="Direct link to Explore">​</a></h3>
+<p>We added a hub for new users to try out built-in visualisations.</p>
+<p><img decoding="async" loading="lazy" alt="Explore Page" src="https://path-visualiser.github.io/assets/images/explore-page-ca45299efb8f8a5017f768d1f34da263.png" width="2560" height="1528" class="img_ev3q"></p>
+<p>For new users, this panel would display on start-up.</p>
+<p><img decoding="async" loading="lazy" alt="Explore Page Modal" src="https://path-visualiser.github.io/assets/images/explore-page-modal-8ca2bfce62dfc11fe378a6587134cddd.png" width="2560" height="1528" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="fit-to-viewport">Fit to Viewport<a href="https://path-visualiser.github.io/blog/1.2.0#fit-to-viewport" class="hash-link" aria-label="Direct link to Fit to Viewport" title="Direct link to Fit to Viewport">​</a></h3>
+<p>We introduced a way to fit specific layers to the viewport.</p>
+<p><a href="https://path-visualiser.github.io/assets/files/1.2.0-fit-c5591a41a812918243f900b9820176e2.mp4" target="_blank">Clip: Fit to Viewport</a></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="filter-steps-by-type">Filter Steps by Type<a href="https://path-visualiser.github.io/blog/1.2.0#filter-steps-by-type" class="hash-link" aria-label="Direct link to Filter Steps by Type" title="Direct link to Filter Steps by Type">​</a></h3>
+<p>We added the ability to filter events in the Steps view by event type.</p>
+<p><img decoding="async" loading="lazy" alt="Steps Filter" src="https://path-visualiser.github.io/assets/images/steps-filter-24b984f4132ebbc56d00e841c98df3aa.png" width="2560" height="1528" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="debugger-improvements">Debugger Improvements<a href="https://path-visualiser.github.io/blog/1.2.0#debugger-improvements" class="hash-link" aria-label="Direct link to Debugger Improvements" title="Direct link to Debugger Improvements">​</a></h3>
+<p>The debugger was updated with some new features. In the standard editor, you can now specify to break when a value changed from its parent. In the advanced editor, you now get access to <code>parent</code> and <code>children</code> variables.</p>
+<p><img decoding="async" loading="lazy" alt="Debugger" src="https://path-visualiser.github.io/assets/images/debugger-eeb3e0c50c80d7bf6eeab07e0323edde.png" width="2560" height="1528" class="img_ev3q"></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="2d-renderer">2D Renderer<a href="https://path-visualiser.github.io/blog/1.2.0#2d-renderer" class="hash-link" aria-label="Direct link to 2D Renderer" title="Direct link to 2D Renderer">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="performance-improvements">Performance Improvements<a href="https://path-visualiser.github.io/blog/1.2.0#performance-improvements" class="hash-link" aria-label="Direct link to Performance Improvements" title="Direct link to Performance Improvements">​</a></h3>
+<p>We slightly improved perceived performance by increasing resolution when playback is paused and decreasing resolution when it is playing. We also implement dynamic framerate so the playback should feel more consistent.</p>
+<h1>Known Issues</h1>
+<p>See issues on <a href="https://github.com/path-visualiser/app/issues" target="_blank" rel="noopener noreferrer">our bug tracker</a>.</p>
+<h1>Releases</h1>
+<p>See releases for v1.2.0 <a href="https://github.com/path-visualiser/app/releases/tag/v1.2.0" target="_blank" rel="noopener noreferrer">here</a>.</p>]]></content:encoded>
+            <category>changelog</category>
+            <category>v1.2.0</category>
+        </item>
+        <item>
+            <title><![CDATA[Posthoc v1.0.4]]></title>
+            <link>https://path-visualiser.github.io/blog/1.0.4</link>
+            <guid>https://path-visualiser.github.io/blog/1.0.4</guid>
+            <pubDate>Fri, 22 Sep 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Changes]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="changes">Changes<a href="https://path-visualiser.github.io/blog/1.0.4#changes" class="hash-link" aria-label="Direct link to Changes" title="Direct link to Changes">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="architecture-changes">Architecture Changes<a href="https://path-visualiser.github.io/blog/1.0.4#architecture-changes" class="hash-link" aria-label="Direct link to Architecture Changes" title="Direct link to Architecture Changes">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="ui-overhaul">UI Overhaul<a href="https://path-visualiser.github.io/blog/1.0.4#ui-overhaul" class="hash-link" aria-label="Direct link to UI Overhaul" title="Direct link to UI Overhaul">​</a></h4>
+<p>Waypoint is completely rebuilt to support dynamic and reconfigurable panels, so you can adjust the UI to fit your workflow or use case. Check out the <a href="https://path-visualiser.github.io/blog/1.0.4#use-cases">use cases</a> section for examples.</p>
+<p><img decoding="async" loading="lazy" alt="aux-1" src="https://path-visualiser.github.io/assets/images/aux-1-45ed2ab984c87a7c95a63ec44a8ce821.png" width="2560" height="1600" class="img_ev3q"></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="layers">Layers<a href="https://path-visualiser.github.io/blog/1.0.4#layers" class="hash-link" aria-label="Direct link to Layers" title="Direct link to Layers">​</a></h4>
+<p>Visualise what you need by adding it as a layer to the app.</p>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="trace-layer">Trace Layer<a href="https://path-visualiser.github.io/blog/1.0.4#trace-layer" class="hash-link" aria-label="Direct link to Trace Layer" title="Direct link to Trace Layer">​</a></h5>
+<p>The <strong>Trace</strong> layer renders a search trace. Search traces are JSON documents produced by pathfinding solvers that record steps in the search process.
+<img decoding="async" loading="lazy" alt="trace" src="https://path-visualiser.github.io/assets/images/trace-59ab9618056b7ccd5760ff247d83c1ce.png" width="2560" height="1600" class="img_ev3q"></p>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="map-layer">Map Layer<a href="https://path-visualiser.github.io/blog/1.0.4#map-layer" class="hash-link" aria-label="Direct link to Map Layer" title="Direct link to Map Layer">​</a></h5>
+<p>The <strong>Map</strong> layer renders maps in a supported format.</p>
+<p><img decoding="async" loading="lazy" alt="map" src="https://path-visualiser.github.io/assets/images/map-63bb13e6eaeca400c8525b10ae95ca9d.png" width="2560" height="1600" class="img_ev3q"></p>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="query-layer">Query Layer<a href="https://path-visualiser.github.io/blog/1.0.4#query-layer" class="hash-link" aria-label="Direct link to Query Layer" title="Direct link to Query Layer">​</a></h5>
+<p>The <strong>Query</strong> layer interfaces with solvers to display search traces for arbitrary problem instances.</p>
+<p><img decoding="async" loading="lazy" alt="query" src="https://path-visualiser.github.io/assets/images/query-56f8e7cf8ca28e2b805ac51c09e4370b.png" width="2560" height="1600" class="img_ev3q"></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="extensible-renderer-system">Extensible Renderer System<a href="https://path-visualiser.github.io/blog/1.0.4#extensible-renderer-system" class="hash-link" aria-label="Direct link to Extensible Renderer System" title="Direct link to Extensible Renderer System">​</a></h4>
+<p>Renderers (a.k.a. the Viewport panel) can now be added to Waypoint via extensions (the exact implementation is work-in-progress). This will allow for future renderers to be added with ease (for example, a 3D renderer).</p>
+<p><img decoding="async" loading="lazy" alt="renderer" src="https://path-visualiser.github.io/assets/images/renderer-5d6db9fcb96dec9017f98310b0fdefff.png" width="2560" height="1600" class="img_ev3q"></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="layers-panel">Layers Panel<a href="https://path-visualiser.github.io/blog/1.0.4#layers-panel" class="hash-link" aria-label="Direct link to Layers Panel" title="Direct link to Layers Panel">​</a></h4>
+<p>Manage view layers using the <strong>Layers</strong> panel.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="viewport-panel">Viewport Panel<a href="https://path-visualiser.github.io/blog/1.0.4#viewport-panel" class="hash-link" aria-label="Direct link to Viewport Panel" title="Direct link to Viewport Panel">​</a></h4>
+<p>The <strong>Viewport</strong> panel renders your layers by making use of an installed renderer (by default, the 2D renderer). You can choose which layers to render, as well as auto-fit the contents to the viewport, or display the contents at 1:1 scale.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="tree-panel">Tree Panel<a href="https://path-visualiser.github.io/blog/1.0.4#tree-panel" class="hash-link" aria-label="Direct link to Tree Panel" title="Direct link to Tree Panel">​</a></h4>
+<p>If your pathfinding search problem does not have a convenient spatial embedding (or if you just wanted to), you can also visualise any search trace in a hierarchal format with the <strong>Tree</strong> panel. You can choose how many nodes to render at once.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="steps-panel">Steps Panel<a href="https://path-visualiser.github.io/blog/1.0.4#steps-panel" class="hash-link" aria-label="Direct link to Steps Panel" title="Direct link to Steps Panel">​</a></h4>
+<p>View and replay the recorded events of the search process using the <strong>Steps</strong> panel.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="debugger-panel">Debugger Panel<a href="https://path-visualiser.github.io/blog/1.0.4#debugger-panel" class="hash-link" aria-label="Direct link to Debugger Panel" title="Direct link to Debugger Panel">​</a></h4>
+<p>Debug a search trace using the <strong>Debugger</strong> panel. This feature is currently non-functional in version 1.0.4.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="settings-panel">Settings Panel<a href="https://path-visualiser.github.io/blog/1.0.4#settings-panel" class="hash-link" aria-label="Direct link to Settings Panel" title="Direct link to Settings Panel">​</a></h4>
+<p>Manage connections to solvers and renderers in the <strong>Settings</strong> panel.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="logs-panel">Logs Panel<a href="https://path-visualiser.github.io/blog/1.0.4#logs-panel" class="hash-link" aria-label="Direct link to Logs Panel" title="Direct link to Logs Panel">​</a></h4>
+<p>Waypoint will keep a record of all alerts in the <strong>Logs</strong> panel.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="features">Features<a href="https://path-visualiser.github.io/blog/1.0.4#features" class="hash-link" aria-label="Direct link to Features" title="Direct link to Features">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="2d-renderer-built-in">2D Renderer (Built-in)<a href="https://path-visualiser.github.io/blog/1.0.4#2d-renderer-built-in" class="hash-link" aria-label="Direct link to 2D Renderer (Built-in)" title="Direct link to 2D Renderer (Built-in)">​</a></h4>
+<p>The basic 2D renderer is built to be reliable and highly performant. Internally, it delegates rendering to background processes. The main process figures out which sections of the screen needs to be repainted (and what resolution) and requests those tiles from the subprocesses.</p>
+<p><img decoding="async" loading="lazy" alt="renderer" src="https://path-visualiser.github.io/assets/images/renderer-935e5393fa13ba12805b4c94eef212ff.gif" width="320" height="200" class="img_ev3q"></p>
+<p><a href="https://path-visualiser.github.io/assets/files/renderer-7dfd3a71e0ced85cd287c5cae1353c2b.mkv" target="_blank">Click here for full size</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="grid-network-xy-poly-mesh-map-support">Grid, Network (XY), Poly, Mesh Map Support<a href="https://path-visualiser.github.io/blog/1.0.4#grid-network-xy-poly-mesh-map-support" class="hash-link" aria-label="Direct link to Grid, Network (XY), Poly, Mesh Map Support" title="Direct link to Grid, Network (XY), Poly, Mesh Map Support">​</a></h4>
+<p>There is built-in support for grid (<code>.grid/.map</code>), network (<code>.co/.gr/.xy</code>), mesh (<code>.mesh</code>), and polygon (<code>.poly</code>) map files. Conversions may be required.</p>
+<table><thead><tr><th></th><th>Grid</th><th>Network</th><th>Mesh</th><th>Poly</th></tr></thead><tbody><tr><td>Conversions required</td><td>Rename your <code>*.map</code> files to <code>*.grid</code></td><td>Use <code>dimacs2xy</code> to convert <code>.co/.gr</code> files to <code>.xy</code></td><td>Update your <code>.mesh</code> file to version 3</td><td>None required</td></tr></tbody></table>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="large-map-rendering-support">Large Map Rendering Support<a href="https://path-visualiser.github.io/blog/1.0.4#large-map-rendering-support" class="hash-link" aria-label="Direct link to Large Map Rendering Support" title="Direct link to Large Map Rendering Support">​</a></h4>
+<p>The renderer and map parser performs optimisations to handle the rendering of large maps.</p>
+<p><img decoding="async" loading="lazy" alt="large-map-florida" src="https://path-visualiser.github.io/assets/images/large-map-florida-817b555cfbce8b5c9ba692f150e2b7c3.gif" width="320" height="191" class="img_ev3q"></p>
+<p><a href="https://path-visualiser.github.io/assets/files/large-map-florida-85a191ca8bf83fd1b369a390262a12ba.mkv" target="_blank">Click here for full size</a></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="use-cases-">Use Cases <a id="use-cases"></a><a href="https://path-visualiser.github.io/blog/1.0.4#use-cases-" class="hash-link" aria-label="Direct link to use-cases-" title="Direct link to use-cases-">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="visualising-a-search-trace">Visualising a Search Trace<a href="https://path-visualiser.github.io/blog/1.0.4#visualising-a-search-trace" class="hash-link" aria-label="Direct link to Visualising a Search Trace" title="Direct link to Visualising a Search Trace">​</a></h4>
+<p>Load a search trace and map into Waypoint.</p>
+<p><img decoding="async" loading="lazy" alt="basic" src="https://path-visualiser.github.io/assets/images/basic-bf576a3c2b60ec7c3982b74e20f8d6eb.gif" width="320" height="200" class="img_ev3q"></p>
+<p><a href="https://path-visualiser.github.io/assets/files/basic-149992c156a3ccaae9b289f20471d5cb.mkv" target="_blank">Click here for full size</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="interacting-with-a-search-trace-viewport-steps-and-tree">Interacting with a Search Trace (Viewport, Steps and Tree)<a href="https://path-visualiser.github.io/blog/1.0.4#interacting-with-a-search-trace-viewport-steps-and-tree" class="hash-link" aria-label="Direct link to Interacting with a Search Trace (Viewport, Steps and Tree)" title="Direct link to Interacting with a Search Trace (Viewport, Steps and Tree)">​</a></h4>
+<p>Move around a search trace through the Viewport, Tree, and Steps panel.</p>
+<p><img decoding="async" loading="lazy" alt="interactive" src="https://path-visualiser.github.io/assets/images/interactive-33b9885bfd021b46a8f8c699ca45684b.gif" width="320" height="200" class="img_ev3q"></p>
+<p><a href="https://path-visualiser.github.io/assets/files/interactive-a365b692c0107b9724255d344b02c622.mkv" target="_blank">Click here for full size</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="creative-use-of-the-search-trace-format-polyanya">Creative Use of the Search Trace Format (Polyanya)<a href="https://path-visualiser.github.io/blog/1.0.4#creative-use-of-the-search-trace-format-polyanya" class="hash-link" aria-label="Direct link to Creative Use of the Search Trace Format (Polyanya)" title="Direct link to Creative Use of the Search Trace Format (Polyanya)">​</a></h4>
+<p>The example uses the search trace format to tell the renderer to draw each event in the search process as a triangle.</p>
+<p><img decoding="async" loading="lazy" alt="polyanya" src="https://path-visualiser.github.io/assets/images/polyanya-0c6df469355810084813f9d27377593b.png" width="2560" height="1600" class="img_ev3q"></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="creative-use-of-the-search-trace-format-9-tile">Creative Use of the Search Trace Format (9-Tile)<a href="https://path-visualiser.github.io/blog/1.0.4#creative-use-of-the-search-trace-format-9-tile" class="hash-link" aria-label="Direct link to Creative Use of the Search Trace Format (9-Tile)" title="Direct link to Creative Use of the Search Trace Format (9-Tile)">​</a></h4>
+<p>This example uses the search trace format to tell the renderer how to display the current state of a 9-tile puzzle.</p>
+<p><img decoding="async" loading="lazy" alt="nine-tile" src="https://path-visualiser.github.io/assets/images/nine-tile-bff39769e723cef8a8003f44e56e0f97.png" width="2560" height="1600" class="img_ev3q"></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="running-a-search-query">Running a Search Query<a href="https://path-visualiser.github.io/blog/1.0.4#running-a-search-query" class="hash-link" aria-label="Direct link to Running a Search Query" title="Direct link to Running a Search Query">​</a></h4>
+<p>This example runs a query using Warthog (WebAssembly) over a grid map.</p>
+<p><img decoding="async" loading="lazy" alt="query" src="https://path-visualiser.github.io/assets/images/query-679331d8a0d49cc0acdc07c5bf8a382d.gif" width="320" height="200" class="img_ev3q"></p>
+<p><a href="https://path-visualiser.github.io/assets/files/query-3e74fab24f898dbdae12c5d8710705a4.mkv" target="_blank">Click here for full size</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="comparison-of-two-traces">Comparison of Two Traces<a href="https://path-visualiser.github.io/blog/1.0.4#comparison-of-two-traces" class="hash-link" aria-label="Direct link to Comparison of Two Traces" title="Direct link to Comparison of Two Traces">​</a></h4>
+<p>This example compares the search process of two A* implementations, one as a Search Trace file, and another as a query. We display these side-by-side.</p>
+<p><img decoding="async" loading="lazy" alt="comparison" src="https://path-visualiser.github.io/assets/images/comparison-77e90d1f3018d68b253fb621fbe5e3af.gif" width="320" height="200" class="img_ev3q"></p>
+<p><a href="https://path-visualiser.github.io/assets/files/comparison-a5d38926d02c70ebc21a60c011a1c526.mkv" target="_blank">Click here for full size</a></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="releases">Releases<a href="https://path-visualiser.github.io/blog/1.0.4#releases" class="hash-link" aria-label="Direct link to Releases" title="Direct link to Releases">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="waypoint-standalone-electron-for-windows">Waypoint Standalone (Electron) for Windows<a href="https://path-visualiser.github.io/blog/1.0.4#waypoint-standalone-electron-for-windows" class="hash-link" aria-label="Direct link to Waypoint Standalone (Electron) for Windows" title="Direct link to Waypoint Standalone (Electron) for Windows">​</a></h4>
+<p>Get Waypoint as a standalone application for Windows.</p>
+<p><a href="https://github.com/path-visualiser/app/releases" target="_blank" rel="noopener noreferrer">View Releases</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="waypoint-standalone-electron-for-linux">Waypoint Standalone (Electron) for Linux<a href="https://path-visualiser.github.io/blog/1.0.4#waypoint-standalone-electron-for-linux" class="hash-link" aria-label="Direct link to Waypoint Standalone (Electron) for Linux" title="Direct link to Waypoint Standalone (Electron) for Linux">​</a></h4>
+<p>Get Waypoint as a standalone application for Linux.</p>
+<p><a href="https://github.com/path-visualiser/app/releases" target="_blank" rel="noopener noreferrer">View Releases</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="waypoint-pwa-github-pages">Waypoint PWA (Github Pages)<a href="https://path-visualiser.github.io/blog/1.0.4#waypoint-pwa-github-pages" class="hash-link" aria-label="Direct link to Waypoint PWA (Github Pages)" title="Direct link to Waypoint PWA (Github Pages)">​</a></h4>
+<p>Use Waypoint in your browser, or install it as a web app.</p>
+<p><a href="https://path-visualiser.github.io/app/" target="_blank" rel="noopener noreferrer">Open Waypoint</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="warthog-webassembly-solver-adapter">Warthog (WebAssembly) Solver Adapter<a href="https://path-visualiser.github.io/blog/1.0.4#warthog-webassembly-solver-adapter" class="hash-link" aria-label="Direct link to Warthog (WebAssembly) Solver Adapter" title="Direct link to Warthog (WebAssembly) Solver Adapter">​</a></h4>
+<p>This is the Warthog solver compiled to WebAssembly. Add this URL as a <strong>Web Worker</strong> connection in Waypoint (it should also be there by default).</p>
+<p><code>https://cdn.jsdelivr.net/gh/path-visualiser/app@adapter-warthog-wasm-dist/warthog-wasm.mjs</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="warthog-socketiowebsocket-solver-adapter">Warthog (Socket.io/WebSocket) Solver Adapter<a href="https://path-visualiser.github.io/blog/1.0.4#warthog-socketiowebsocket-solver-adapter" class="hash-link" aria-label="Direct link to Warthog (Socket.io/WebSocket) Solver Adapter" title="Direct link to Warthog (Socket.io/WebSocket) Solver Adapter">​</a></h4>
+<p>This is the Warthog solver running behind an adapter server. The adapter translates requests into Warthog problem instances, and converts Warthog output into the search trace format. The visualiser and solver communicates through a WebSocket channel.</p>
+<div class="language-shell codeBlockContainer_Ckt0 theme-code-block" style="--prism-background-color:hsl(230, 1%, 98%);--prism-color:hsl(230, 8%, 24%)"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-shell codeBlock_bY9V thin-scrollbar" style="background-color:hsl(230, 1%, 98%);color:hsl(230, 8%, 24%)"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">git clone https://github.com/path-visualiser/app</span><br></span><span class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">cd ./app/adapter-warthog-websocket</span><br></span><span class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">npm i</span><br></span><span class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">npm start</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>Then, as prompted, add the server's URL as a <strong>Socket.io</strong> connection in Waypoint.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="iron-harvest-map-adapter">Iron Harvest Map Adapter<a href="https://path-visualiser.github.io/blog/1.0.4#iron-harvest-map-adapter" class="hash-link" aria-label="Direct link to Iron Harvest Map Adapter" title="Direct link to Iron Harvest Map Adapter">​</a></h4>
+<p>This is an example adapter that exclusively serves iron harvest grid maps to demonstrate how you could serve maps as well as run search queries.</p>
+<div class="language-shell codeBlockContainer_Ckt0 theme-code-block" style="--prism-background-color:hsl(230, 1%, 98%);--prism-color:hsl(230, 8%, 24%)"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-shell codeBlock_bY9V thin-scrollbar" style="background-color:hsl(230, 1%, 98%);color:hsl(230, 8%, 24%)"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">git clone https://github.com/path-visualiser/app</span><br></span><span class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">cd ./app/adapter-iron-harvest</span><br></span><span class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">npm i</span><br></span><span class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">npm start</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>Then, as prompted, add the server's URL as a <strong>Socket.io</strong> connection in Waypoint.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="known-issues">Known Issues<a href="https://path-visualiser.github.io/blog/1.0.4#known-issues" class="hash-link" aria-label="Direct link to Known Issues" title="Direct link to Known Issues">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="freeze-on-large-search-traces">Freeze on Large Search Traces<a href="https://path-visualiser.github.io/blog/1.0.4#freeze-on-large-search-traces" class="hash-link" aria-label="Direct link to Freeze on Large Search Traces" title="Direct link to Freeze on Large Search Traces">​</a></h4>
+<p>Waypoint may freeze when the search trace contains too many steps. This is due to the inefficient way the path is currently calculated.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="cannot-choose-source-and-destination-nodes-for-queries-on-network-maps">Cannot Choose Source and Destination Nodes for Queries on Network Maps<a href="https://path-visualiser.github.io/blog/1.0.4#cannot-choose-source-and-destination-nodes-for-queries-on-network-maps" class="hash-link" aria-label="Direct link to Cannot Choose Source and Destination Nodes for Queries on Network Maps" title="Direct link to Cannot Choose Source and Destination Nodes for Queries on Network Maps">​</a></h4>
+<p>Currently, queries on the network maps will force the source and destination nodes to be <code>0</code>.</p>]]></content:encoded>
+            <category>changelog</category>
+            <category>v1.0.4</category>
         </item>
     </channel>
 </rss>

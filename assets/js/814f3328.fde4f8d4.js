@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_2=self.webpackChunkdocs_2||[]).push([[2535],{5641:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Posthoc v1.2.4","permalink":"/blog/1.2.4","unlisted":false},{"title":"Posthoc v1.2.0","permalink":"/blog/1.2.0","unlisted":false},{"title":"Posthoc v1.0.4","permalink":"/blog/1.0.4","unlisted":false}]}')}}]);
