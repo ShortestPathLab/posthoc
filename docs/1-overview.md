@@ -6,7 +6,7 @@ sidebar_position: 1
 
 **Posthoc** is a way to build quick-and-dirty visualisations ✨ for sequential decision-making algorithms, such as search algorithms 🚀.
 
-![Alt text](image-1.png)
+![Alt text](overview.png)
 
 It's easy to get started.
 
@@ -22,33 +22,39 @@ It's easy to get started.
 
 Play back, step-through, and inspect the decisions of your algorithm. See your algorithm as a decision tree by annotating your log with `id` and `pId` properties, or view it in context by including declarative rendering instructions in your trace.
 
-![9 tile](image-2.png)
+![9 tile](nine-tile.png)
 
 ### Use built-in debugging tools
 
 Pinpoint when an invariant is violated, where a point of interest is, or where things go wrong, during algorithm execution. Do so by setting regular breakpoints or breakpoint expressions.
 
-![Rayscan debugging](image-3.png)
+![Rayscan debugging](rayscan-debugging.png)
 
 ### Compare with a baseline
 
 Identify where your algorithm has deviated from a known good baseline by comparing traces side-by-side or superimposed.
 
-![Comparison](image-4.png)
+![Comparison](comparison-with-baseline.png)
 
 ## Collaborate and share
 
 ### Discuss ideas with your team
 
-Present your ideas to your team and problem-solve together.
+Visually present your work to other people to solve problems and exchange ideas.
+
+![Discuss ideas with your team](discuss-ideas-with-your-team.png)
 
 ### Help students learn
 
-Walk through algorithms and techniques visually with students.
+Walk through algorithms and techniques with students.
+
+![Help students learn](help-students-learn.png)
 
 ### Share your work
 
-Let the world discover your work.
+Let the wider community discover your work.
+
+![Share your work](share-your-work.png)
 
 ## Why we built Posthoc
 

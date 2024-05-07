@@ -56,7 +56,7 @@ export const makeTheme = (mode: "light" | "dark", theme?: AccentColor) =>
       },
       h1: {
         fontSize: "max(32px, min(46px, 6vw))",
-        fontWeight: 500,
+        fontWeight: 600,
       },
       h2: {
         fontSize: "max(22px, min(32px, 4vw))",
@@ -135,7 +135,7 @@ export function useAcrylic(color?: string): SxProps<Theme> {
 
 export function usePaper(): (e?: number) => SxProps<Theme> {
   return (elevation: number = 1) => ({
-    boxShadow: "none",
+    boxShadow: "inset 0px 0px 0px 1px rgba(255,255,255,0.02)",
     borderRadius: 8,
     backdropFilter: "blur(32px)",
     background: "url(img/noise.png)",

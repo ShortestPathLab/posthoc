@@ -78,7 +78,7 @@ function AppBar({ showVideo }: SV) {
   const menu = l10n.sections.map(({ url, label }) => (
     <ButtonBase
       sx={{ py: 1, px: 2, borderRadius: 4, justifyContent: "flex-start" }}
-      onClick={() => location.replace(url)}
+      onClick={() => (location.href = url)}
     >
       <Typography variant="body2" sx={{ fontWeight: 500 }}>
         {label}
@@ -118,6 +118,7 @@ function AppBar({ showVideo }: SV) {
             ...(top
               ? {
                   ...paper(1),
+                  // boxShadow: "inset 0px 1px 0px 1px rgba(255,255,255,0.05)",
                 }
               : {}),
             width: 1000,

@@ -1,12 +1,12 @@
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import LoadSearchTrace from "./_loading-search-trace.mdx";
-import StepThroughSearchTrace from "./_step-through-the-search-trace.mdx"
-import nineTileAndDecisionTree from './nine-tile-and-decision-tree.png';
+import StepThroughSearchTrace from "./_step-through-the-search-trace.mdx";
+import nineTileAndDecisionTree from "./nine-tile-and-decision-tree.png";
 
-# Decision Tree Search
+# Decision Tree
 
-Visualiser comes with a built-in decision tree viewer for searches that may have no spatial embedding.
+Posthoc comes with a built-in decision tree viewer for searches that may have no spatial embedding.
 
 As an example, the A\* algorithm can be used to solve a nine-tile puzzle more efficiently than backtracking. Its heuristic would be how similar the current board state is to the final board state.
 
@@ -18,7 +18,6 @@ Follow these steps to visualise how an A\* search would play a nine-tile game, w
 
 Download [this](./tile.trace.yaml) pre-computed search trace.
 
-        
     The file should start like this:
 
 ```yaml title="tile.trace.yaml"
@@ -28,24 +27,23 @@ render:
   components:
     # this represents each tile
     tile:
-      - 
-        # sets the shape of the tile into a rectangle
+      - # sets the shape of the tile into a rectangle
         $: rect
-        
+
         # sets the height and width
         width: 0.98
         height: 0.98
 
         # sets if the tile context is 0 a.k.a empty, it will set the text into ''
         text: "{{$[`${$.tile_x}${$.tile_y}`] === 0 ? '' : $[`${$.tile_x}${$.tile_y}`]}}"
-        
+
         # the text position within the tile
         textX: 0.27
         textY: 0.75
 
         # sets if the tile context is 0 a.k.a empty, it will not fill the tile
         fill: "{{$[`${$.tile_x}${$.tile_y}`] ? $.themeTextPrimary : $.themeAccent}}"
-        
+
         # font settings
         fontSize: 0.75
         fontColor: "{{$.themeBackground}}"
@@ -75,13 +73,12 @@ render:
 
   # sets the renderer as 2d-pixi and the tileboard as the component
   views:
-    main: 
-      components: 
+    main:
+      components:
         - $: tileboard
 
 events:
-  - 
-    # "11" represents the xy coordinate, 11 means the most top left tile
+  - # "11" represents the xy coordinate, 11 means the most top left tile
     # 1 represents the value of the tile, 1
     "11": 1
     "12": 4
@@ -94,8 +91,7 @@ events:
     "33": 0
     id: 1
     type: "source"
-  - 
-    "11": 1
+  - "11": 1
     "12": 4
     "13": 6
     "21": 2
@@ -106,7 +102,6 @@ events:
     "33": 8
     id: 25
     type: "destination"
-
 ```
 
 The search trace contains a record of the events that occured during the search and how to visualise them.
@@ -121,10 +116,10 @@ The search trace contains a record of the events that occured during the search 
 
 ## Viewing the Decision Tree
 
-- On any panel, click the left-most dropdown and choose **Tree** to view the decision tree. 
+- On any panel, click the left-most dropdown and choose **Tree** to view the decision tree.
 - A tree should show up as down below. By default, the tree only shows nodes that are related to the current node. To view all nodes, click on the third dropdown from the left and choose **All**.
 - Explore the decisions by clicking through the nodes on the tree.
 
 ![Tree](decision-tree.png)
 
-You have now visualised the decision tree of an A* algorithm as it tries to solve a nine tile game.
+You have now visualised the decision tree of an A\* algorithm as it tries to solve a nine tile game.

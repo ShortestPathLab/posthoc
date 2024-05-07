@@ -20,6 +20,6 @@ You can use Posthoc directly in a browser.
 
 Optionally, you can [install Posthoc as a web app](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Installing) so that it runs in its own window.
 
-### Standalone Builds
+### Standalone builds
 
-Check the [releases](https://github.com/path-visualiser/app/releases) page for a list of latest Windows and Linux releases.
+Check the [releases](https://github.com/path-visualiser/app/releases) page for a list of latest Windows and Linux releases. They work exactly the same as the web version, but you can get access to older versions of Posthoc.
