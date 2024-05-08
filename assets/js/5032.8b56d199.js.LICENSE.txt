@@ -1,3 +1,13 @@
+/*!
+ * OverlayScrollbars
+ * Version: 2.7.3
+ *
+ * Copyright (c) Rene Haas | KingSora.
+ * https://github.com/KingSora
+ *
+ * Released under the MIT license.
+ */
+
 /**
  * @license
  * Lodash <https://lodash.com/>
