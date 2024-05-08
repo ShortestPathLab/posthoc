@@ -55,7 +55,7 @@ export const makeTheme = (mode: "light" | "dark", theme?: AccentColor) =>
         fontSize: 15,
       },
       h1: {
-        fontSize: "max(42px, min(58px, min(6vw, 6vh)))",
+        fontSize: "max(36px, min(58px, min(6vw, 6vh)))",
         fontWeight: 600,
       },
       h2: {

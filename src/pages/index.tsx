@@ -230,7 +230,7 @@ function Hero({ showVideo, onShowVideo }: SV) {
       alignItems={sm ? "stretch" : "flex-start"}
       sx={{
         maxWidth: "100vw",
-        minHeight: 600,
+        minHeight: 720,
         height: "90vh",
         textAlign: "left",
         pt: 36,
@@ -593,17 +593,12 @@ export default function Home() {
                 borderRadius: 8,
               }}
             >
-              <video
-                controls
+              <iframe
+                src="https://drive.google.com/file/d/1ve-GQbgj0MGcouCdE0gxQON-20rpxtW5/preview"
                 width="100%"
                 height="100%"
-                style={{
-                  borderRadius: 8,
-                  objectFit: "cover",
-                }}
-              >
-                <source src={l10n.demoVideoUrl} type={l10n.demoVideoMime} />
-              </video>
+                allow="autoplay"
+              ></iframe>
             </Box>
             {/* <SectionTitle
               anchor="features"
