@@ -102,7 +102,7 @@ Custom views get you quickly going to creating something useful, but its also a 
 
 ![Complex view](complex-view.png)
 
-See the [2D renderer API reference](category/renderer) for a list of primitives provided by the built-in renderer.
+See the [**Pixel** API reference](./visualiser/pixel-renderer#api) for a list of primitives provided by the built-in renderer.
 
 ## Nested views
 
@@ -161,9 +161,15 @@ events:
 
 If a property is a single expression, the property's value and type is taken from the result of the expression. But, if the property contains multiple expressions, or if there's text around the expressions, it becomes a concatenated string instead.
 
-See the [search trace API reference](api/search-trace) for a list of properties available in expressions.
+See the [search trace API reference](./search-trace#api) for a list of properties available in expressions.
 
 ## Special properties
+
+### `type`
+
+The `type` property doesn't do anything, but it's used to drive some parts of **Posthoc**'s UI.
+
+![Alt text](image-2.png)
 
 ### `clear`
 
@@ -278,8 +284,75 @@ events:
 
 ## API
 
-The search trace API defines how you can write and structure your search trace. [See the search trace API](api/search-trace).
+### Definition
 
-The renderer specifies what primitives are available and how you can use them. For the built-in renderer, see the [2D renderer API here](category/renderer).
+#### `Trace`
 
-Check out the [YAML 1.2.2 documentation](https://yaml.org/spec/1.2.2/) for all the ways you can write YAML.
+The root of a search trace file.
+
+```ts
+type Trace = {
+  version: string;
+  views?: Dictionary<View[]>;
+  pivot?: Pivot;
+  events?: Event[];
+};
+```
+
+#### `View`
+
+A primitive or higher-order view.
+
+```ts
+type View = {
+  $: string;
+  [K in string]?: Property<any>;
+  clear?: Property<boolean | string>;
+  $info?: Dictionary<Property<any>>;
+  $if?: Property<boolean>;
+  $for?: {
+    $let?: string;
+    $from?: Property<number>;
+    $to?: Property<number>;
+    $to?: Property<number>;
+  };
+};
+```
+
+#### `Property`
+
+```ts
+type Property<T> = T | PropertyExpression<T>;
+```
+
+Where `PropertyExpression<T>` is a [property expression](#property-expressions) that evaluates to type T.
+
+#### `Pivot`
+
+Define the center-point of an event.
+
+```ts
+type Pivot = {
+  scale?: Property<number>;
+  x?: Property<number>;
+  y?: Property<number>;
+  z?: Property<number>;
+  w?: Property<number>;
+};
+```
+
+#### `Event`
+
+A recorded event.
+
+```ts
+type Event = Dictionary<any>;
+```
+
+### Primitives
+
+The search trace format itself doesn't define any primitives. Renderers do. For the built-in renderer, **Pixel**, see the [**Pixel** primitives here](visualiser/pixel-renderer#primitives).
+
+### YAML
+
+The search trace is a YAML document. Check out the [YAML 1.2.2 documentation](https://yaml.org/spec/1.2.2/) for all the ways you can write YAML.

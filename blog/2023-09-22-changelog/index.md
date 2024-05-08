@@ -11,7 +11,7 @@ tags: [changelog, v1.0.4]
 
 #### UI Overhaul
 
-Waypoint is completely rebuilt to support dynamic and reconfigurable panels, so you can adjust the UI to fit your workflow or use case. Check out the [use cases](#use-cases) section for examples.
+Waypoint is completely rebuilt to support dynamic and reconfigurable panels, so you can adjust the UI to fit your workflow or use case. Check out the use cases section for examples.
 
 ![aux-1](./assets/22-09-2023/aux-1.png)
 
@@ -96,7 +96,7 @@ The renderer and map parser performs optimisations to handle the rendering of la
 
 [Click here for full size](./assets/22-09-2023/large-map-florida.mkv)
 
-### Use Cases <a id="use-cases"></a>
+### Use Cases
 
 #### Visualising a Search Trace
 

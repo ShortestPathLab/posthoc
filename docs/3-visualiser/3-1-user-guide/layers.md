@@ -36,7 +36,7 @@ It's optional to use maps because you might not be doing pathfinding search. We 
 
 ### Query
 
-Query layers interact with extensions that implement the [visualiser adapter protocol](.). The query layer and the visualiser adapter protocol should allow you to interactively call your solver, complete with custom parameters and inputs.
+Query layers interact with extensions that implement the [Visualiser Adapter Protocol](/docs/visualiser-adapter-protocol). The query layer and the Visualiser Adapter Protocol should allow you to interactively call your solver, complete with custom parameters and inputs.
 
 ![Alt text](image-5.png)
 

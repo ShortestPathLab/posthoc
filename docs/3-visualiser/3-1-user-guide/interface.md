@@ -15,7 +15,7 @@ Explore Posthoc and its community creations via examples and guides.
 ## Layers
 
 Add, edit, and remove layers. The options available to a layer depends on the layer type.
-[Read more about layers here.](.)
+[Read more about layers here.](./layers)
 
 ![Screenshot of layer](interface-views-layers-layer.png)
 
@@ -29,7 +29,7 @@ Add, edit, and remove layers. The options available to a layer depends on the la
 
 ### Trace options
 
-Load a [search trace](.) file.
+Load a [search trace](./layers#trace) file.
 
 | Name   | Description                                     |
 | ------ | ----------------------------------------------- |
@@ -37,7 +37,7 @@ Load a [search trace](.) file.
 
 ### Map options
 
-Load a [map](.).
+Load a [map](./layers#map).
 
 | Name                | Description                                           |
 | ------------------- | ----------------------------------------------------- |
@@ -46,7 +46,7 @@ Load a [map](.).
 
 ### Query options
 
-Make a query using the [visualiser adapter protocol](.).
+Make a query using the [Visualiser Adapter Protocol](/docs/visualiser-adapter-protocol).
 
 | Name | Description                            |
 | ---- | -------------------------------------- |
@@ -71,10 +71,10 @@ Browse the events of a search trace.
 
 ### Toolbar items
 
-| Name     | Description                                          | Default             |
-| -------- | ---------------------------------------------------- | ------------------- |
-| Layers   | The layers to render.                                | Render all layers.  |
-| Renderer | The renderer to use. [Read more about renderers.](.) | Pick automatically. |
+| Name     | Description                                                               | Default             |
+| -------- | ------------------------------------------------------------------------- | ------------------- |
+| Layers   | The layers to render.                                                     | Render all layers.  |
+| Renderer | The renderer to use. [Read more about renderers.](./extensions#renderers) | Pick automatically. |
 
 ## Graph
 
@@ -161,7 +161,7 @@ Configure Posthoc.
 
 ### Extensions
 
-Manage connected solvers, adapters, renderers, and map parsers. [Read more about extensions here.](.)
+Manage connected solvers, adapters, renderers, and map parsers. [Read more about extensions here.](./extensions)
 
 ## Customising views
 
@@ -195,11 +195,11 @@ The titlebar gives you commands that control Posthoc as a whole.
 
 ![Alt text](interface-titlebar-workspace-export-workspace.png)
 
-| Item             | Description                                                                                                     |
-| ---------------- | --------------------------------------------------------------------------------------------------------------- |
-| Open workspace   | Select a \*.workspace file to load.                                                                             |
-| Add panel below  | Save the current project as a \*.workspace file.                                                                |
-| Export workspace | Save the current project as a _.workspace and _.workspace.meta file. [Read more about exporting workspaces.](.) |
+| Item             | Description                                                          |
+| ---------------- | -------------------------------------------------------------------- |
+| Open workspace   | Select a \*.workspace file to load.                                  |
+| Add panel below  | Save the current project as a \*.workspace file.                     |
+| Export workspace | Save the current project as a _.workspace and _.workspace.meta file. |
 
 ## Sidebar
 

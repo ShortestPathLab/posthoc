@@ -1,12 +1,12 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # Extensions
 
 ## Adapters
 
-Adapters implement the [visualiser adapter protocol](.) to connect solvers to Posthoc.
+Adapters implement the [Visualiser Adapter Protocol](/docs/visualiser-adapter-protocol) to connect solvers to Posthoc.
 
 ### Built-in adapters
 

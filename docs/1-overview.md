@@ -10,11 +10,11 @@ sidebar_position: 1
 
 It's easy to get started.
 
-1. Print logs as [search traces](./3-search-trace)
-2. Load those into the [Posthoc visualiser](./2-visualiser)
+1. Print logs as [search traces](./search-trace)
+2. Load those into the [Posthoc visualiser](./visualiser/overview)
 3. Voila!
 
-[Search trace](./3-search-trace) is log-like YAML format that describes what happened during your algorithm, and how you want to visualise it. If you're generating logs already, we invite you to convert them to search traces. Then, [Posthoc](./2-visualiser) is a comprehensive, no-install visualiser that helps you interpret and analyse search traces.
+[Search trace](./search-trace) is log-like YAML format that describes what happened during your algorithm, and how you want to visualise it. If you're generating logs already, we invite you to convert them to search traces. Then, [Posthoc](./visualiser/overview) is a comprehensive, no-install visualiser that helps you interpret and analyse search traces.
 
 ## Find and fix problems
 
@@ -67,9 +67,3 @@ Building visualisations is a lot of effort; we want to focus on writing and perf
 Posthoc adds visualisation to our problem-solving toolkit 🛠️.
 
 When problems occur in a spatial environment &mdash; navigating through roads, corridors, terrain etc &mdash; it's just natural to reason about them visually. Posthoc lets us create quick-and-dirty visualisations to leverage intuition, debug problems, draw insights, and collaborate with each other.
-
-:::warning
-
-This site is under construction. Content may be inaccurate or missing.
-
-:::

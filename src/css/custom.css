@@ -54,6 +54,7 @@
   --ifm-color-gray-600: #909dab;
   --ifm-color-gray-700: #acb9c9;
   --ifm-color-gray-800: #dbe4f0;
+  --ifm-table-border-color: var(--ifm-color-gray-900);
   --ifm-color-primary: #248aff;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
@@ -67,6 +68,10 @@
   --ifm-background-surface-color: rgb(17 19 23 / 80%) !important;
   --ifm-color-content: hsl(210, 1%, 85%) !important;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.15);
+}
+
+.theme-back-to-top-button {
+  display: none;
 }
 
 .theme-code-block {
@@ -281,8 +286,8 @@ b {
 .main-wrapper img {
   border: 1px solid var(--ifm-menu-color-background-hover);
   border-radius: 12px;
-  box-shadow: 0px 4px 9px -1px rgb(0 0 0 / 4%), 0px 5px 24px 0px rgb(0 0 0 / 4%),
-    0px 10px 48px 0px rgb(0 0 0 / 4%);
+  filter: drop-shadow(0px 5px 24px rgb(0 0 0 / 4%))
+    drop-shadow(0px 10px 48px rgb(0 0 0 / 4%));
 }
 
 .main-wrapper img.avatar__photo {
