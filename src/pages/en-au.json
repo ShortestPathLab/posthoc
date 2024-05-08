@@ -1,4 +1,7 @@
 {
+  "org": "ShortestPathLab",
+  "name": "Posthoc",
+  "openAppLabel": "Open Posthoc Web",
   "logoUrl": "img/logo192.png",
   "closeVideo": "Close video",
   "backdropVideoUrl": "media/clip.webm",
@@ -15,14 +18,37 @@
       "url": "https://github.com/shortestpathlab/posthoc"
     }
   ],
-  "heroTitle": "Understand your solver's decision-making process visually.",
-  "heroSubtitle": "Posthoc is zero-commitment and is useful from the get-go.",
+  "gallery": [
+    {
+      "url": "img/gallery/astar.png",
+      "label": "Demonstration, A* search"
+    },
+    {
+      "url": "img/gallery/complex-view.png",
+      "label": "Post-game analysis, StarCraft"
+    },
+    {
+      "url": "img/gallery/image-7.png",
+      "label": "Compression algorithm analysis, RLE"
+    },
+    {
+      "url": "img/gallery/image-3.png",
+      "label": "Debugging, duel euclidean path search"
+    },
+    {
+      "url": "img/gallery/room-detection.png",
+      "label": "Debugging, room detection algorithm"
+    }
+  ],
+  "heroTitle": "Understand decision-making processes intuitively.",
+  "heroSubtitle": "Posthoc is a zero-commitment visualiser that is useful from the get-go.",
   "heroCallToAction": "Get started",
-  "demoSectionTitle": "demoSectionTitle",
-  "demoSectionSubtitle": "demoSectionSubtitle",
-  "featuresSectionTitle": "featuresSectionTitle",
+  "heroCallToActionUrl": "./docs/overview",
+  "demoSectionTitle": "Accepted into the ICAPS 24 Demo Track",
+  "demoSectionSubtitle": "Check out our submission",
+  "featuresSectionTitle": "Features",
   "featuresSectionSubtitle": "featuresSectionSubtitle",
-  "teamSectionTitle": "teamSectionTitle",
+  "teamSectionTitle": "Team",
   "teamSectionSubtitle": "teamSectionSubtitle",
   "features": [
     {

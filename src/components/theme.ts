@@ -55,7 +55,7 @@ export const makeTheme = (mode: "light" | "dark", theme?: AccentColor) =>
         fontSize: 15,
       },
       h1: {
-        fontSize: "max(32px, min(46px, 6vw))",
+        fontSize: "max(42px, min(58px, min(6vw, 6vh)))",
         fontWeight: 600,
       },
       h2: {
@@ -135,13 +135,11 @@ export function useAcrylic(color?: string): SxProps<Theme> {
 
 export function usePaper(): (e?: number) => SxProps<Theme> {
   return (elevation: number = 1) => ({
-    boxShadow: "inset 0px 0px 0px 1px rgba(255,255,255,0.02)",
     borderRadius: 8,
-    backdropFilter: "blur(32px)",
-    background: "url(img/noise.png)",
+    backdropFilter: "blur(64px)",
+    background: ({ palette }) =>
+      `url(img/noise.png), ${alpha(palette.background.paper, 0.75)}`,
     backgroundSize: "32px 32px",
-    backgroundColor: ({ palette }) =>
-      alpha(palette.action.disabledBackground, elevation * 0.01),
   });
 }
 

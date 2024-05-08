@@ -1,30 +1,36 @@
 import {
   ArrowBack,
   ArrowForward,
-  FilterTiltShiftOutlined,
-  Menu,
+  CloseOutlined as CloseIcon,
+  DragHandleOutlined as MenuIcon,
+  LaunchOutlined as OpenIcon,
+  FilterTiltShiftOutlined as ShowVideoIcon,
 } from "@mui/icons-material";
 import {
-  Fade,
   Box,
   Button,
   ButtonBase,
   CssBaseline,
   Divider,
+  Fade,
   IconButton,
-  Popover,
   Stack,
   StackProps,
   SxProps,
+  Tab,
+  Tabs,
   Theme,
   ThemeProvider,
   Typography,
   alpha,
   useMediaQuery,
   useScrollTrigger,
+  useTheme,
 } from "@mui/material";
-import { Dictionary, find, first, keyBy, mapValues, times } from "lodash";
-import PopupState, { bindPopover, bindTrigger } from "material-ui-popup-state";
+import { Dictionary, find, first, keyBy, map, mapValues, times } from "lodash";
+import PopupState, { bindTrigger } from "material-ui-popup-state";
+import { OverlayScrollbars } from "overlayscrollbars";
+import "overlayscrollbars/overlayscrollbars.css";
 import {
   ComponentProps,
   ReactNode as RN,
@@ -33,8 +39,9 @@ import {
   useRef,
   useState,
 } from "react";
-import l10n from "./en-au.json";
+import { createPortal } from "react-dom";
 import { makeTheme, usePaper } from "../components/theme";
+import l10n from "./en-au.json";
 
 const theme = makeTheme("dark");
 
@@ -72,8 +79,8 @@ function useScrollListener(setShowVideo: (b: boolean) => void) {
 }
 
 function AppBar({ showVideo }: SV) {
-  const paper = usePaper();
   const sm = useSm();
+  const paper = usePaper();
   const top = useScrollTrigger({ threshold: 0, disableHysteresis: true });
   const menu = l10n.sections.map(({ url, label }) => (
     <ButtonBase
@@ -87,17 +94,17 @@ function AppBar({ showVideo }: SV) {
   ));
   const openPosthoc = (
     <Button
-      variant="contained"
-      sx={{ ...paper(1), py: 1.5, px: 4 }}
+      startIcon={<OpenIcon sx={{ color: "primary.main" }} />}
+      sx={{ py: 1.5, px: 2, color: "text.primary", borderRadius: 32 }}
       onClick={() => window.open(l10n.appUrl)}
     >
-      Open Posthoc
+      {l10n.openAppLabel}
     </Button>
   );
   return (
     <Box
       sx={{
-        width: "100%",
+        width: "100vw",
         position: "fixed",
         px: 2,
         zIndex: (t) => t.zIndex.appBar,
@@ -113,15 +120,13 @@ function AppBar({ showVideo }: SV) {
             p: 1,
             mx: "auto",
             mt: sm ? 2 : 4,
-            transition: (t) =>
-              t.transitions.create(["background-color", "backdrop-filter"]),
             ...(top
               ? {
                   ...paper(1),
                   // boxShadow: "inset 0px 1px 0px 1px rgba(255,255,255,0.05)",
                 }
               : {}),
-            width: 1000,
+            width: 1000 + 8 * 4,
             maxWidth: "100%",
             height: 64,
             borderRadius: 9,
@@ -138,29 +143,32 @@ function AppBar({ showVideo }: SV) {
                 {(state) => (
                   <>
                     <IconButton {...bindTrigger(state)}>
-                      <Menu />
+                      <MenuIcon />
                     </IconButton>
-                    <Popover
-                      onClick={state.close}
-                      {...bindPopover(state)}
-                      anchorOrigin={{
-                        vertical: "bottom",
-                        horizontal: "right",
-                      }}
-                      slotProps={{
-                        paper: {
-                          sx: {
-                            ...paper(1),
-                            mt: 4,
-                            borderRadius: 8,
-                          },
-                        },
-                      }}
-                    >
-                      <Stack gap={2} p={2}>
-                        {menu}
-                      </Stack>
-                    </Popover>
+                    {createPortal(
+                      <Fade in={state.isOpen}>
+                        <Box
+                          sx={{
+                            ...paper(0),
+                            position: "fixed",
+                            zIndex: (t) => t.zIndex.modal,
+                            top: 0,
+                            left: 0,
+                            width: "100vw",
+                            height: "100vh",
+                            borderRadius: 0,
+                          }}
+                        >
+                          <Stack gap={4} p={3.5} alignItems="flex-end">
+                            <IconButton onClick={state.close}>
+                              <CloseIcon />
+                            </IconButton>
+                            {menu}
+                          </Stack>
+                        </Box>
+                      </Fade>,
+                      document.body
+                    )}
                   </>
                 )}
               </PopupState>
@@ -182,53 +190,97 @@ function Logo(props: ComponentProps<"img">) {
   return <img src={l10n.logoUrl} width={32} height={32} {...props} />;
 }
 
+function Gallery() {
+  const paper = usePaper();
+  const [selected, setSelected] = useState(0);
+  return (
+    <Stack gap={4}>
+      <Box sx={{ ...paper(0), overflow: "hidden" }}>
+        <img src={l10n.gallery[selected].url}></img>
+      </Box>
+      <Tabs
+        variant="scrollable"
+        allowScrollButtonsMobile
+        scrollButtons={true}
+        value={selected}
+        onChange={(e, i) => setSelected(i)}
+        sx={{
+          " button.Mui-selected": { color: "text.primary" },
+        }}
+      >
+        {map(l10n.gallery, ({ label, url }, i) => (
+          <Tab key={url} label={label} value={i} />
+        ))}
+      </Tabs>
+    </Stack>
+  );
+}
+
 type SV = {
   showVideo?: boolean;
   onShowVideo?: (b: boolean) => void;
 };
 
 function Hero({ showVideo, onShowVideo }: SV) {
+  const sm = useSm();
   return (
     <Stack
       gap={4}
-      alignItems="center"
       justifyContent="center"
+      alignItems={sm ? "stretch" : "flex-start"}
       sx={{
-        maxWidth: 740,
-        height: "80vh",
-        textAlign: "center",
-        pt: 48,
+        maxWidth: "100vw",
+        minHeight: 600,
+        height: "90vh",
+        textAlign: "left",
+        pt: 36,
         pb: 16,
         mx: "auto",
       }}
     >
       {space()}
-      <Typography sx={{ zIndex: 1 }} variant="h1">
+      <Typography
+        sx={{
+          zIndex: 1,
+          mb: -2,
+          pr: "8vw",
+          fontWeight: 600,
+          color: "primary.main",
+          fontSize: "1rem",
+        }}
+        variant="overline"
+      >
+        {l10n.org} / {l10n.name}
+      </Typography>
+      <Typography sx={{ zIndex: 1, pr: "8vw" }} variant="h1">
         {l10n.heroTitle}
       </Typography>
       <Typography sx={{ zIndex: 1 }} variant="body2" color="text.secondary">
         {l10n.heroSubtitle}
       </Typography>
-      <Button
-        sx={{ py: 2, px: 6 }}
-        variant="contained"
-        endIcon={<ArrowForward />}
-      >
-        {l10n.heroCallToAction}
-      </Button>
       {space()}
-      <Button
-        onClick={() => onShowVideo(true)}
-        startIcon={<FilterTiltShiftOutlined />}
-        sx={{
-          color: "text.secondary",
-          py: 2,
-          px: 6,
-        }}
-      >
-        {l10n.showVideo}
-      </Button>
-      {space(2)}
+      <Stack direction={sm ? "column" : "row"} gap={2}>
+        <Button
+          sx={{ py: 2, px: 4 }}
+          variant="contained"
+          endIcon={<ArrowForward />}
+          onClick={() => (location.href = l10n.heroCallToActionUrl)}
+        >
+          {l10n.heroCallToAction}
+        </Button>
+        <Button
+          onClick={() => onShowVideo(true)}
+          startIcon={<ShowVideoIcon />}
+          sx={{
+            color: "text.secondary",
+            py: 2,
+            px: 4,
+          }}
+        >
+          {l10n.showVideo}
+        </Button>
+      </Stack>
+      {space(4)}
     </Stack>
   );
 }
@@ -338,6 +390,7 @@ function DocSelector() {
 function Background({ showVideo, onShowVideo }: SV) {
   const paper = usePaper();
   const ref = useRef<HTMLDivElement>();
+  const theme = useTheme();
   let cancelled = false;
   useEffect(() => {
     const f = () => {
@@ -377,6 +430,7 @@ function Background({ showVideo, onShowVideo }: SV) {
           loop
           style={{
             objectFit: showVideo ? "contain" : "cover",
+            background: theme.palette.background.paper,
           }}
         >
           <source src={l10n.backdropVideoUrl} type={l10n.backdropVideoMime} />
@@ -394,7 +448,7 @@ function Background({ showVideo, onShowVideo }: SV) {
             background: (t) => `
             linear-gradient(to bottom, ${alpha(
               t.palette.background.default,
-              0.6
+              0.9
             )} 60%, ${t.palette.background.default})
             `,
           }}
@@ -484,16 +538,39 @@ export default function Home() {
   const [showVideo, setShowVideo] = useState(false);
   useScrollListener(setShowVideo);
   useVideoStartController(showVideo);
+  useEffect(() => {
+    OverlayScrollbars(document.body, {
+      overflow: { x: "hidden", y: "scroll" },
+      scrollbars: {
+        theme: "os-theme-light",
+      },
+    });
+  }, []);
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline>
         <Background showVideo={showVideo} onShowVideo={setShowVideo} />
+        <Fade in={!showVideo}>
+          <Box
+            sx={{
+              position: "absolute",
+              zIndex: showVideo ? 1 : 0,
+              height: "100vh",
+              width: "100vw",
+              top: "50vh",
+              transition: (t) => t.transitions.create(["z-index", "opacity"]),
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              background: `radial-gradient(46.56% 45.08% at 56.04% 55.33%,rgba(0,50,255,.2) 0,transparent 100%),radial-gradient(46.69% 41.74% at 69.64% 60.81%,rgba(192,59,196,.2) 0,transparent 100%),radial-gradient(59.78% 45.73% at 30.42% 58.68%,rgba(0,120,212,.2) 0,transparent 100%),radial-gradient(32.53% 31.57% at 50% 66.82%,rgba(70,54,104,.2) 0,transparent 100%)`,
+            }}
+          ></Box>
+        </Fade>
         <Box
           sx={{
             ...getShowVideoOpacityStyle(showVideo),
             maxWidth: "100%",
-            width: 1000,
-            px: 3,
+            width: 1000 + 8 * 8,
+            px: 4,
             m: "0 auto",
             pb: 9,
             zIndex: 3,
@@ -501,15 +578,16 @@ export default function Home() {
         >
           <Box sx={{ pb: 9 }}>
             <Hero showVideo={showVideo} onShowVideo={setShowVideo} />
+            <Gallery />
             <SectionTitle
               title={l10n.demoSectionTitle}
               subtitle={l10n.demoSectionSubtitle}
             />
             <Box
               sx={{
-                width: 960,
+                width: 1000,
                 mx: "auto",
-                maxWidth: "95%",
+                maxWidth: "100%",
                 aspectRatio: "16 / 10",
                 overflow: "hidden",
                 borderRadius: 8,
@@ -519,28 +597,31 @@ export default function Home() {
                 controls
                 width="100%"
                 height="100%"
-                style={{ borderRadius: 8, objectFit: "cover" }}
+                style={{
+                  borderRadius: 8,
+                  objectFit: "cover",
+                }}
               >
                 <source src={l10n.demoVideoUrl} type={l10n.demoVideoMime} />
               </video>
             </Box>
-            <SectionTitle
+            {/* <SectionTitle
               anchor="features"
               title={l10n.featuresSectionTitle}
               subtitle={l10n.featuresSectionSubtitle}
-            />
-            <Stack gap={4} sx={grid(320)}>
+            /> */}
+            {/* <Stack gap={4} sx={grid(320)}>
               {times(6, () => (
                 <Card p={6} image={<Box sx={{ height: 280 }}></Box>} />
               ))}
-            </Stack>
-            <SectionTitle
+            </Stack> */}
+            {/* <SectionTitle
               anchor="docs"
               title={l10n.docsSectionTitle}
               subtitle={l10n.docsSectionSubtitle}
             />
-            <DocSelector />
-            <SectionTitle
+            <DocSelector /> */}
+            {/* <SectionTitle
               anchor="team"
               title={l10n.teamSectionTitle}
               subtitle={l10n.teamSectionSubtitle}
@@ -549,7 +630,7 @@ export default function Home() {
               {times(3, () => (
                 <Card p={2} />
               ))}
-            </Stack>
+            </Stack> */}
           </Box>
         </Box>
         <Footer />
