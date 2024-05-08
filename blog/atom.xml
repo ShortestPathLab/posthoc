@@ -98,7 +98,7 @@
         <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="changes">Changes<a href="https://path-visualiser.github.io/blog/1.0.4#changes" class="hash-link" aria-label="Direct link to Changes" title="Direct link to Changes">​</a></h2>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="architecture-changes">Architecture Changes<a href="https://path-visualiser.github.io/blog/1.0.4#architecture-changes" class="hash-link" aria-label="Direct link to Architecture Changes" title="Direct link to Architecture Changes">​</a></h3>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="ui-overhaul">UI Overhaul<a href="https://path-visualiser.github.io/blog/1.0.4#ui-overhaul" class="hash-link" aria-label="Direct link to UI Overhaul" title="Direct link to UI Overhaul">​</a></h4>
-<p>Waypoint is completely rebuilt to support dynamic and reconfigurable panels, so you can adjust the UI to fit your workflow or use case. Check out the <a href="https://path-visualiser.github.io/blog/1.0.4#use-cases">use cases</a> section for examples.</p>
+<p>Waypoint is completely rebuilt to support dynamic and reconfigurable panels, so you can adjust the UI to fit your workflow or use case. Check out the use cases section for examples.</p>
 <p><img decoding="async" loading="lazy" alt="aux-1" src="https://path-visualiser.github.io/assets/images/aux-1-45ed2ab984c87a7c95a63ec44a8ce821.png" width="2560" height="1600" class="img_ev3q"></p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="layers">Layers<a href="https://path-visualiser.github.io/blog/1.0.4#layers" class="hash-link" aria-label="Direct link to Layers" title="Direct link to Layers">​</a></h4>
 <p>Visualise what you need by adding it as a layer to the app.</p>
@@ -140,7 +140,7 @@
 <p>The renderer and map parser performs optimisations to handle the rendering of large maps.</p>
 <p><img decoding="async" loading="lazy" alt="large-map-florida" src="https://path-visualiser.github.io/assets/images/large-map-florida-817b555cfbce8b5c9ba692f150e2b7c3.gif" width="320" height="191" class="img_ev3q"></p>
 <p><a href="https://path-visualiser.github.io/assets/files/large-map-florida-85a191ca8bf83fd1b369a390262a12ba.mkv" target="_blank">Click here for full size</a></p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="use-cases-">Use Cases <a id="use-cases"></a><a href="https://path-visualiser.github.io/blog/1.0.4#use-cases-" class="hash-link" aria-label="Direct link to use-cases-" title="Direct link to use-cases-">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="use-cases">Use Cases<a href="https://path-visualiser.github.io/blog/1.0.4#use-cases" class="hash-link" aria-label="Direct link to Use Cases" title="Direct link to Use Cases">​</a></h3>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="visualising-a-search-trace">Visualising a Search Trace<a href="https://path-visualiser.github.io/blog/1.0.4#visualising-a-search-trace" class="hash-link" aria-label="Direct link to Visualising a Search Trace" title="Direct link to Visualising a Search Trace">​</a></h4>
 <p>Load a search trace and map into Waypoint.</p>
 <p><img decoding="async" loading="lazy" alt="basic" src="https://path-visualiser.github.io/assets/images/basic-bf576a3c2b60ec7c3982b74e20f8d6eb.gif" width="320" height="200" class="img_ev3q"></p>

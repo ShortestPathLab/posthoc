@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_2=self.webpackChunkdocs_2||[]).push([[8756],{3181:e=>{e.exports=JSON.parse('{"title":"User Guide","slug":"/category/user-guide","permalink":"/docs/category/user-guide","navigation":{"previous":{"title":"Overview","permalink":"/docs/visualiser/overview"},"next":{"title":"UI","permalink":"/docs/visualiser/3-1-user-guide/interface"}}}')}}]);
