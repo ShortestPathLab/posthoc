@@ -4,7 +4,10 @@ sidebar_position: 2
 
 # Overview
 
-Posthoc visualises [search traces](/docs/search-trace). It gives you a variety of tools to help you analyse and debug your algorithm. It's quick to get started and install-free &mdash; even better, it's robust and performant enough to support the largest of problem instances.
+Posthoc visualises [search traces](/docs/search-trace). It gives you a variety of
+tools to help you analyse and debug your algorithm. It's quick to get started and
+install-free &mdash; even better, it's robust and performant enough to support the
+largest of problem instances.
 
 ![Complex view](../complex-view.png)
 

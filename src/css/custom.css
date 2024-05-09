@@ -311,7 +311,10 @@ b {
     margin-bottom: 0 !important;
   }
   .docMainContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Main-styles-module {
-    padding: 0 64px;
+    padding-left: 64px;
+  }
+  .theme-doc-markdown {
+    padding-right: 64px;
   }
   .col--7 {
     padding-right: 64px;

@@ -11,7 +11,7 @@ tags: [changelog, v1.0.4]
 
 #### UI Overhaul
 
-Waypoint is completely rebuilt to support dynamic and reconfigurable panels, so you can adjust the UI to fit your workflow or use case. Check out the use cases section for examples.
+Posthoc is completely rebuilt to support dynamic and reconfigurable panels, so you can adjust the UI to fit your workflow or use case. Check out the use cases section for examples.
 
 ![aux-1](./assets/22-09-2023/aux-1.png)
 
@@ -38,7 +38,7 @@ The **Query** layer interfaces with solvers to display search traces for arbitra
 
 #### Extensible Renderer System
 
-Renderers (a.k.a. the Viewport panel) can now be added to Waypoint via extensions (the exact implementation is work-in-progress). This will allow for future renderers to be added with ease (for example, a 3D renderer).
+Renderers (a.k.a. the Viewport panel) can now be added to Posthoc via extensions (the exact implementation is work-in-progress). This will allow for future renderers to be added with ease (for example, a 3D renderer).
 
 ![renderer](./assets/22-09-2023/renderer.png)
 
@@ -68,7 +68,7 @@ Manage connections to solvers and renderers in the **Settings** panel.
 
 #### Logs Panel
 
-Waypoint will keep a record of all alerts in the **Logs** panel.
+Posthoc will keep a record of all alerts in the **Logs** panel.
 
 ### Features
 
@@ -100,7 +100,7 @@ The renderer and map parser performs optimisations to handle the rendering of la
 
 #### Visualising a Search Trace
 
-Load a search trace and map into Waypoint.
+Load a search trace and map into Posthoc.
 
 ![basic](./assets/22-09-2023/basic.gif?raw=true)
 
@@ -144,27 +144,27 @@ This example compares the search process of two A\* implementations, one as a Se
 
 ### Releases
 
-#### Waypoint Standalone (Electron) for Windows
+#### Posthoc Standalone (Electron) for Windows
 
-Get Waypoint as a standalone application for Windows.
-
-[View Releases](https://github.com/path-visualiser/app/releases)
-
-#### Waypoint Standalone (Electron) for Linux
-
-Get Waypoint as a standalone application for Linux.
+Get Posthoc as a standalone application for Windows.
 
 [View Releases](https://github.com/path-visualiser/app/releases)
 
-#### Waypoint PWA (Github Pages)
+#### Posthoc Standalone (Electron) for Linux
 
-Use Waypoint in your browser, or install it as a web app.
+Get Posthoc as a standalone application for Linux.
 
-[Open Waypoint](https://path-visualiser.github.io/app/)
+[View Releases](https://github.com/path-visualiser/app/releases)
+
+#### Posthoc PWA (Github Pages)
+
+Use Posthoc in your browser, or install it as a web app.
+
+[Open Posthoc](https://path-visualiser.github.io/app/)
 
 #### Warthog (WebAssembly) Solver Adapter
 
-This is the Warthog solver compiled to WebAssembly. Add this URL as a **Web Worker** connection in Waypoint (it should also be there by default).
+This is the Warthog solver compiled to WebAssembly. Add this URL as a **Web Worker** connection in Posthoc (it should also be there by default).
 
 `https://cdn.jsdelivr.net/gh/path-visualiser/app@adapter-warthog-wasm-dist/warthog-wasm.mjs`
 
@@ -179,7 +179,7 @@ npm i
 npm start
 ```
 
-Then, as prompted, add the server's URL as a **Socket.io** connection in Waypoint.
+Then, as prompted, add the server's URL as a **Socket.io** connection in Posthoc.
 
 #### Iron Harvest Map Adapter
 
@@ -192,13 +192,13 @@ npm i
 npm start
 ```
 
-Then, as prompted, add the server's URL as a **Socket.io** connection in Waypoint.
+Then, as prompted, add the server's URL as a **Socket.io** connection in Posthoc.
 
 ### Known Issues
 
 #### Freeze on Large Search Traces
 
-Waypoint may freeze when the search trace contains too many steps. This is due to the inefficient way the path is currently calculated.
+Posthoc may freeze when the search trace contains too many steps. This is due to the inefficient way the path is currently calculated.
 
 #### Cannot Choose Source and Destination Nodes for Queries on Network Maps
 
