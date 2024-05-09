@@ -45,7 +45,7 @@
   "heroCallToAction": "Get started",
   "heroCallToActionUrl": "./docs/overview",
   "demoSectionTitle": "Accepted into the ICAPS 24 Demo Track",
-  "demoSectionSubtitle": "Check out our submission",
+  "demoSectionSubtitle": "We're excited to present Posthoc to the search and planning community.",
   "featuresSectionTitle": "Features",
   "featuresSectionSubtitle": "featuresSectionSubtitle",
   "teamSectionTitle": "Team",
@@ -93,7 +93,7 @@
           "label": "Open Posthoc",
           "url": "https://posthoc.pathfinding.ai"
         },
-        { "label": "Documentation", "url": "./docs/overview" },
+        { "label": "Docs", "url": "./docs/overview" },
         {
           "label": "Github",
           "url": "https://github.com/shortestpathlab/posthoc"
@@ -106,6 +106,14 @@
         {
           "label": "Home",
           "url": "https://pathfinding.ai/"
+        },
+        {
+          "label": "Benchmarks",
+          "url": "https://benchmarks.pathfinding.ai/"
+        },
+        {
+          "label": "Tracker",
+          "url": "https://tracker.pathfinding.ai/"
         },
         { "label": "Github", "url": "https://github.com/ShortestPathLab" }
       ]

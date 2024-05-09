@@ -195,7 +195,14 @@ function Gallery() {
   const [selected, setSelected] = useState(0);
   return (
     <Stack gap={4}>
-      <Box sx={{ ...paper(0), overflow: "hidden" }}>
+      <Box
+        sx={{
+          ...paper(0),
+          overflow: "hidden",
+          height: "fit-content",
+          aspectRatio: 16 / 10,
+        }}
+      >
         <img src={l10n.gallery[selected].url}></img>
       </Box>
       <Tabs
@@ -304,8 +311,14 @@ function SectionTitle({
         pb: 8,
       }}
     >
-      <Typography variant="h2">{title ?? "Title"}</Typography>
-      <Typography variant="body2" color="text.secondary">
+      <Typography sx={{ textAlign: "center" }} variant="h2">
+        {title ?? "Title"}
+      </Typography>
+      <Typography
+        sx={{ textAlign: "center" }}
+        variant="body2"
+        color="text.secondary"
+      >
         {subtitle ?? "Subtitle"}
       </Typography>
     </Stack>
@@ -478,22 +491,22 @@ function Background({ showVideo, onShowVideo }: SV) {
 }
 
 function Footer() {
-  const paper = usePaper();
+  const sm = useSm();
   return (
     <>
-      <Box sx={{ ...paper(1), borderRadius: 0 }} p={4}>
+      <Box p={4}>
         <Stack
           gap={4}
           sx={{
             maxWidth: "100%",
             width: 1000,
-            px: 3,
+            px: sm ? 0 : 3,
             py: 4,
             m: "0 auto",
           }}
         >
           <Stack direction="row" gap={8}>
-            <Logo width={48} height={48} />
+            <Logo width={32} height={32} />
             <Stack sx={grid(180)} gap={8} flex={1}>
               {l10n.footerLinks.map(({ title, links }) => (
                 <Stack gap={1} sx={{ flex: 1 }}>
