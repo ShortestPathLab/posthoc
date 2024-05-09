@@ -2,11 +2,13 @@ import {
   ArrowBack,
   ArrowForward,
   CloseOutlined as CloseIcon,
+  GitHub,
   DragHandleOutlined as MenuIcon,
   LaunchOutlined as OpenIcon,
   FilterTiltShiftOutlined as ShowVideoIcon,
 } from "@mui/icons-material";
 import {
+  Avatar,
   Box,
   Button,
   ButtonBase,
@@ -14,6 +16,7 @@ import {
   Divider,
   Fade,
   IconButton,
+  Link,
   Stack,
   StackProps,
   SxProps,
@@ -257,7 +260,7 @@ function Hero({ showVideo, onShowVideo }: SV) {
         }}
         variant="overline"
       >
-        {l10n.org} / {l10n.name}
+        <Link href={l10n.orgUrl}>{l10n.org}</Link> / {l10n.name}
       </Typography>
       <Typography sx={{ zIndex: 1, pr: "8vw" }} variant="h1">
         {l10n.heroTitle}
@@ -334,15 +337,15 @@ function Card({
   image?: RN;
   title?: RN;
   subtitle?: RN;
-} & StackProps) {
+} & Omit<StackProps, "title">) {
   const paper = usePaper();
   return (
     <Stack
+      justifyContent="center"
       alignItems="center"
       gap={1}
       {...props}
-      ///@ts-ignore
-      sx={{ ...paper(1), p: 8, ...props.sx }}
+      sx={{ ...paper(1), p: 8, textAlign: "center", ...props.sx } as any}
     >
       {image ?? <Box height={64}></Box>}
       <Typography variant="h3">{title ?? "Title"}</Typography>
@@ -629,16 +632,26 @@ export default function Home() {
               subtitle={l10n.docsSectionSubtitle}
             />
             <DocSelector /> */}
-            {/* <SectionTitle
+            <SectionTitle
               anchor="team"
               title={l10n.teamSectionTitle}
               subtitle={l10n.teamSectionSubtitle}
             />
             <Stack gap={4} sx={grid(260)}>
-              {times(3, () => (
-                <Card p={2} />
+              {map(l10n.team, ({ avatar, name, title, github }) => (
+                <ButtonBase
+                  sx={paper(0)}
+                  onClick={() => !!github && window.open(github)}
+                >
+                  <Card
+                    sx={{ py: 6 }}
+                    image={<Avatar sx={{ mb: 4, width: 64, height: 64 }} />}
+                    title={name}
+                    subtitle={title}
+                  />
+                </ButtonBase>
               ))}
-            </Stack> */}
+            </Stack>
           </Box>
         </Box>
         <Footer />

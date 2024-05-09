@@ -1,5 +1,6 @@
 {
   "org": "ShortestPathLab",
+  "orgUrl": "https://pathfinding.ai",
   "name": "Posthoc",
   "openAppLabel": "Open Posthoc Web",
   "logoUrl": "img/logo192.png",
@@ -49,7 +50,7 @@
   "featuresSectionTitle": "Features",
   "featuresSectionSubtitle": "featuresSectionSubtitle",
   "teamSectionTitle": "Team",
-  "teamSectionSubtitle": "teamSectionSubtitle",
+  "teamSectionSubtitle": "Built with passion by ShortestPathLab @ Monash University",
   "features": [
     {
       "image": null,
@@ -121,6 +122,26 @@
     {
       "title": "Monash Optimisation",
       "links": [{ "label": "Home", "url": "https://www.monash.edu" }]
+    }
+  ],
+  "team": [
+    {
+      "name": "Kevin Zheng",
+      "title": "Posthoc lead developer",
+      "avatar": null,
+      "github": "https://github.com/Spaaaacccee"
+    },
+    {
+      "name": "Dr Daniel Harabor",
+      "title": "Associate Professor",
+      "avatar": null,
+      "github": "https://harabor.net/daniel"
+    },
+    {
+      "name": "Dr Michael Wybrow",
+      "title": "Associate Professor",
+      "avatar": null,
+      "github": "https://harabor.net/daniel"
     }
   ],
   "footerCopyright": "Copyright © 2024 Monash University"

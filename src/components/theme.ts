@@ -63,7 +63,7 @@ export const makeTheme = (mode: "light" | "dark", theme?: AccentColor) =>
         fontWeight: 500,
       },
       h3: {
-        fontSize: "max(18px, min(22px, 2vw))",
+        fontSize: "max(16px, min(20px, 2vw))",
         fontWeight: 500,
       },
       button: {
