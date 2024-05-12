@@ -45,14 +45,9 @@ import {
 import { createPortal } from "react-dom";
 import { makeTheme, usePaper } from "../components/theme";
 import l10n from "./en-au.json";
+import { grid } from "../components/grid";
 
 const theme = makeTheme("dark");
-
-const grid = (size: number) => ({
-  display: "grid",
-  gridAutoFlow: "row",
-  gridTemplateColumns: `repeat(auto-fill, minmax(min(100%, ${size}px), 1fr))`,
-});
 
 const getShowVideoOpacityStyle = (showVideo?: boolean): SxProps<Theme> => ({
   opacity: +!showVideo,

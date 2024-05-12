@@ -15,9 +15,9 @@ export type Shade = keyof (typeof colors)[AccentColor];
 export const { common, ...accentColors } = colors;
 
 const shadow = `
-      0px 4px 9px -1px rgb(0 0 0 / 4%), 
+      0px 4px 3px -2px rgb(0 0 0 / 4%), 
       0px 5px 24px 0px rgb(0 0 0 / 4%), 
-      0px 10px 48px 0px rgb(0 0 0 / 4%)
+      0px 10px 48px 0px rgb(0 0 0 / 2%)
   `;
 
 export const getShade = (

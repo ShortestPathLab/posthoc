@@ -1,0 +1,39 @@
+---
+sidebar_position: 0
+title: Get started
+slug: get-started
+---
+
+import Card from "../src/components/ActionCard";
+import { grid } from "../src/components/grid";
+import { Stack } from "@mui/material";
+import imageA from "./image-3.png";
+import imageB from "./30531.png";
+import imageC from "./image-9.png";
+
+# Hey there!
+
+We're excited to have you here. 😊
+
+Posthoc is a way to build quick-and-dirty visualisations ✨ for sequential decision-making algorithms, such as search algorithms. 🚀 Just print logs as [search traces](./search-trace) and drop those into the [Posthoc visualiser](./visualiser/overview).
+
+<Stack direction="row" sx={{ ...grid(360), gap: 2, mb: 4 }}>
+  <Card
+    primary="Try Posthoc"
+    secondary="Dive right into Posthoc and try out some examples."
+    onClick={() => open("https://posthoc.pathfinding.ai")}
+    image={imageA}
+  />
+  <Card
+    primary="Watch the primer"
+    secondary="Watch our ICAPS 24 demo video, which explains how Posthoc works."
+    onClick={() => open("https://youtu.be/qVpHPYRi6GY")}
+    image={imageB}
+  />
+  <Card
+    primary="Read the docs"
+    secondary="Ready to build your own visualisations? Continue exploring our documentation."
+    onClick={() => open("http://localhost:3000/docs/overview")}
+    image={imageC}
+  />
+</Stack>
