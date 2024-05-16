@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_2=self.webpackChunkdocs_2||[]).push([[9711],{1064:(s,t,e)=>{e.r(t),e.d(t,{default:()=>c});var h=e(5893);function c(){return(0,h.jsx)("iframe",{src:"http://localhost:5173",style:{width:"100vw",height:"100vh"}})}}}]);
