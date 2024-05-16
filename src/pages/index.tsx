@@ -116,7 +116,7 @@ function Content() {
                 {map(l10n.team, ({ avatar, name, title, github }) => (
                   <Button
                     sx={{ p: 0 }}
-                    onClick={() => !!github && window.open(github)}
+                    onClick={() => !!github && open(github)}
                   >
                     <Card
                       sx={{ py: 6, width: "100%", color: "text.primary" }}

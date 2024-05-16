@@ -3,7 +3,7 @@ import { grid } from "./grid";
 import l10n from "../pages/en-au.json";
 import { Logo } from "./Logo";
 import { useSm } from "./useSm";
-import { space } from "../pages/space";
+import { space } from "./space";
 
 export function Footer() {
   const sm = useSm();

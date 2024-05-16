@@ -17,7 +17,7 @@ import {
 import PopupState, { bindTrigger } from "material-ui-popup-state";
 import { createPortal } from "react-dom";
 import l10n from "../pages/en-au.json";
-import { space } from "../pages/space";
+import { space } from "./space";
 import { Logo } from "./Logo";
 import { useMode } from "./ModeContext";
 import { usePaper } from "./theme";
@@ -42,7 +42,7 @@ export function AppBar() {
     <Button
       startIcon={<OpenIcon sx={{ color: "primary.main" }} />}
       sx={{ py: 1.5, px: 2, borderRadius: 32 }}
-      onClick={() => window.open(l10n.appUrl)}
+      onClick={() => open(l10n.appUrl)}
     >
       <Typography color="text.primary" variant="button">
         {l10n.openAppLabel}

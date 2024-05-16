@@ -1,7 +1,7 @@
 import { FilterTiltShiftOutlined as ShowVideoIcon } from "@mui/icons-material";
 import { Button, Link, Stack, Typography } from "@mui/material";
 import l10n from "../pages/en-au.json";
-import { space } from "../pages/space";
+import { space } from "./space";
 import { GetStartedButton } from "./GetStartedButton";
 
 export function Hero() {

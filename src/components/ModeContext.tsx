@@ -1,8 +1,9 @@
 import { createContext, useContext } from "react";
+import { get } from "./storage";
 
 export const ModeContext = createContext<
   ["light" | "dark", (m: "light" | "dark") => void]
->([(localStorage.getItem("theme") as any) || "light", () => {}]);
+>([(get("theme") as any) || "light", () => {}]);
 
 export function useMode() {
   return useContext(ModeContext);
