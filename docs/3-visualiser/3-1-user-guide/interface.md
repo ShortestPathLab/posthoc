@@ -165,7 +165,7 @@ Manage connected solvers, adapters, renderers, and map parsers. [Read more about
 
 ## Customising views
 
-### Choosing content for a views
+### Choosing content for views
 
 You can choose what content to display in views by clicking the dropdown menu on the top left.
 
@@ -187,9 +187,11 @@ The titlebar gives you commands that control Posthoc as a whole.
 
 | Item                   | Description                                                                                                                                                 |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| New window             | Create a new [linked window](#linked-window).                                                                                                               |
 | Add panel to the right | Create an empty view on the far right edge.                                                                                                                 |
 | Add panel below        | Create an empty view on the bottom edge.                                                                                                                    |
 | Reset layout           | Reset the panels to the original configuration. Depending on the screen size, this could be a vertical two-panel layout or a horizontal three-panel layout. |
+| Reload window          | Reload the window, clearing any current work.                                                                                                               |
 
 ### Workspace menu
 
@@ -204,6 +206,16 @@ The titlebar gives you commands that control Posthoc as a whole.
 ## Sidebar
 
 The sidebar gives you quick access to Explore and Settings. In the future, you'll be able to pin items to the sidebar for quick access, and pop sidebar panels out into the main area.
+
+## Linked window
+
+You can create linked windows via **View > New window**. This is helpful if you have multiple monitors.
+
+To help you identify windows that belong to the same workspace, when multiple windows are open, they're labelled **Group [letter]** on the top left corner.
+
+![Alt text](image-6.png)
+
+When the main window is closed, the oldest linked window becomes the main one.
 
 ## Drag and drop
 

@@ -5,7 +5,7 @@ title: Visualiser Adapter Protocol ⚠️
 
 # Visualiser Adapter Protocol
 
-The **Visualiser Adapter Protocol** defines a communication interface between a solver and a visualiser.
+The **Visualiser Adapter Protocol** connects solvers directly to the visualiser to enable interactivity and integrations that would otherwise not be possible with search trace files.
 
 **Visualiser Adapter Protocol** goes beyond simple solution-based visualisations. It allows visualisers to interactively run queries on solvers, and solvers to return expressive visualisations as search traces, to help you understand, debug, and experiment with your code.
 

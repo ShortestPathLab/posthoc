@@ -2,12 +2,14 @@
   "org": "ShortestPathLab",
   "orgUrl": "https://pathfinding.ai",
   "name": "Posthoc",
-  "openAppLabel": "Open Posthoc Web",
+  "openAppLabel": "Open Posthoc",
   "logoUrl": "img/logo192.png",
   "closeVideo": "Close video",
+  "playVideo": "Play video",
   "backdropVideoUrl": "media/clip.webm",
   "backdropVideoMime": "video/webm",
-  "demoVideoUrl": "media/clip.webm",
+  "demoVideoUrl": "https://drive.google.com/file/d/1ve-GQbgj0MGcouCdE0gxQON-20rpxtW5/preview",
+  "demoVideoThumbnail": "img/primer-thumbnail.png",
   "demoVideoMime": "video/webm",
   "appUrl": "https://posthoc.pathfinding.ai",
   "sections": [
@@ -21,12 +23,12 @@
   ],
   "gallery": [
     {
-      "url": "img/gallery/astar.png",
-      "label": "Demonstration, A* search"
-    },
-    {
       "url": "img/gallery/complex-view.png",
       "label": "Post-game analysis, StarCraft"
+    },
+    {
+      "url": "img/gallery/astar.png",
+      "label": "Demonstration, A* search"
     },
     {
       "url": "img/gallery/image-7.png",
@@ -41,11 +43,12 @@
       "label": "Debugging, room detection algorithm"
     }
   ],
-  "heroTitle": "Understand decision-making processes intuitively.",
-  "heroSubtitle": "Posthoc is a zero-commitment visualiser that is useful from the get-go.",
+  "heroTitle": "Explore decision-making in search",
+  "heroSubtitle": "Posthoc is a way to create quick-and-dirty visualisations from logs to help you understand search.",
   "heroCallToAction": "Get started",
   "heroCallToActionUrl": "./docs/get-started",
-  "demoSectionTitle": "Accepted into the ICAPS 24 Demo Track",
+  "endCallToActionTitle": "Ready to try Posthoc?",
+  "demoSectionTitle": "Watch our ICAPS 24 Demo",
   "demoSectionSubtitle": "We're excited to present Posthoc to the search and planning community",
   "featuresSectionTitle": "Features",
   "featuresSectionSubtitle": "featuresSectionSubtitle",
@@ -85,7 +88,7 @@
   ],
   "docsCallToAction": "See Posthoc docs for %os in %lang",
   "docsCallToActionGeneric": "See how Posthoc works for you",
-  "showVideo": "Show video",
+  "showVideo": "Watch ICAPS 24 Demo",
   "footerLinks": [
     {
       "title": "Posthoc",

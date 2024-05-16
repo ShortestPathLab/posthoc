@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Mono:wght@400;500;600;700&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap");
 html,
 body {
   overflow-x: hidden;
@@ -13,6 +13,8 @@ body {
 
 /* You can override the default Infima variables here. */
 :root {
+  /* --ifm-font-family-monospace: "Consolas", ui-monospace, monospace; */
+  --ifm-heading-font-weight: 500;
   --aa-primary-color-rgb: 36, 138, 255 !important;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-code-font-size: 95%;
@@ -25,23 +27,20 @@ body {
   --ifm-color-gray-400: #ccd0d5;
   --ifm-color-gray-500: #bec3c9;
   --ifm-color-gray-600: #505c68;
-  --ifm-color-gray-700: #252d36;
-  --ifm-color-gray-800: #1d2229;
-  --ifm-color-gray-900: rgb(59, 69, 78, 1);
+  --ifm-color-gray-700: #000000;
+  --ifm-color-gray-800: #000;
+  --ifm-color-gray-900: #000;
   --ifm-color-primary-dark: #2572ff;
   --ifm-color-primary-darker: #1567ff;
   --ifm-color-primary-darkest: #0050e4;
   --ifm-color-primary-light: #669cff;
   --ifm-color-primary-lighter: #77a7ff;
   --ifm-color-primary-lightest: #a7c6ff;
-  --ifm-color-primary: #248aff;
+  --ifm-color-primary: #4f51ff;
   --ifm-color-white: #ffffff;
-  --ifm-font-family-base: Inter, system-ui, -apple-system, Segoe UI, Roboto,
-    Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI",
-    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol";
+  --ifm-font-family-base: Inter, sans-serif;
   --ifm-font-weight-black: 700;
-  --ifm-font-weight-bold: 600;
+  --ifm-font-weight-bold: 500;
   --ifm-font-weight-semibold: 500;
   --ifm-font-weight-normal: 400;
   --ifm-font-weight-light: 300;
@@ -50,7 +49,7 @@ body {
   --ifm-menu-link-padding-vertical: 0.5rem;
   --ifm-navbar-height: 4rem;
   --ifm-menu-color-background-active: transparent;
-  --ifm-color-content: hsl(240, 4%, 9%) !important;
+  --ifm-color-content: hsl(0, 0%, 0%) !important;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.05);
 }
 
@@ -60,7 +59,7 @@ body {
   --ifm-color-gray-700: #acb9c9;
   --ifm-color-gray-800: #dbe4f0;
   --ifm-table-border-color: var(--ifm-color-gray-900);
-  --ifm-color-primary: #248aff;
+  --ifm-color-primary: #7c7eff;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
   --ifm-color-primary-darkest: #1a8870;
@@ -68,11 +67,25 @@ body {
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-  --ifm-background-color: #111317 !important;
-  --aa-background-color-rgb: 17, 19, 23 !important;
+  --ifm-background-color: rgb(10, 12, 16) !important;
+  --aa-background-color-rgb: 10, 12, 16 !important;
   --ifm-background-surface-color: rgb(17 19 23 / 80%) !important;
   --ifm-color-content: hsl(210, 1%, 85%) !important;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.15);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.menu {
+  font-family: "Inter Tight", sans-serif;
+}
+
+.avatar__name {
+  font-weight: 500;
 }
 
 .theme-back-to-top-button {
@@ -94,10 +107,20 @@ body {
 }
 
 .navbar--fixed-top {
+  background-color: transparent;
+  box-shadow: none;
+}
+.navbar--fixed-top::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(var(--aa-background-color-rgb), 0.8);
   backdrop-filter: blur(32px);
-  /* background-image: url("/img/noise.png"); */
-  background-size: 64px 64px;
-  border-bottom: 1px solid var(--ifm-menu-color-background-hover);
+  z-index: -1;
 }
 
 .navbar--fixed-top.navbar-sidebar--show {
@@ -105,15 +128,15 @@ body {
 }
 
 .navbar-sidebar--show .navbar-sidebar {
+  background-color: rgba(var(--aa-background-color-rgb), 0.8);
   backdrop-filter: blur(32px);
-  background-image: url("/img/noise.png");
-  background-size: 64px 64px;
 }
 
 .navbar__link,
 .navbar__title {
   font-size: 15px;
   margin-left: 6px;
+  font-family: "Inter Tight", sans-serif;
 }
 
 .navbar__link > svg {
@@ -161,7 +184,7 @@ body {
 .markdown h1:first-child,
 header > h1 {
   font-size: 2.5rem;
-  font-weight: var(--ifm-font-weight-bold);
+  font-weight: var(--ifm-font-weight-normal);
   padding-top: 0px;
 }
 
@@ -302,6 +325,13 @@ b {
 @media screen and (max-width: 997px) {
   .navbar__title {
     display: none;
+  }
+  .theme-doc-toc-mobile {
+    display: none;
+  }
+  .markdown h1:first-child,
+  header > h1 {
+    margin-top: 32px;
   }
 }
 

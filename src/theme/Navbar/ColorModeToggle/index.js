@@ -1,29 +1,26 @@
 import { useColorMode, useThemeConfig } from "@docusaurus/theme-common";
 import { DarkModeOutlined, LightModeOutlined } from "@mui/icons-material";
 import { Box, IconButton } from "@mui/material";
-import { useContext, useEffect } from "react";
-import { ModeContext } from "../../Root";
+import { useMode } from "../../../components/ModeContext";
 
 export default function NavbarColorModeToggle({ className }) {
-  const [, setMode] = useContext(ModeContext) ?? [];
+  const [mode, setMode] = useMode();
+  const { setColorMode } = useColorMode();
   const disabled = useThemeConfig().colorMode.disableSwitch;
-  const { colorMode, setColorMode } = useColorMode();
   if (disabled) {
     return null;
   }
-  useEffect(() => {
-    if (setMode) {
-      setMode(colorMode);
-    }
-  }, [colorMode, setMode]);
+
   return (
     <Box>
       <IconButton
+        sx={{ color: "text.primary" }}
         onClick={() => {
-          setColorMode(colorMode === "light" ? "dark" : "light");
+          setColorMode(mode === "light" ? "dark" : "light");
+          setMode(mode === "light" ? "dark" : "light");
         }}
       >
-        {colorMode === "dark" ? <DarkModeOutlined /> : <LightModeOutlined />}
+        {mode === "dark" ? <LightModeOutlined /> : <DarkModeOutlined />}
       </IconButton>
     </Box>
   );

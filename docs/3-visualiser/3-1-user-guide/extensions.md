@@ -38,11 +38,4 @@ Maps are an escape-hatch from search traces, and allows you to hard-code a visua
 
 Posthoc supports the following map formats by default. This list also shows up in **Settings view > Extensions > Map support**. We'll soon let you define custom formats via extensions.
 
-### Built-in map formats
-
-| Format  | Extension         | Description                                                                                                                                                                                                               |
-| ------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Grid    | `*.grid`, `*.map` | Moving AI grid map format. [Learn about this format here.](https://movingai.com/benchmarks/formats.html)                                                                                                                  |
-| Network | `*.xy`            | A single-file alternative of the DIMACS network graph format, obtained using `dimacs2xy` of the Warthog library. [Learn about XY and `dimacs2xy` here.](https://bitbucket.org/dharabor/pathfinding/src/neomaster/warthog) |
-| Mesh    | `*.mesh`          | [Learn about mesh maps here.](https://bitbucket.org/shortestpathlab/benchmarks/src/master/mesh-maps)                                                                                                                      |
-| Poly    | `*.poly`          | [Learn about poly maps here.](https://bitbucket.org/shortestpathlab/benchmarks/src/master/poly-maps/)                                                                                                                     |
+[Read about built-in map support here.](./layers#built-in-map-formats)

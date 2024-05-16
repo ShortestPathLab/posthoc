@@ -6,7 +6,7 @@ import {
   TextFieldProps,
   Theme,
 } from "@mui/material";
-import { constant, floor, times } from "lodash";
+import { constant, times } from "lodash";
 
 export type AccentColor = Exclude<keyof typeof colors, "common" | undefined>;
 
@@ -14,11 +14,13 @@ export type Shade = keyof (typeof colors)[AccentColor];
 
 export const { common, ...accentColors } = colors;
 
-const shadow = `
-      0px 4px 3px -2px rgb(0 0 0 / 4%), 
-      0px 5px 24px 0px rgb(0 0 0 / 4%), 
-      0px 10px 48px 0px rgb(0 0 0 / 2%)
-  `;
+// const shadow = `
+//       0px 4px 3px -2px rgb(0 0 0 / 4%),
+//       0px 5px 24px 0px rgb(0 0 0 / 4%),
+//       0px 10px 48px 0px rgb(0 0 0 / 2%)
+//   `;
+
+const shadow = ``;
 
 export const getShade = (
   color: AccentColor = "blue",
@@ -28,20 +30,35 @@ export const getShade = (
   return colors[color][shade ?? (mode === "dark" ? "A100" : "A700")];
 };
 
-const fontFamily = `"Inter", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-          "Droid Sans", "Helvetica Neue", "Arial", sans-serif`;
+const fontFamily = `"Inter", sans-serif`;
 
-const defaultColor = "#248aff";
+const headingFamily = `"Inter Tight", sans-serif`;
+
+const accent = "#4f51ff";
+const accentDark = "#7C7EFF";
 
 export const makeTheme = (mode: "light" | "dark", theme?: AccentColor) =>
   createTheme({
     palette: {
-      primary: { main: theme ? getShade(theme, mode) : defaultColor },
+      primary: {
+        main: theme
+          ? getShade(theme, mode)
+          : mode === "dark"
+          ? accentDark
+          : accent,
+      },
+      secondary: {
+        main: theme
+          ? getShade(theme, mode)
+          : mode === "light"
+          ? "#000000"
+          : "#ffffff",
+      },
       mode,
       background:
         mode === "dark"
           ? // ? { default: "#101418", paper: "#14191f" }
-            { default: "#111317", paper: "#111317" }
+            { default: "#0a0c10", paper: "#0a0c10" }
           : { default: "#ebecef", paper: "#ffffff" },
     },
     typography: {
@@ -56,25 +73,45 @@ export const makeTheme = (mode: "light" | "dark", theme?: AccentColor) =>
       },
       h1: {
         fontSize: "max(36px, min(58px, min(6vw, 6vh)))",
-        fontWeight: 600,
+        fontWeight: mode === "dark" ? 400 : 500,
+        fontFamily: headingFamily,
       },
       h2: {
-        fontSize: "max(22px, min(32px, 4vw))",
-        fontWeight: 500,
+        fontSize: "max(26px, min(32px, 4vw))",
+        fontWeight: mode === "dark" ? 400 : 500,
+        fontFamily: headingFamily,
       },
       h3: {
-        fontSize: "max(16px, min(20px, 2vw))",
-        fontWeight: 500,
+        fontSize: "20px",
+        fontWeight: mode === "dark" ? 400 : 500,
+        fontFamily: headingFamily,
+      },
+      h4: {
+        fontFamily: headingFamily,
+      },
+      h5: {
+        fontFamily: headingFamily,
+      },
+      h6: {
+        fontFamily: headingFamily,
       },
       button: {
         textTransform: "none",
         fontWeight: 500,
         letterSpacing: 0,
         backgroundColor: "background.paper",
+        fontFamily: headingFamily,
+      },
+      overline: {
+        fontFamily: headingFamily,
+        letterSpacing: 0,
+      },
+      subtitle1: {
+        fontFamily: headingFamily,
       },
       subtitle2: {
-        marginTop: 6,
-        fontWeight: 400,
+        fontWeight: mode === "dark" ? 400 : 500,
+        fontFamily: headingFamily,
       },
     },
     components: {
@@ -82,6 +119,7 @@ export const makeTheme = (mode: "light" | "dark", theme?: AccentColor) =>
         styleOverrides: {
           root: {
             borderRadius: "16px",
+            fontWeight: 500,
           },
         },
       },
@@ -104,13 +142,12 @@ export const makeTheme = (mode: "light" | "dark", theme?: AccentColor) =>
       MuiTypography: {
         styleOverrides: {
           body1: {
-            fontWeight: 400,
+            fontWeight: mode === "dark" ? 400 : 500,
             fontSize: "0.875rem",
           },
           overline: {
-            fontWeight: 400,
+            fontWeight: mode === "dark" ? 400 : 500,
             textTransform: "none",
-            letterSpacing: 0,
             fontSize: "0.875rem",
           },
           h4: {
@@ -118,7 +155,6 @@ export const makeTheme = (mode: "light" | "dark", theme?: AccentColor) =>
           },
           h6: {
             fontWeight: 500,
-            letterSpacing: -0.4,
           },
         },
       },
@@ -135,10 +171,10 @@ export function useAcrylic(color?: string): SxProps<Theme> {
 
 export function usePaper(): (e?: number) => SxProps<Theme> {
   return (elevation: number = 1) => ({
-    borderRadius: 8,
-    backdropFilter: "blur(64px)",
+    borderRadius: 4,
+    backdropFilter: "blur(32px)",
     background: ({ palette }) =>
-      `url(img/noise.png), ${alpha(palette.background.paper, 0.75)}`,
+      `url(img/noise.png), ${alpha(palette.background.paper, 0.8)}`,
     backgroundSize: "32px 32px",
   });
 }

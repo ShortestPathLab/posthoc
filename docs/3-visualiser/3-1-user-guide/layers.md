@@ -26,13 +26,20 @@ Trace layers are supported by **event**, **viewport**, **graph**, **source**, an
 
 ### Map
 
-Maps are a separate list of filetypes that we thought deserved first-class support. Typically, these represent domains for pathfinding search, like grids, networks, and meshes.
+Maps typically represent domains &mdash; or operating environments &mdash; for pathfinding search, like grids, networks, and meshes. This is a separate list of filetypes that we thought deserved first-class support.
 
 ![Alt text](image-4.png)
 
 It's optional to use maps because you might not be doing pathfinding search. We recommend you to use search traces for visualisation. But if you have files in a supported map format, it might be more convenient to use a map layer. You can import map files a map layer via **Source > Choose Map > Import Map**.
 
-[Read about built-in map support here.](./extensions#map-support)
+#### Built-in map formats
+
+| Format  | Extension         | Description                                                                                                                                                                                                               |
+| ------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Grid    | `*.grid`, `*.map` | Moving AI grid map format. [Learn about this format here.](https://movingai.com/benchmarks/formats.html)                                                                                                                  |
+| Network | `*.xy`            | A single-file alternative of the DIMACS network graph format, obtained using `dimacs2xy` of the Warthog library. [Learn about XY and `dimacs2xy` here.](https://bitbucket.org/dharabor/pathfinding/src/neomaster/warthog) |
+| Mesh    | `*.mesh`          | [Learn about mesh maps here.](https://bitbucket.org/shortestpathlab/benchmarks/src/master/mesh-maps)                                                                                                                      |
+| Poly    | `*.poly`          | [Learn about poly maps here.](https://bitbucket.org/shortestpathlab/benchmarks/src/master/poly-maps/)                                                                                                                     |
 
 ### Query
 

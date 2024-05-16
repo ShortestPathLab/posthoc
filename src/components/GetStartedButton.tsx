@@ -1,0 +1,25 @@
+import { ArrowForward } from "@mui/icons-material";
+import { Button, useTheme } from "@mui/material";
+import l10n from "../pages/en-au.json";
+
+export function GetStartedButton() {
+  const mode = useTheme().palette.mode;
+  return (
+    <Button
+      color="secondary"
+      sx={{
+        mx: "auto",
+        py: 2,
+        px: 4,
+        borderRadius: 32,
+        // Light text rendering bias
+        fontWeight: mode === "dark" ? 600 : 500,
+      }}
+      variant="contained"
+      endIcon={<ArrowForward />}
+      onClick={() => (location.href = l10n.heroCallToActionUrl)}
+    >
+      {l10n.heroCallToAction}
+    </Button>
+  );
+}

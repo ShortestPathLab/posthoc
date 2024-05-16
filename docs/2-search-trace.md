@@ -4,25 +4,37 @@ sidebar_position: 2
 
 # Search trace
 
-The search trace is a YAML log of your algorithm's decisions. What, and how much, you want to log is up to you. Here are some ideas.
+This is the centrepiece of Posthoc. ✨
+
+The search trace is a YAML log of your algorithm's decisions. What, and how much, you want to log is up to you.
 
 <figure>
   ```yaml title="single-agent-search.trace.yaml"
   version: 1.4.0
   events:
+    - { type: source, id: 0 }
     - { type: expand, id: 0, f: 0, g: 0 }
     - { type: generate, id: 1, pId: 0, f: 1, g: 1 }
     - { type: close, id: 0, f: 0, g: 0 }
+    - { type: source, id: 2 }
   ```
   <figcaption>Generic search events</figcaption>
 </figure>
+
+Each line of the `events` was output by a solver program during the execution of a single-agent search. The `type` property records what the step should represent in the context of the algorithm. In this case, events like `generate`, `expand`, and `close` would make sense.
+
+:::warning
+For the [Posthoc visualiser](./visualiser/overview), it's required to declare `version: 1.4.0` because older versions have a slightly different schema.
+:::
+
+Here are some more ideas.
 
 <figure>
   ```yaml title="agent-moves.trace.yaml"
   version: 1.4.0
   events:
-    - { type: move, agent: 47, id: 0, x: 0, y: 0 }
-    - { type: move, agent: 18, id: 0, pId: 0, x: 5, y: 2 }
+    - { type: move, id: 47, x: 0, y: 0 }
+    - { type: move, id: 18, pId: 0, x: 5, y: 2 }
   ```
   <figcaption>Multi-agent plan execution</figcaption>
 </figure>
@@ -54,7 +66,17 @@ Since YAML is a superset of JSON, your traces can be in JSON too.
   <figcaption>Generic search events (JSON)</figcaption>
 </figure>
 
-Search traces should have the extensions `.trace.yaml` or `.trace.json`. It's required to declare `version: 1.4.0`.
+Search traces should have the extensions `.trace.yaml` or `.trace.json`.
+
+## Creating search traces
+
+Search traces are zero-configuration to get started. Log events via print statements. Copy and paste those into a file, and chuck that into [Posthoc](./visualiser/overview). Quick-and-dirty's the spirit!
+
+```cpp
+cout << "- { type: " << type << ", id: " << id << "}"
+```
+
+If you want to invest a little more into Posthoc, pick up a JSON or YAML serialiser, or use the [Visualiser Adapter Protocol](/docs/visualiser-adapter-protocol).
 
 ## Decision tree
 
@@ -167,7 +189,7 @@ See the [search trace API reference](./search-trace#api) for a list of propertie
 
 ### `type`
 
-The `type` property doesn't do anything, but it's used to drive some parts of **Posthoc**'s UI.
+The `type` property should succinctly represent the kind of event that was recorded. It's used everywhere in **Posthoc**'s UI to identify events.
 
 ![Alt text](image-2.png)
 
@@ -175,11 +197,11 @@ The `type` property doesn't do anything, but it's used to drive some parts of **
 
 Control when elements should be cleared.
 
-| Value             | Usage          | Description                                                                                              |
-| ----------------- | -------------- | -------------------------------------------------------------------------------------------------------- |
-| `false` (default) | `clear: false` | Event will remain once drawn.                                                                            |
-| `true`            | `clear: true`  | Event will clear immediately after the step they're drawn.                                               |
-| `string`          | `clear: close` | Event clears once another event of the same `id`, and the specified type (e.g. `close`), is encountered. |
+| Value             | Usage          | Description                                                                                                                                                                   |
+| ----------------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `false` (default) | `clear: false` | Event remains visible until the end of the search trace. drawn.                                                                                                               |
+| `true`            | `clear: true`  | Event clears immediately after the step they're drawn.                                                                                                                        |
+| `string`          | `clear: close` | Event remains visible until another event of the same `id`, and the specified type (e.g. `close`), is encountered. This can also be an expression that evaluates to a string. |
 
 ```yaml title="clear.trace.yaml"
 version: 1.4.0
@@ -200,7 +222,7 @@ events:
 
 ### `$for`
 
-Repeat a view based on a value.
+Repeat a view based on a value. This property is only evaluated at the time of the event.
 
 ```yaml {11-15} title="loop.trace.yaml"
 version: 1.4.0
@@ -226,7 +248,7 @@ events:
 
 ### `$if`
 
-Conditionally render a view.
+Conditionally render a view. This property is only evaluated at the time of the event.
 
 ```yaml title="if.trace.yaml"
 version: 1.4.0
