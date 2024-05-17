@@ -70,7 +70,7 @@ Search traces should have the extensions `.trace.yaml` or `.trace.json`.
 
 ## Creating search traces
 
-Search traces are zero-configuration to get started. Log events via print statements. Copy and paste those into a file, and chuck that into [Posthoc](./visualiser/overview). Quick-and-dirty's the spirit!
+Search traces are zero-configuration to get started. Log events via print statements. Copy and paste those into a file, and chuck that into [Posthoc](./visualiser/overview). simple and effective's the spirit!
 
 ```cpp
 cout << "- { type: " << type << ", id: " << id << "}"
@@ -199,7 +199,7 @@ Control when elements should be cleared.
 
 | Value             | Usage          | Description                                                                                                                                                                   |
 | ----------------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `false` (default) | `clear: false` | Event remains visible until the end of the search trace. drawn.                                                                                                               |
+| `false` (default) | `clear: false` | Event remains visible until the end of the search trace.                                                                                                                      |
 | `true`            | `clear: true`  | Event clears immediately after the step they're drawn.                                                                                                                        |
 | `string`          | `clear: close` | Event remains visible until another event of the same `id`, and the specified type (e.g. `close`), is encountered. This can also be an expression that evaluates to a string. |
 

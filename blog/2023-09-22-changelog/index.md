@@ -148,19 +148,19 @@ This example compares the search process of two A\* implementations, one as a Se
 
 Get Posthoc as a standalone application for Windows.
 
-[View Releases](https://github.com/path-visualiser/app/releases)
+[View Releases](https://github.com/ShortestPathLab/posthoc-app/releases)
 
 #### Posthoc Standalone (Electron) for Linux
 
 Get Posthoc as a standalone application for Linux.
 
-[View Releases](https://github.com/path-visualiser/app/releases)
+[View Releases](https://github.com/ShortestPathLab/posthoc-app/releases)
 
 #### Posthoc PWA (Github Pages)
 
 Use Posthoc in your browser, or install it as a web app.
 
-[Open Posthoc](https://path-visualiser.github.io/app/)
+[Open Posthoc](https://posthoc-app.pathfinding.ai/)
 
 #### Warthog (WebAssembly) Solver Adapter
 
@@ -173,7 +173,7 @@ This is the Warthog solver compiled to WebAssembly. Add this URL as a **Web Work
 This is the Warthog solver running behind an adapter server. The adapter translates requests into Warthog problem instances, and converts Warthog output into the search trace format. The visualiser and solver communicates through a WebSocket channel.
 
 ```shell
-git clone https://github.com/path-visualiser/app
+git clone https://github.com/ShortestPathLab/posthoc-app
 cd ./app/adapter-warthog-websocket
 npm i
 npm start
@@ -186,7 +186,7 @@ Then, as prompted, add the server's URL as a **Socket.io** connection in Posthoc
 This is an example adapter that exclusively serves iron harvest grid maps to demonstrate how you could serve maps as well as run search queries.
 
 ```shell
-git clone https://github.com/path-visualiser/app
+git clone https://github.com/ShortestPathLab/posthoc-app
 cd ./app/adapter-iron-harvest
 npm i
 npm start

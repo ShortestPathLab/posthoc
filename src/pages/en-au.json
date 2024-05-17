@@ -44,7 +44,7 @@
     }
   ],
   "heroTitle": "Explore decision-making in search",
-  "heroSubtitle": "Posthoc is a way to create quick-and-dirty visualisations from logs to help you understand search.",
+  "heroSubtitle": "Posthoc is a way to create simple and effective visualisations from logs to help you understand search.",
   "heroCallToAction": "Get started",
   "heroCallToActionUrl": "./docs/get-started",
   "endCallToActionTitle": "Ready to try Posthoc?",

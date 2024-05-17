@@ -9,14 +9,14 @@ const config: Config = {
   titleDelimiter: "-",
 
   // Set the production url of your site here
-  url: "https://path-visualiser.github.io",
+  url: "https://posthoc.pathfinding.ai",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "path-visualiser", // Usually your GitHub org/user name.
+  organizationName: "ShortestPathLab", // Usually your GitHub org/user name.
   projectName: "docs", // Usually your repo name.
 
   onBrokenLinks: "warn",
@@ -38,15 +38,13 @@ const config: Config = {
           sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/path-visualiser/path-visualiser.github.io/tree/master",
+          editUrl: "https://github.com/ShortestPathLab/posthoc/tree/master",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/path-visualiser/path-visualiser.github.io/tree/master",
+          editUrl: "https://github.com/ShortestPathLab/posthoc/tree/master",
         },
         // blog: {
         //   showReadingTime: true,
@@ -79,12 +77,12 @@ const config: Config = {
         },
         { to: "/blog", label: "Blog", position: "left" },
         {
-          href: "https://path-visualiser.github.io/app",
+          href: "https://posthoc-app.pathfinding.ai",
           label: "Open Posthoc",
           position: "right",
         },
         {
-          href: "https://github.com/path-visualiser/app",
+          href: "https://github.com/ShortestPathLab/posthoc-app",
           label: "Github",
           position: "left",
         },

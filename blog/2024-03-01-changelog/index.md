@@ -109,8 +109,8 @@ We slightly improved perceived performance by increasing resolution when playbac
 
 # Known Issues
 
-See issues on [our bug tracker](https://github.com/path-visualiser/app/issues).
+See issues on [our bug tracker](https://github.com/ShortestPathLab/posthoc-app/issues).
 
 # Releases
 
-See releases for v1.2.0 [here](https://github.com/path-visualiser/app/releases/tag/v1.2.0).
+See releases for v1.2.0 [here](https://github.com/ShortestPathLab/posthoc-app/releases/tag/v1.2.0).

@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Overview
 
-**Posthoc** is a way to build quick-and-dirty visualisations ✨ for sequential decision-making algorithms, such as search algorithms 🚀.
+**Posthoc** is a way to build simple and effective visualisations ✨ for sequential decision-making algorithms, such as search algorithms 🚀.
 
 ![Alt text](overview.png)
 
@@ -66,4 +66,4 @@ Building visualisations is a lot of effort; we want to focus on writing and perf
 
 Posthoc adds visualisation to our problem-solving toolkit 🛠️.
 
-When problems occur in a spatial environment &mdash; navigating through roads, corridors, terrain etc &mdash; it's just natural to reason about them visually. Posthoc lets us create quick-and-dirty visualisations to leverage intuition, debug problems, draw insights, and collaborate with each other.
+When problems occur in a spatial environment &mdash; navigating through roads, corridors, terrain etc &mdash; it's just natural to reason about them visually. Posthoc lets us create simple and effective visualisations to leverage intuition, debug problems, draw insights, and collaborate with each other.
