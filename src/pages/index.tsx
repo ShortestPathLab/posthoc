@@ -49,7 +49,7 @@ function Content() {
           backgroundColor: "background.default",
           backgroundImage: `radial-gradient(46.56% 45.08% at 56.04% 55.33%,rgba(0,50,255,.075) 0,transparent 100%),radial-gradient(46.69% 41.74% at 69.64% 60.81%,rgba(192,59,196,.075) 0,transparent 100%),radial-gradient(59.78% 45.73% at 30.42% 58.68%,rgba(0,120,212,.075) 0,transparent 100%),radial-gradient(32.53% 31.57% at 50% 66.82%,rgba(70,54,104,.075) 0,transparent 100%)`,
           backgroundSize: "100vw 200vh",
-          backgroundPosition: "50% 30vh",
+          backgroundPosition: "50% 0vh",
           backgroundRepeat: "no-repeat",
           transition: (t) =>
             t.transitions.create("background-color", {
