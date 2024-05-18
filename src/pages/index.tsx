@@ -51,6 +51,10 @@ function Content() {
           backgroundSize: "100vw 200vh",
           backgroundPosition: "50% 0vh",
           backgroundRepeat: "no-repeat",
+          transition: (t) =>
+            t.transitions.create("background-color", {
+              duration: t.transitions.duration.complex,
+            }),
         }}
       >
         <Box>
