@@ -10,7 +10,6 @@ export default function NavbarColorModeToggle({ className }) {
   if (disabled) {
     return null;
   }
-
   return (
     <Box>
       <IconButton
