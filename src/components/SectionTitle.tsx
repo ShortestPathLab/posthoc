@@ -20,8 +20,14 @@ export function SectionTitle({
         pb: 8,
       }}
     >
-      <Typography variant="h2">{title ?? "Title"}</Typography>
-      {subtitle && <Typography variant="subtitle2">{subtitle}</Typography>}
+      <Typography variant="h2" color="text.primary">
+        {title ?? "Title"}
+      </Typography>
+      {subtitle && (
+        <Typography variant="subtitle2" color="text.primary">
+          {subtitle}
+        </Typography>
+      )}
     </Stack>
   );
 }

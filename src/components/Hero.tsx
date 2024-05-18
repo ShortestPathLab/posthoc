@@ -36,10 +36,18 @@ export function Hero() {
         </Link>{" "}
         / {l10n.name}
       </Typography>
-      <Typography sx={{ zIndex: 1, px: "4vw" }} variant="h1">
+      <Typography
+        sx={{ zIndex: 1, px: "4vw" }}
+        variant="h1"
+        color="text.primary"
+      >
         {l10n.heroTitle}
       </Typography>
-      <Typography sx={{ zIndex: 1, px: "16vw" }} variant="subtitle1">
+      <Typography
+        sx={{ zIndex: 1, px: "16vw" }}
+        variant="subtitle1"
+        color="text.primary"
+      >
         {l10n.heroSubtitle}
       </Typography>
       {space()}
