@@ -3,13 +3,13 @@
   "orgUrl": "https://pathfinding.ai",
   "name": "Posthoc",
   "openAppLabel": "Open Posthoc",
-  "logoUrl": "img/logo192.png",
+  "logoUrl": "/img/logo192.png",
   "closeVideo": "Close video",
   "playVideo": "Play video",
   "backdropVideoUrl": "media/clip.webm",
   "backdropVideoMime": "video/webm",
   "demoVideoUrl": "https://drive.google.com/file/d/1ve-GQbgj0MGcouCdE0gxQON-20rpxtW5/preview",
-  "demoVideoThumbnail": "img/primer-thumbnail.png",
+  "demoVideoThumbnail": "/img/primer-thumbnail.png",
   "demoVideoMime": "video/webm",
   "appUrl": "https://posthoc.pathfinding.ai",
   "sections": [
@@ -23,23 +23,23 @@
   ],
   "gallery": [
     {
-      "url": "img/gallery/complex-view.png",
+      "url": "/img/gallery/complex-view.png",
       "label": "Post-game analysis, StarCraft"
     },
     {
-      "url": "img/gallery/astar.png",
+      "url": "/img/gallery/astar.png",
       "label": "Demonstration, A* search"
     },
     {
-      "url": "img/gallery/image-7.png",
+      "url": "/img/gallery/image-7.png",
       "label": "Compression algorithm analysis, RLE"
     },
     {
-      "url": "img/gallery/image-3.png",
+      "url": "/img/gallery/image-3.png",
       "label": "Debugging, duel euclidean path search"
     },
     {
-      "url": "img/gallery/room-detection.png",
+      "url": "/img/gallery/room-detection.png",
       "label": "Debugging, room detection algorithm"
     }
   ],
