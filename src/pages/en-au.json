@@ -18,7 +18,7 @@
     {
       "key": "github",
       "label": "Github",
-      "url": "https://github.com/shortestpathlab/posthoc"
+      "url": "https://github.com/shortestpathlab/posthoc-app"
     }
   ],
   "gallery": [
@@ -100,7 +100,7 @@
         { "label": "Docs", "url": "./docs/overview" },
         {
           "label": "Github",
-          "url": "https://github.com/shortestpathlab/posthoc"
+          "url": "https://github.com/shortestpathlab/posthoc-app"
         }
       ]
     },
