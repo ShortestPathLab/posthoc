@@ -174,7 +174,7 @@ export function usePaper(): (e?: number) => SxProps<Theme> {
     borderRadius: 4,
     backdropFilter: "blur(32px)",
     background: ({ palette }) =>
-      `url(img/noise.png), ${alpha(palette.background.paper, 0.8)}`,
+      `url(/img/noise.png), ${alpha(palette.background.paper, 0.8)}`,
     backgroundSize: "32px 32px",
   });
 }

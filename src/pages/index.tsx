@@ -144,11 +144,9 @@ function Content() {
 function ContentWithTheme() {
   const [mode] = useContext(ModeContext);
   return (
-    <ThemeProvider theme={themes[mode]}>
-      <CssBaseline>
-        <Content />
-      </CssBaseline>
-    </ThemeProvider>
+    <CssBaseline>
+      <Content />
+    </CssBaseline>
   );
 }
 
