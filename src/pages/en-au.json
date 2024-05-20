@@ -48,7 +48,7 @@
   "heroCallToAction": "Get started",
   "heroCallToActionUrl": "./docs/get-started",
   "endCallToActionTitle": "Ready to try Posthoc?",
-  "demoSectionTitle": "Watch our ICAPS 24 Demo",
+  "demoSectionTitle": "Watch our ICAPS 24 demo",
   "demoSectionSubtitle": "We're excited to present Posthoc to the search and planning community",
   "featuresSectionTitle": "Features",
   "featuresSectionSubtitle": "featuresSectionSubtitle",
@@ -88,7 +88,7 @@
   ],
   "docsCallToAction": "See Posthoc docs for %os in %lang",
   "docsCallToActionGeneric": "See how Posthoc works for you",
-  "showVideo": "Watch ICAPS 24 Demo",
+  "showVideo": "Watch ICAPS 24 demo",
   "footerLinks": [
     {
       "title": "Posthoc",
@@ -136,13 +136,13 @@
     },
     {
       "name": "Dr Daniel Harabor",
-      "title": "Associate Professor",
+      "title": "Associate professor",
       "avatar": null,
       "github": "https://harabor.net/daniel"
     },
     {
       "name": "Dr Michael Wybrow",
-      "title": "Associate Professor",
+      "title": "Associate professor",
       "avatar": null,
       "github": "https://harabor.net/daniel"
     }
