@@ -26,6 +26,7 @@ import "./index.module.css";
 import { PlayArrowOutlined } from "@mui/icons-material";
 import { useTitleBar } from "../components/useTitleBar";
 import { useSm } from "../components/useSm";
+import BrowserOnly from "@docusaurus/BrowserOnly";
 
 function Content() {
   const sm = useSm();
@@ -55,7 +56,7 @@ function Content() {
             }),
         }}
       >
-        <AppBar />
+        <BrowserOnly>{() => <AppBar />}</BrowserOnly>
         <Box>
           <Box
             sx={{
