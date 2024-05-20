@@ -24,6 +24,7 @@ import { makeTheme } from "../components/theme";
 import l10n from "./en-au.json";
 import "./index.module.css";
 import { PlayArrowOutlined } from "@mui/icons-material";
+import { useTitleBar } from "../components/useTitleBar";
 
 const themes = {
   dark: makeTheme("dark"),
@@ -142,7 +143,7 @@ function Content() {
 }
 
 function ContentWithTheme() {
-  const [mode] = useContext(ModeContext);
+  useTitleBar();
   return (
     <CssBaseline>
       <Content />

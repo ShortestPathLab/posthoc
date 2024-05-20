@@ -16,9 +16,9 @@ Adapters implement the [Visualiser Adapter Protocol](/docs/visualiser-adapter-pr
 
 ### Other adapters
 
-| Name                  | URL                                                                                                              | Connection Type | Description                          |
-| --------------------- | ---------------------------------------------------------------------------------------------------------------- | --------------- | ------------------------------------ |
-| Warthog (WebAssembly) | `https://cdn.jsdelivr.net/gh/ShortestPathLab/posthoc-adapter-warthog@adapter-warthog-wasm-dist/warthog-wasm.mjs` | Web Worker      | Solver adapter for Warthog & Roadhog |
+| Name                  | URL                                                                                                  | Connection Type | Description                          |
+| --------------------- | ---------------------------------------------------------------------------------------------------- | --------------- | ------------------------------------ |
+| Warthog (WebAssembly) | `https://cdn.jsdelivr.net/gh/ShortestPathLab/posthoc-app@adapter-warthog-wasm-dist/warthog-wasm.mjs` | Web Worker      | Solver adapter for Warthog & Roadhog |
 
 [You can find more adapters here.](https://github.com/ShortestPathLab/posthoc-app)
 
