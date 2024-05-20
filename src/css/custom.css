@@ -366,3 +366,27 @@ b {
     max-width: 100%;
   }
 }
+
+@media (pointer: fine) {
+  *::-webkit-scrollbar {
+    width: 6px;
+    height: 14px;
+    background-color: transparent;
+  }
+  *::-webkit-scrollbar-track {
+    background: inherit;
+  }
+  *::-webkit-scrollbar-thumb {
+    transition: background-color 300ms ease;
+    background-color: color-mix(in srgb, currentColor 45%, transparent);
+    min-height: 64px;
+    padding: 2px;
+    background-clip: padding-box;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: color-mix(in srgb, currentColor 60%, transparent);
+  }
+  *::-webkit-scrollbar-thumb:active {
+    background-color: color-mix(in srgb, currentColor 75%, transparent);
+  }
+}

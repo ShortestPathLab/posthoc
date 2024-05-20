@@ -9,7 +9,7 @@ export function Footer() {
   const sm = useSm();
   return (
     <>
-      <Box p={4}>
+      <Box p={3}>
         <Stack
           gap={4}
           sx={{

@@ -25,24 +25,21 @@ import l10n from "./en-au.json";
 import "./index.module.css";
 import { PlayArrowOutlined } from "@mui/icons-material";
 import { useTitleBar } from "../components/useTitleBar";
-
-const themes = {
-  dark: makeTheme("dark"),
-  light: makeTheme("light"),
-};
+import { useSm } from "../components/useSm";
 
 function Content() {
+  const sm = useSm();
   const [mode] = useMode();
 
-  useEffect(() => {
-    const sb = OverlayScrollbars(document.body, {
-      overflow: { x: "hidden", y: "scroll" },
-      scrollbars: {
-        // theme: mode === "dark" ? "os-theme-light" : undefined,
-      },
-    });
-    () => sb.destroy();
-  }, [mode]);
+  // useEffect(() => {
+  //   const sb = OverlayScrollbars(document.body, {
+  //     overflow: { x: "hidden", y: "scroll" },
+  //     scrollbars: {
+  //       // theme: mode === "dark" ? "os-theme-light" : undefined,
+  //     },
+  //   });
+  //   () => sb.destroy();
+  // }, [mode]);
   return (
     <>
       <Box
@@ -58,13 +55,14 @@ function Content() {
             }),
         }}
       >
+        <AppBar />
         <Box>
           <Box
             sx={{
               textAlign: "center",
               maxWidth: "100%",
               width: 1000 + 8 * 8,
-              px: 4,
+              px: sm ? 3 : 4,
               m: "0 auto",
               pb: 12,
             }}
@@ -137,7 +135,6 @@ function Content() {
           <Footer />
         </Box>
       </Box>
-      <AppBar />
     </>
   );
 }

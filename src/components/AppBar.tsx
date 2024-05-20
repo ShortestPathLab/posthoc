@@ -27,7 +27,11 @@ export function AppBar() {
   const [mode, setMode] = useMode();
   const sm = useSm();
   const paper = usePaper();
-  const top = useScrollTrigger({ threshold: 0, disableHysteresis: true });
+  const top = useScrollTrigger({
+    threshold: 0,
+    disableHysteresis: true,
+    target: document.body,
+  });
   const menu = l10n.sections.map(({ url, label }) => (
     <Button
       sx={{ py: 1.5, px: 2, borderRadius: 32 }}
@@ -60,9 +64,12 @@ export function AppBar() {
   return (
     <Box
       sx={{
-        width: "100vw",
-        position: "fixed",
-        px: 2,
+        width: "100%",
+        position: "sticky",
+        px: sm ? 1 : 2,
+        pt: sm ? 1 : 4,
+        top: 0,
+        left: 0,
         zIndex: (t) => t.zIndex.appBar,
       }}
     >
@@ -73,8 +80,8 @@ export function AppBar() {
           direction="row"
           sx={{
             p: 2,
+            px: 1.5,
             mx: "auto",
-            mt: sm ? 2 : 4,
             ...(top ? paper(1) : {}),
             width: 1000 + 8 * 4,
             maxWidth: "100%",
@@ -82,7 +89,7 @@ export function AppBar() {
             borderRadius: 32,
           }}
         >
-          <Box sx={{ mr: 2, height: 32, minWidth: 32 }}>
+          <Box sx={{ pr: 2, pl: 0.5, height: 32, minWidth: 32 }}>
             <Logo />
           </Box>
           {sm ? (
@@ -114,12 +121,12 @@ export function AppBar() {
                           zIndex: (t) => t.zIndex.modal,
                           top: 0,
                           left: 0,
-                          width: "100vw",
-                          height: "100vh",
+                          width: "100dvw",
+                          height: "100dvh",
                           borderRadius: 0,
                         }}
                       >
-                        <Stack gap={4} p={3.5} alignItems="flex-end">
+                        <Stack gap={4} p={2.5} alignItems="flex-end">
                           <IconButton onClick={state.close}>
                             <CloseIcon />
                           </IconButton>

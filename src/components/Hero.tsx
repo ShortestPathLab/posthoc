@@ -3,19 +3,21 @@ import { Button, Link, Stack, Typography } from "@mui/material";
 import l10n from "../pages/en-au.json";
 import { space } from "./space";
 import { GetStartedButton } from "./GetStartedButton";
+import { useSm } from "./useSm";
 
 export function Hero() {
+  const sm = useSm();
   return (
     <Stack
       gap={4}
       justifyContent="center"
-      alignItems={"center"}
+      alignItems="center"
       sx={{
-        maxWidth: "100vw",
-        minHeight: 720,
-        height: "90vh",
+        maxWidth: "100dvw",
+        height: "80dvh",
+        minHeight: 520,
         textAlign: "center",
-        pt: 36,
+        pt: 24,
         pb: 16,
         mx: "auto",
       }}
@@ -37,21 +39,20 @@ export function Hero() {
         / {l10n.name}
       </Typography>
       <Typography
-        sx={{ zIndex: 1, px: "4vw" }}
+        sx={{ zIndex: 1, px: "4dvw" }}
         variant="h1"
         color="text.primary"
       >
         {l10n.heroTitle}
       </Typography>
       <Typography
-        sx={{ zIndex: 1, px: "16vw" }}
+        sx={{ zIndex: 1, px: "4dvw", maxWidth: 640 }}
         variant="subtitle1"
         color="text.primary"
       >
         {l10n.heroSubtitle}
       </Typography>
-      {space()}
-      <Stack direction="row" flexWrap="wrap" gap={1}>
+      <Stack direction="row" flexWrap="wrap" gap={2} sx={{ pt: sm ? 0 : 4 }}>
         <GetStartedButton />
         <Button
           onClick={() => open(l10n.demoVideoUrl)}
