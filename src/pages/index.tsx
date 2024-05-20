@@ -5,6 +5,7 @@ import {
   CssBaseline,
   Stack,
   ThemeProvider,
+  useTheme,
 } from "@mui/material";
 import Root from "@theme/Root";
 import { map } from "lodash";
@@ -32,15 +33,6 @@ function Content() {
   const sm = useSm();
   const [mode] = useMode();
 
-  // useEffect(() => {
-  //   const sb = OverlayScrollbars(document.body, {
-  //     overflow: { x: "hidden", y: "scroll" },
-  //     scrollbars: {
-  //       // theme: mode === "dark" ? "os-theme-light" : undefined,
-  //     },
-  //   });
-  //   () => sb.destroy();
-  // }, [mode]);
   return (
     <>
       <Box
@@ -141,7 +133,12 @@ function Content() {
 }
 
 function ContentWithTheme() {
+  const { palette } = useTheme();
   useTitleBar();
+  useEffect(() => {
+    document.body.style.backgroundColor = palette.background.default;
+    document.body.style.color = palette.text.primary;
+  }, [palette.background.default, palette.text.primary]);
   return (
     <CssBaseline>
       <Content />
