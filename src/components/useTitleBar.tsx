@@ -3,9 +3,14 @@ import { useEffect } from "react";
 
 export function useTitleBar() {
   const { palette } = useTheme();
+  const color = palette.background.default;
   useEffect(() => {
-    document
-      .querySelector('meta[name="theme-color"]')!
-      .setAttribute("content", palette.background.default);
-  }, [palette.background.default]);
+    let node = document.querySelector('meta[name="theme-color"]');
+    if (!node) {
+      node = document.createElement("meta");
+      node.setAttribute("name", "theme-color");
+      document.head.appendChild(node);
+    }
+    node.setAttribute("content", color);
+  }, [color]);
 }
