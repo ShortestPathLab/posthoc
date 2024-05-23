@@ -118,7 +118,8 @@ export function Gallery() {
                       overflow: "hidden",
                       backgroundImage: `url(${url})`,
                       backgroundSize: "cover",
-                      backgroundPosition: "calc(var(--factor) * -0.5px) 50%",
+                      backgroundPosition:
+                        "calc(50% + calc(var(--factor) * -0.5px)) 50%",
                     }}
                   >
                     {sm ? (
