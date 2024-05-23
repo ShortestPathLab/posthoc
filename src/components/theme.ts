@@ -78,7 +78,7 @@ export const makeTheme = (mode: "light" | "dark", theme?: AccentColor) =>
       },
       h2: {
         fontSize: "max(26px, min(32px, 4vw))",
-        fontWeight: mode === "dark" ? 400 : 500,
+        fontWeight: mode === "dark" ? 400 : 420,
         fontFamily: headingFamily,
       },
       h3: {

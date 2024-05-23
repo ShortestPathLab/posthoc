@@ -24,6 +24,7 @@
   "gallery": [
     {
       "url": "/img/gallery/complex-view.png",
+      "workspace": "content/dps.workspace",
       "label": "Post-game analysis, StarCraft"
     },
     {
@@ -32,7 +33,10 @@
     },
     {
       "url": "/img/gallery/image-7.png",
-      "label": "Compression algorithm analysis, RLE"
+      "label": "Compression algorithm analysis",
+      "workspace": null,
+      "author": "Mark Carlson",
+      "description": "Mark used Posthoc to showcase an encoding scheme for black-and-white video based on run-length encoding."
     },
     {
       "url": "/img/gallery/image-3.png",

@@ -8,7 +8,6 @@ import {
 import {
   Box,
   Button,
-  Fade,
   IconButton,
   Stack,
   Typography,
@@ -17,9 +16,9 @@ import {
 import PopupState, { bindTrigger } from "material-ui-popup-state";
 import { createPortal } from "react-dom";
 import l10n from "../pages/en-au.json";
-import { space } from "./space";
 import { Logo } from "./Logo";
 import { useMode } from "./ModeContext";
+import { space } from "./space";
 import { usePaper } from "./theme";
 import { useSm } from "./useSm";
 
@@ -73,84 +72,79 @@ export function AppBar() {
         zIndex: (t) => t.zIndex.appBar,
       }}
     >
-      <Fade in>
-        <Stack
-          gap={1}
-          alignItems="center"
-          direction="row"
-          sx={{
-            p: 2,
-            px: 1.5,
-            mx: "auto",
-            ...(top ? paper(1) : {}),
-            width: 1000 + 8 * 4,
-            maxWidth: "100%",
-            height: 64,
-            borderRadius: 32,
-          }}
-        >
-          <Box sx={{ pr: 2, pl: 0.5, height: 32, minWidth: 32 }}>
-            <Logo />
-          </Box>
-          {sm ? (
-            <>
-              <Box sx={{ flex: 1 }}></Box>
-              {openPosthoc}
-              <PopupState variant="popover">
-                {(state) => (
-                  <>
-                    <IconButton {...bindTrigger(state)}>
-                      <MenuIcon />
-                    </IconButton>
-                    {createPortal(
-                      <Box
-                        sx={{
-                          ...(state.isOpen
-                            ? { opacity: 1 }
-                            : {
-                                opacity: 0,
-                                pointerEvents: "none",
-                              }),
-                          ...paper(0),
-                          transition: (t) =>
-                            t.transitions.create([
-                              "opacity",
-                              "backdrop-filter",
-                            ]),
-                          position: "fixed",
-                          zIndex: (t) => t.zIndex.modal,
-                          top: 0,
-                          left: 0,
-                          width: "100dvw",
-                          height: "100vh",
-                          borderRadius: 0,
-                        }}
-                      >
-                        <Stack gap={4} p={2.5} alignItems="flex-end">
-                          <IconButton onClick={state.close}>
-                            <CloseIcon />
-                          </IconButton>
-                          {darkToggle}
-                          {menu}
-                          {openPosthoc}
-                        </Stack>
-                      </Box>,
-                      document.body
-                    )}
-                  </>
-                )}
-              </PopupState>
-            </>
-          ) : (
-            <>
-              {menu}
-              {space()}
-              {openPosthoc}
-              {darkToggle}
-            </>
-          )}
-        </Stack>
-      </Fade>
+      <Stack
+        gap={1}
+        alignItems="center"
+        direction="row"
+        sx={{
+          p: 2,
+          px: 1.5,
+          mx: "auto",
+          ...(top ? paper(1) : {}),
+          width: 1000 + 8 * 4,
+          maxWidth: "100%",
+          height: 64,
+          borderRadius: 32,
+        }}
+      >
+        <Box sx={{ pr: 2, pl: 0.5, height: 32, minWidth: 32 }}>
+          <Logo />
+        </Box>
+        {sm ? (
+          <>
+            <Box sx={{ flex: 1 }}></Box>
+            {openPosthoc}
+            <PopupState variant="popover">
+              {(state) => (
+                <>
+                  <IconButton {...bindTrigger(state)}>
+                    <MenuIcon />
+                  </IconButton>
+                  {createPortal(
+                    <Box
+                      sx={{
+                        ...(state.isOpen
+                          ? { opacity: 1 }
+                          : {
+                              opacity: 0,
+                              pointerEvents: "none",
+                            }),
+                        ...paper(0),
+                        transition: (t) =>
+                          t.transitions.create(["opacity", "backdrop-filter"]),
+                        position: "fixed",
+                        zIndex: (t) => t.zIndex.modal,
+                        top: 0,
+                        left: 0,
+                        width: "100dvw",
+                        height: "100vh",
+                        borderRadius: 0,
+                      }}
+                    >
+                      <Stack gap={4} p={2.5} alignItems="flex-end">
+                        <IconButton onClick={state.close}>
+                          <CloseIcon />
+                        </IconButton>
+                        {darkToggle}
+                        {menu}
+                        {openPosthoc}
+                      </Stack>
+                    </Box>,
+                    document.body
+                  )}
+                </>
+              )}
+            </PopupState>
+          </>
+        ) : (
+          <>
+            {menu}
+            {space()}
+            {openPosthoc}
+            {darkToggle}
+          </>
+        )}
+      </Stack>
     </Box>
   );
 }

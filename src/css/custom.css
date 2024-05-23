@@ -370,7 +370,7 @@ b {
 @media (pointer: fine) {
   *::-webkit-scrollbar {
     width: 6px;
-    height: 14px;
+    height: 6px;
     background-color: transparent;
   }
   *::-webkit-scrollbar-track {
@@ -379,9 +379,9 @@ b {
   *::-webkit-scrollbar-thumb {
     transition: background-color 300ms ease;
     background-color: color-mix(in srgb, currentColor 45%, transparent);
-    min-height: 64px;
     padding: 2px;
     background-clip: padding-box;
+    border-radius: 6px;
   }
   *::-webkit-scrollbar-thumb:hover {
     background-color: color-mix(in srgb, currentColor 60%, transparent);
