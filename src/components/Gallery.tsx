@@ -171,7 +171,10 @@ export function Gallery() {
           <Box sx={{ minWidth: `calc(50vw - ${width / 2}px)` }} />
           {a(width)}
           {l10n.gallery.map(
-            ({ label, url, description, workspace, author, tagline }, i) => (
+            (
+              { label, url, description, workspace, author, tagline, avatar },
+              i
+            ) => (
               <Box
                 data-index={i}
                 onClick={(e) => {
@@ -279,7 +282,7 @@ export function Gallery() {
                         alignItems: "center",
                       }}
                     >
-                      <Avatar sx={{ width: 24, height: 24 }} />
+                      <Avatar sx={{ width: 24, height: 24 }} src={avatar} />
                       <Typography variant="subtitle2" sx={{ color: "white" }}>
                         {author ?? "Anonymous"}
                       </Typography>

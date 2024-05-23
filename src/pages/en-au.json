@@ -25,33 +25,47 @@
     {
       "tagline": "Analysis",
       "url": "/img/gallery/complex-view.png",
-      "label": "Post-game analysis, StarCraft"
+      "workspace": "/content/starcraft.min.workspace",
+      "label": "Post-game breakdown",
+      "author": "Ryan Hechenberger",
+      "avatar": "https://github.com/heavenfall.png",
+      "description": "Explore the decisions of AI units in a recorded StarCraft game."
     },
     {
       "tagline": "Showcase",
       "url": "/img/gallery/image-7.png",
       "label": "Video compression",
-      "workspace": null,
+      "workspace": "/content/apple.min.workspace",
       "author": "Mark Carlson",
-      "description": "A simple encoding scheme for binary video based on run-length encoding."
+      "avatar": null,
+      "description": "A simple encoding scheme for black and white video based on run-length encoding."
     },
     {
-      "tagline": "Demonstration",
+      "tagline": "Interrogation",
       "url": "/img/gallery/astar.png",
       "label": "A* search",
+      "workspace": "/content/astar.min.workspace",
       "author": "ShortestPathLab",
+      "avatar": "https://github.com/ShortestPathLab.png",
       "description": "Get to know Posthoc by taking apart and inspecting the classic A* algorithm on a small grid map."
     },
     {
-      "tagline": "Validation",
+      "tagline": "Debugging",
       "url": "/img/gallery/image-3.png",
       "workspace": "/content/dps.workspace",
-      "label": "Duel euclidean path search"
+      "label": "Dual euclidean path search",
+      "description": "Visually verify that DPS can correctly generate shortest paths for a simple map.",
+      "avatar": "https://github.com/heavenfall.png",
+      "author": "Ryan Hechenberger"
     },
     {
-      "tagline": "Debugging",
-      "url": "/img/gallery/room-detection.png",
-      "label": "Room detection"
+      "tagline": "Demonstration",
+      "url": "/img/gallery/mcp.png",
+      "label": "Minimum communication policy",
+      "workspace": "/content/mcp.min.workspace",
+      "description": "See how agents handle execution delays via a minimum communication policy.",
+      "avatar": "https://github.com/YueZhang-studyuse.png",
+      "author": "Yue Zhang"
     }
   ],
   "galleryCallToAction": "See more examples in Posthoc",
