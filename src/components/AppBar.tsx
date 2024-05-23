@@ -85,6 +85,7 @@ export function AppBar() {
           maxWidth: "100%",
           height: 64,
           borderRadius: 32,
+          boxShadow: (t) => t.shadows[4],
         }}
       >
         <Box sx={{ pr: 2, pl: 0.5, height: 32, minWidth: 32 }}>

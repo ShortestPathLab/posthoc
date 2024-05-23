@@ -14,7 +14,7 @@ export function Hero() {
       alignItems="center"
       sx={{
         maxWidth: "100dvw",
-        height: "80svh",
+        height: "60svh",
         minHeight: 520,
         textAlign: "center",
         pt: 24,

@@ -23,36 +23,44 @@
   ],
   "gallery": [
     {
+      "tagline": "Analysis",
       "url": "/img/gallery/complex-view.png",
-      "workspace": "content/dps.workspace",
       "label": "Post-game analysis, StarCraft"
     },
     {
-      "url": "/img/gallery/astar.png",
-      "label": "Demonstration, A* search"
-    },
-    {
+      "tagline": "Showcase",
       "url": "/img/gallery/image-7.png",
-      "label": "Compression algorithm analysis",
+      "label": "Video compression",
       "workspace": null,
       "author": "Mark Carlson",
-      "description": "Mark used Posthoc to showcase an encoding scheme for black-and-white video based on run-length encoding."
+      "description": "A simple encoding scheme for binary video based on run-length encoding."
     },
     {
+      "tagline": "Demonstration",
+      "url": "/img/gallery/astar.png",
+      "label": "A* search",
+      "author": "ShortestPathLab",
+      "description": "Get to know Posthoc by taking apart and inspecting the classic A* algorithm on a small grid map."
+    },
+    {
+      "tagline": "Validation",
       "url": "/img/gallery/image-3.png",
-      "label": "Debugging, duel euclidean path search"
+      "workspace": "/content/dps.workspace",
+      "label": "Duel euclidean path search"
     },
     {
+      "tagline": "Debugging",
       "url": "/img/gallery/room-detection.png",
-      "label": "Debugging, room detection algorithm"
+      "label": "Room detection"
     }
   ],
+  "galleryCallToAction": "See more examples in Posthoc",
   "heroTitle": "Explore decision-making in search",
   "heroSubtitle": "Posthoc is a way to create simple and effective visualisations from logs to help you understand search.",
   "heroCallToAction": "Get started",
   "heroCallToActionUrl": "./docs/get-started",
   "endCallToActionTitle": "Ready to try Posthoc?",
-  "demoSectionTitle": "Watch our ICAPS 24 demo",
+  "demoSectionTitle": "Showcased @ ICAPS24",
   "demoSectionSubtitle": "We're excited to present Posthoc to the search and planning community",
   "featuresSectionTitle": "Features",
   "featuresSectionSubtitle": "featuresSectionSubtitle",

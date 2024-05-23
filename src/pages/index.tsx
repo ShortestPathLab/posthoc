@@ -38,9 +38,9 @@ function Content() {
       <Box
         sx={{
           backgroundColor: "background.default",
-          backgroundImage: `radial-gradient(46.56% 45.08% at 56.04% 55.33%,rgba(0,50,255,.075) 0,transparent 100%),radial-gradient(46.69% 41.74% at 69.64% 60.81%,rgba(192,59,196,.075) 0,transparent 100%),radial-gradient(59.78% 45.73% at 30.42% 58.68%,rgba(0,120,212,.075) 0,transparent 100%),radial-gradient(32.53% 31.57% at 50% 66.82%,rgba(70,54,104,.075) 0,transparent 100%)`,
-          backgroundSize: "100vw 200vh",
-          backgroundPosition: "50% 0vh",
+          backgroundImage: `radial-gradient(46.56% 45.08% at 56.04% 55.33%, rgb(138 161 255 / 8%) 0, transparent 100%), radial-gradient(46.69% 41.74% at 69.64% 60.81%, rgb(223 127 226 / 8%) 0, transparent 100%), radial-gradient(59.78% 45.73% at 30.42% 58.68%, rgb(115 182 234 / 8%) 0, transparent 100%), radial-gradient(32.53% 31.57% at 50% 66.82%, rgb(102 63 115 / 8%) 0, transparent 100%)`,
+          backgroundSize: "100vw 100vh",
+          backgroundPosition: "50% 45vh",
           backgroundRepeat: "no-repeat",
           transition: (t) =>
             t.transitions.create("background-color", {
@@ -74,11 +74,12 @@ function Content() {
                   width: 1000,
                   mx: "auto",
                   maxWidth: "100%",
-                  aspectRatio: "16 / 10",
+                  aspectRatio: sm ? 10 / 16 : 16 / 10,
                   overflow: "hidden",
                   borderRadius: 4,
                   backgroundImage: `url(${l10n.demoVideoThumbnail})`,
                   backgroundSize: "cover",
+                  backgroundPosition: "center",
                 }}
               >
                 <Button
