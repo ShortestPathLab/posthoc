@@ -245,6 +245,7 @@ export function Gallery() {
                       position: "absolute",
                       textAlign: "center",
                       gap: 2,
+                      px: 2,
                       justifyContent: "center",
                       alignItems: "center",
                       maxWidth: 720,
