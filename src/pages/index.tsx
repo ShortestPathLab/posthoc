@@ -22,8 +22,8 @@ import { SectionTitle } from "../components/SectionTitle";
 import { grid } from "../components/grid";
 import { useSm } from "../components/useSm";
 import { useTitleBar } from "../components/useTitleBar";
-import l10n from "./en-au.json";
 import "./index.module.css";
+import { l10n } from "../l10n";
 
 function Content() {
   const sm = useSm();

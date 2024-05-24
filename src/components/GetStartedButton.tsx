@@ -1,6 +1,6 @@
 import { ArrowForward } from "@mui/icons-material";
 import { Button, useTheme } from "@mui/material";
-import l10n from "../pages/en-au.json";
+import { l10n } from "../l10n";
 
 export function GetStartedButton() {
   const mode = useTheme().palette.mode;

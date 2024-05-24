@@ -156,7 +156,7 @@ Get Posthoc as a standalone application for Linux.
 
 [View Releases](https://github.com/ShortestPathLab/posthoc-app/releases)
 
-#### Posthoc PWA (Github Pages)
+#### Posthoc PWA (GitHub Pages)
 
 Use Posthoc in your browser, or install it as a web app.
 

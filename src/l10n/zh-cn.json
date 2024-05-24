@@ -2,10 +2,10 @@
   "org": "ShortestPathLab",
   "orgUrl": "https://pathfinding.ai",
   "name": "Posthoc",
-  "openAppLabel": "Open Posthoc",
+  "openAppLabel": "打开 Posthoc",
   "logoUrl": "/img/logo192.png",
-  "closeVideo": "Close video",
-  "playVideo": "Play ICAPS24 demo",
+  "closeVideo": "关闭视频",
+  "playVideo": "播放 ICAPS24 演示",
   "backdropVideoUrl": "media/clip.webm",
   "backdropVideoMime": "video/webm",
   "demoVideoUrl": "https://drive.google.com/file/d/1ve-GQbgj0MGcouCdE0gxQON-20rpxtW5/preview",
@@ -13,73 +13,73 @@
   "demoVideoMime": "video/webm",
   "appUrl": "https://posthoc-app.pathfinding.ai",
   "sections": [
-    { "key": "docs", "label": "Docs", "url": "./docs/overview" },
-    { "key": "blog", "label": "Blog", "url": "./blog" },
+    { "key": "docs", "label": "文档", "url": "./docs/overview" },
+    { "key": "blog", "label": "博客", "url": "./blog" },
     {
       "key": "github",
-      "label": "Github",
+      "label": "GitHub",
       "url": "https://github.com/shortestpathlab/posthoc-app"
     }
   ],
   "gallery": [
     {
-      "tagline": "Analysis",
+      "tagline": "分析",
       "url": "/img/gallery/complex-view.png",
       "workspace": "/content/starcraft.min.workspace",
-      "label": "Post-game breakdown",
+      "label": "赛后分析",
       "author": "Ryan Hechenberger",
       "avatar": "https://github.com/heavenfall.png",
-      "description": "Explore the decisions of AI units in a recorded StarCraft game."
+      "description": "探索记录的星际争霸游戏中 AI 单位的决策。"
     },
     {
-      "tagline": "Showcase",
+      "tagline": "展示",
       "url": "/img/gallery/image-7.png",
-      "label": "Video compression",
+      "label": "视频压缩",
       "workspace": "/content/apple.min.workspace",
       "author": "Mark Carlson",
       "avatar": null,
-      "description": "A simple encoding scheme for black and white video based on run-length encoding."
+      "description": "基于游程编码的黑白视频的简单编码方案。"
     },
     {
-      "tagline": "Interrogation",
+      "tagline": "审问",
       "url": "/img/gallery/astar.png",
-      "label": "A* search",
+      "label": "A* 搜索",
       "workspace": "/content/astar.min.workspace",
       "author": "ShortestPathLab",
       "avatar": "https://github.com/ShortestPathLab.png",
-      "description": "Get to know Posthoc by taking apart and inspecting the classic A* algorithm on a small grid map."
+      "description": "通过拆解和检查小型网格地图上的经典 A* 算法，了解 Posthoc。"
     },
     {
-      "tagline": "Debugging",
+      "tagline": "调试",
       "url": "/img/gallery/image-3.png",
       "workspace": "/content/dps.workspace",
-      "label": "Dual euclidean path search",
-      "description": "Visually verify that DPS can correctly generate shortest paths for a simple map.",
+      "label": "双欧几里得路径搜索",
+      "description": "直观验证 DPS 能否为简单地图正确生成最短路径。",
       "avatar": "https://github.com/heavenfall.png",
       "author": "Ryan Hechenberger"
     },
     {
-      "tagline": "Demonstration",
+      "tagline": "演示",
       "url": "/img/gallery/mcp.png",
-      "label": "Minimum communication policy",
+      "label": "最小通信策略",
       "workspace": "/content/mcp.min.workspace",
-      "description": "See how agents handle execution delays via a minimum communication policy.",
+      "description": "查看代理如何通过最小通信策略处理执行延迟。",
       "avatar": "https://github.com/YueZhang-studyuse.png",
       "author": "Yue Zhang"
     }
   ],
-  "galleryCallToAction": "See more examples in Posthoc",
-  "heroTitle": "Explore decision-making in search",
-  "heroSubtitle": "Posthoc is a way to create simple and effective visualisations from logs to help you understand search.",
-  "heroCallToAction": "Get started",
+  "galleryCallToAction": "在 Posthoc 中查看更多示例",
+  "heroTitle": "探索搜索中的决策制定",
+  "heroSubtitle": "Posthoc 是一种从日志创建简单有效的可视化的方法，帮助您理解搜索。",
+  "heroCallToAction": "开始使用",
   "heroCallToActionUrl": "./docs/get-started",
-  "endCallToActionTitle": "Ready to try Posthoc?",
-  "demoSectionTitle": "Showcased @ ICAPS24",
-  "demoSectionSubtitle": "We're excited to present Posthoc to the search and planning community",
-  "featuresSectionTitle": "Features",
+  "endCallToActionTitle": "准备尝试 Posthoc 吗？",
+  "demoSectionTitle": "在 ICAPS24 上展示",
+  "demoSectionSubtitle": "我们很高兴向搜索和规划社区介绍 Posthoc",
+  "featuresSectionTitle": "特点",
   "featuresSectionSubtitle": "featuresSectionSubtitle",
-  "teamSectionTitle": "Team",
-  "teamSectionSubtitle": "Built with passion by ShortestPathLab @ Monash University",
+  "teamSectionTitle": "团队",
+  "teamSectionSubtitle": "由 Monash University ShortestPathLab 团队热情打造",
   "features": [
     {
       "image": null,
@@ -93,39 +93,39 @@
   "docs": [
     {
       "key": "os",
-      "label": "OS",
+      "label": "操作系统",
       "options": [
         { "key": "linux", "label": "Linux" },
         { "key": "windows", "label": "Windows" },
         { "key": "macos", "label": "MacOS" },
-        { "key": "other", "label": "Other" }
+        { "key": "other", "label": "其他" }
       ]
     },
     {
       "key": "lang",
-      "label": "Language",
+      "label": "语言",
       "options": [
         { "key": "cpp", "label": "C++" },
         { "key": "python", "label": "Python" },
         { "key": "rust", "label": "Rust" },
-        { "key": "other", "label": "Other" }
+        { "key": "other", "label": "其他" }
       ]
     }
   ],
-  "docsCallToAction": "See Posthoc docs for %os in %lang",
-  "docsCallToActionGeneric": "See how Posthoc works for you",
-  "showVideo": "Watch ICAPS24 demo",
+  "docsCallToAction": "查看 %os 的 %lang Posthoc 文档",
+  "docsCallToActionGeneric": "了解 Posthoc 如何为您服务",
+  "showVideo": "观看 ICAPS24 演示",
   "footerLinks": [
     {
       "title": "Posthoc",
       "links": [
         {
-          "label": "Open Posthoc",
+          "label": "打开 Posthoc",
           "url": "https://posthoc.pathfinding.ai"
         },
-        { "label": "Docs", "url": "./docs/overview" },
+        { "label": "文档", "url": "./docs/overview" },
         {
-          "label": "Github",
+          "label": "GitHub",
           "url": "https://github.com/shortestpathlab/posthoc-app"
         }
       ]
@@ -134,44 +134,44 @@
       "title": "ShortestPathLab",
       "links": [
         {
-          "label": "Home",
+          "label": "首页",
           "url": "https://pathfinding.ai/"
         },
         {
-          "label": "Benchmarks",
+          "label": "基准测试",
           "url": "https://benchmarks.pathfinding.ai/"
         },
         {
-          "label": "Tracker",
+          "label": "追踪器",
           "url": "https://tracker.pathfinding.ai/"
         },
-        { "label": "Github", "url": "https://github.com/ShortestPathLab" }
+        { "label": "GitHub", "url": "https://github.com/ShortestPathLab" }
       ]
     },
     {
       "title": "Monash Optimisation",
-      "links": [{ "label": "Home", "url": "https://www.monash.edu" }]
+      "links": [{ "label": "首页", "url": "https://www.monash.edu" }]
     }
   ],
   "team": [
     {
       "name": "Kevin Zheng",
-      "title": "Posthoc lead developer",
+      "title": "Posthoc 首席开发者",
       "avatar": null,
       "github": "https://github.com/Spaaaacccee"
     },
     {
       "name": "Dr Daniel Harabor",
-      "title": "Associate professor",
+      "title": "副教授",
       "avatar": null,
       "github": "https://harabor.net/daniel"
     },
     {
       "name": "Dr Michael Wybrow",
-      "title": "Associate professor",
+      "title": "副教授",
       "avatar": null,
       "github": "https://harabor.net/daniel"
     }
   ],
-  "footerCopyright": "Copyright © 2024 Monash University"
+  "footerCopyright": "版权所有 © 2024 Monash University"
 }

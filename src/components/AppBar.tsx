@@ -15,13 +15,13 @@ import {
 } from "@mui/material";
 import PopupState, { bindTrigger } from "material-ui-popup-state";
 import { createPortal } from "react-dom";
-import l10n from "../pages/en-au.json";
 import { Logo } from "./Logo";
 import { useMode } from "./ModeContext";
 import { space } from "./space";
 import { usePaper } from "./theme";
 import { useSm } from "./useSm";
 import BrowserOnly from "@docusaurus/BrowserOnly";
+import { l10n } from "../l10n";
 
 export function AppBar() {
   const sm = useSm();

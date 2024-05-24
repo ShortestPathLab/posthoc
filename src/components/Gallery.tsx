@@ -14,7 +14,7 @@ import { clamp, floor } from "lodash";
 import { useEffect, useState } from "react";
 import AutoSize from "react-virtualized-auto-sizer";
 import resolve from "resolve-url";
-import l10n from "../pages/en-au.json";
+import { l10n } from "../l10n";
 import { usePaper } from "./theme";
 import { useSm } from "./useSm";
 

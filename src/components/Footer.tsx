@@ -1,6 +1,6 @@
 import { Box, Button, Divider, Stack, Typography } from "@mui/material";
 import { grid } from "./grid";
-import l10n from "../pages/en-au.json";
+import { l10n } from "../l10n";
 import { Logo } from "./Logo";
 import { useSm } from "./useSm";
 import { space } from "./space";
