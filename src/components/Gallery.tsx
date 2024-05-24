@@ -10,13 +10,13 @@ import {
   alpha,
   useMediaQuery,
 } from "@mui/material";
-import { clamp, defer, delay, floor } from "lodash";
-import { useEffect, useRef, useState } from "react";
-import ReactVirtualizedAutoSizer from "react-virtualized-auto-sizer";
+import { clamp, floor } from "lodash";
+import { useEffect, useState } from "react";
+import AutoSize from "react-virtualized-auto-sizer";
+import resolve from "resolve-url";
 import l10n from "../pages/en-au.json";
 import { usePaper } from "./theme";
 import { useSm } from "./useSm";
-import resolve from "resolve-url";
 
 const center = (d: HTMLDivElement) => {
   const box = d.getBoundingClientRect();
@@ -162,7 +162,14 @@ export function Gallery() {
     </Box>
   );
   return (
-    <ReactVirtualizedAutoSizer style={{ width: "100%", height: "fit-content" }}>
+    <AutoSize
+      style={{
+        width: "100%",
+        // 20vw is obtained from `(10 / 16) * (100vw / 3)` to get low-ball estimate of element height.
+        minHeight: "20vw",
+        height: "fit-content",
+      }}
+    >
       {({ width }) => (
         <Fade in={ready}>
           <Stack
@@ -343,6 +350,6 @@ export function Gallery() {
           </Stack>
         </Fade>
       )}
-    </ReactVirtualizedAutoSizer>
+    </AutoSize>
   );
 }
