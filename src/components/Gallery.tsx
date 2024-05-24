@@ -99,9 +99,11 @@ export function Gallery() {
   }, [ref]);
   useEffect(() => {
     if (ref) {
-      ref.scrollLeft = (
-        ref.childNodes.item(floor(ref.childNodes.length / 2)) as HTMLDivElement
-      ).offsetLeft;
+      const midItem = ref.childNodes.item(
+        floor(ref.childNodes.length / 2)
+      ) as HTMLDivElement;
+      ref.scrollLeft =
+        midItem.offsetLeft - ref.offsetWidth / 2 + midItem.clientWidth / 2;
     }
   }, [ref]);
   const a = (width: number) => (
@@ -166,6 +168,7 @@ export function Gallery() {
             marginLeft: `calc(50% - 50vw)`,
             overflowX: "scroll",
             scrollSnapType: "x mandatory",
+            pb: 2,
           }}
         >
           <Box sx={{ minWidth: `calc(50vw - ${width / 2}px)` }} />
@@ -206,7 +209,7 @@ export function Gallery() {
                     backgroundImage: `url(${url})`,
                     backgroundSize: "cover",
                     backgroundPosition:
-                      "calc(50% + calc(var(--factor) * -0.5px)) 50%",
+                      "calc(50% + calc(var(--factor) * +0.5px)) 50%",
                     transform: lg
                       ? `scale(calc(90% + calc(10% * var(--factor-near))))`
                       : "none",
