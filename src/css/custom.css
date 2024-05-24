@@ -369,8 +369,8 @@ b {
 
 @media (pointer: fine) {
   *::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    width: 10px;
+    height: 10px;
     background-color: transparent;
   }
   *::-webkit-scrollbar-track {
@@ -378,15 +378,24 @@ b {
   }
   *::-webkit-scrollbar-thumb {
     transition: background-color 300ms ease;
+    /* color-mix support fallback */
+    background-color: currentColor;
     background-color: color-mix(in srgb, currentColor 45%, transparent);
     padding: 2px;
     background-clip: padding-box;
     border-radius: 6px;
+    border: 2px solid transparent;
+    cursor: grab;
   }
   *::-webkit-scrollbar-thumb:hover {
+    /* color-mix support fallback */
+    background-color: currentColor;
     background-color: color-mix(in srgb, currentColor 60%, transparent);
   }
   *::-webkit-scrollbar-thumb:active {
+    /* color-mix support fallback */
+    background-color: currentColor;
     background-color: color-mix(in srgb, currentColor 75%, transparent);
+    cursor: grabbing;
   }
 }

@@ -247,7 +247,7 @@ export function Gallery() {
                       <Box
                         sx={{
                           position: "absolute",
-                          zIndex: 1,
+                          zIndex: -1,
                           pointerEvents: "none",
                           width: "100%",
                           aspectRatio: 16 / 10,
@@ -257,8 +257,6 @@ export function Gallery() {
                           borderRadius: 4,
                           backdropFilter: "blur(8px)",
                           transform: "translateX(calc(var(--factor) * 0.1px))",
-                          // filter:
-                          //   "blur(calc(calc(1 - var(--factor-near)) * 64px))",
                         }}
                       ></Box>
                     )}
@@ -275,7 +273,7 @@ export function Gallery() {
                         opacity: "var(--factor-near)",
                         filter: !lg
                           ? "none"
-                          : "blur(calc(calc(1 - var(--factor-near)) * 16px))",
+                          : "blur(calc(calc(calc(1 - var(--factor-near)) * 16px) - 1px))",
                       }}
                     >
                       <Typography
