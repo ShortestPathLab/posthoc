@@ -23,7 +23,7 @@ const center = (d: HTMLDivElement) => {
   return box.left + box.width / 2;
 };
 
-const SCROLL_FAC_NEAR = 1 / 1000;
+const SCROLL_FAC_NEAR = 3;
 
 export function Gallery() {
   const paper = usePaper();
@@ -75,7 +75,7 @@ export function Gallery() {
             const a = basis - positions.get(c) + ref.scrollLeft;
             c.style.setProperty(
               "--factor-near",
-              `${clamp(-((a * SCROLL_FAC_NEAR) ** 2) + 1, 0, 1)}`
+              `${clamp(-(((a * SCROLL_FAC_NEAR) / innerWidth) ** 2) + 1, 0, 1)}`
             );
             c.style.setProperty("--factor", `${a}`);
           });
@@ -115,6 +115,7 @@ export function Gallery() {
         (e.target as HTMLDivElement).scrollIntoView({
           behavior: "smooth",
           block: "nearest",
+          inline: "center",
         });
       }}
       sx={{
@@ -188,6 +189,7 @@ export function Gallery() {
                     (e.target as HTMLDivElement).scrollIntoView({
                       behavior: "smooth",
                       block: "nearest",
+                      inline: "center",
                     });
                   }}
                   sx={{
@@ -230,12 +232,14 @@ export function Gallery() {
                           right: 0,
                           opacity: `var(--factor-near)`,
                           backgroundColor: "#0a0c1099",
+                          pointerEvents: "none",
                         }}
                       ></Box>
                     ) : (
                       <Box
                         sx={{
                           position: "absolute",
+                          pointerEvents: "none",
                           width: "100%",
                           aspectRatio: 16 / 10,
                           maxWidth: 720,
