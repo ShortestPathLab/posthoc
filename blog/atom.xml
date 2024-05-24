@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://posthoc.pathfinding.ai/blog</id>
-    <title>Posthoc Blog</title>
+    <title>Posthoc - The Visualisation Framework for Search Blog</title>
     <updated>2024-05-08T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://posthoc.pathfinding.ai/blog"/>
-    <subtitle>Posthoc Blog</subtitle>
+    <subtitle>Posthoc - The Visualisation Framework for Search Blog</subtitle>
     <icon>https://posthoc.pathfinding.ai/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Posthoc v1.2.4]]></title>
