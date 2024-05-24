@@ -117,7 +117,7 @@ function Content() {
                 ))}
               </Stack>
             </Box>
-            <Box>
+            <Box sx={{ pb: 16 }}>
               <SectionTitle anchor="team" title={l10n.endCallToActionTitle} />
               <GetStartedButton />
             </Box>
