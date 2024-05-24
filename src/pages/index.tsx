@@ -1,33 +1,29 @@
+import { PlayArrowOutlined } from "@mui/icons-material";
 import {
   Avatar,
   Box,
   Button,
   CssBaseline,
   Stack,
-  ThemeProvider,
   useTheme,
 } from "@mui/material";
 import Root from "@theme/Root";
 import { map } from "lodash";
-import { OverlayScrollbars } from "overlayscrollbars";
 import "overlayscrollbars/overlayscrollbars.css";
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import { AppBar } from "../components/AppBar";
 import { Card } from "../components/Card";
 import { Footer } from "../components/Footer";
 import { Gallery } from "../components/Gallery";
 import { GetStartedButton } from "../components/GetStartedButton";
 import { Hero } from "../components/Hero";
-import { ModeContext, useMode } from "../components/ModeContext";
+import { useMode } from "../components/ModeContext";
 import { SectionTitle } from "../components/SectionTitle";
 import { grid } from "../components/grid";
-import { makeTheme } from "../components/theme";
+import { useSm } from "../components/useSm";
+import { useTitleBar } from "../components/useTitleBar";
 import l10n from "./en-au.json";
 import "./index.module.css";
-import { PlayArrowOutlined } from "@mui/icons-material";
-import { useTitleBar } from "../components/useTitleBar";
-import { useSm } from "../components/useSm";
-import BrowserOnly from "@docusaurus/BrowserOnly";
 
 function Content() {
   const sm = useSm();
@@ -48,7 +44,7 @@ function Content() {
             }),
         }}
       >
-        <BrowserOnly>{() => <AppBar />}</BrowserOnly>
+        <AppBar />
         <Box>
           <Box
             sx={{

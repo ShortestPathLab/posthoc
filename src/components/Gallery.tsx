@@ -4,6 +4,7 @@ import {
   Box,
   Button,
   ButtonBase,
+  Fade,
   Stack,
   Typography,
   alpha,
@@ -29,6 +30,7 @@ export function Gallery() {
   const sm = useSm();
   const lg = useMediaQuery("(min-width: 1200px)");
   const [ref, setRef] = useState<HTMLDivElement>(null);
+  const [ready, setReady] = useState(false);
   useEffect(() => {
     if (ref) {
       let cancelled = false;
@@ -86,7 +88,8 @@ export function Gallery() {
       resizeObserver.observe(ref);
       mutationObserver.observe(ref, { childList: true });
       refresh();
-      requestAnimationFrame(f);
+      f();
+      setReady(true);
 
       return () => {
         intersectionObserver.disconnect();
@@ -96,7 +99,7 @@ export function Gallery() {
         cancelled = true;
       };
     }
-  }, [ref]);
+  }, [ref, setReady]);
   useEffect(() => {
     if (ref) {
       const midItem = ref.childNodes.item(
@@ -160,177 +163,181 @@ export function Gallery() {
   return (
     <ReactVirtualizedAutoSizer style={{ width: "100%", height: "fit-content" }}>
       {({ width }) => (
-        <Stack
-          ref={setRef}
-          direction="row"
-          sx={{
-            width: "100vw",
-            marginLeft: `calc(50% - 50vw)`,
-            overflowX: "scroll",
-            scrollSnapType: "x mandatory",
-            pb: 2,
-          }}
-        >
-          <Box sx={{ minWidth: `calc(50vw - ${width / 2}px)` }} />
-          {a(width)}
-          {l10n.gallery.map(
-            (
-              { label, url, description, workspace, author, tagline, avatar },
-              i
-            ) => (
-              <Box
-                data-index={i}
-                onClick={(e) => {
-                  (e.target as HTMLDivElement).scrollIntoView({
-                    behavior: "smooth",
-                    block: "nearest",
-                  });
-                }}
-                sx={{
-                  p: lg ? 0 : width * 0.001,
-                  minWidth: width + (lg ? 0 : width * 0.001) * 8 * 2,
-                  scrollSnapAlign: "center",
-                }}
-              >
-                <ButtonBase
-                  disableRipple
-                  disableTouchRipple
+        <Fade in={ready}>
+          <Stack
+            ref={setRef}
+            direction="row"
+            sx={{
+              width: "100vw",
+              marginLeft: `calc(50% - 50vw)`,
+              overflowX: "scroll",
+              scrollSnapType: "x mandatory",
+              pb: 2,
+            }}
+          >
+            <Box sx={{ minWidth: `calc(50vw - ${width / 2}px)` }} />
+            {a(width)}
+            {l10n.gallery.map(
+              (
+                { label, url, description, workspace, author, tagline, avatar },
+                i
+              ) => (
+                <Box
+                  data-index={i}
+                  onClick={(e) => {
+                    (e.target as HTMLDivElement).scrollIntoView({
+                      behavior: "smooth",
+                      block: "nearest",
+                    });
+                  }}
                   sx={{
-                    boxShadow: (t) =>
-                      `0px 16px 32px ${alpha(
-                        t.palette.background.default,
-                        0.25
-                      )}`,
-                    aspectRatio: sm ? 10 / 16 : 16 / 10,
-                    width: "100%",
-                    borderRadius: 4,
-                    position: "relative",
-                    overflow: "hidden",
-                    backgroundImage: `url(${url})`,
-                    backgroundSize: "cover",
-                    backgroundPosition:
-                      "calc(50% + calc(var(--factor) * +0.5px)) 50%",
-                    transform: lg
-                      ? `scale(calc(90% + calc(10% * var(--factor-near))))`
-                      : "none",
+                    p: lg ? 0 : width * 0.001,
+                    minWidth: width + (lg ? 0 : width * 0.001) * 8 * 2,
+                    scrollSnapAlign: "center",
                   }}
                 >
-                  {!lg ? (
-                    <Box
-                      sx={{
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        bottom: 0,
-                        right: 0,
-                        opacity: `var(--factor-near)`,
-                        backgroundColor: "#0a0c1099",
-                      }}
-                    ></Box>
-                  ) : (
-                    <Box
-                      sx={{
-                        position: "absolute",
-                        width: "100%",
-                        aspectRatio: 16 / 10,
-                        maxWidth: 720,
-                        opacity: `var(--factor-near)`,
-                        backgroundColor: "#0a0c10DD",
-                        borderRadius: 4,
-                        backdropFilter: "blur(8px)",
-                        // filter:
-                        //   "blur(calc(calc(1 - var(--factor-near)) * 64px))",
-                      }}
-                    ></Box>
-                  )}
-                  <Stack
+                  <ButtonBase
+                    disableRipple
+                    disableTouchRipple
                     sx={{
-                      position: "absolute",
-                      textAlign: "center",
-                      gap: 2,
-                      px: 2,
-                      justifyContent: "center",
-                      alignItems: "center",
-                      maxWidth: 720,
-                      opacity: "var(--factor-near)",
-                      filter: !lg
-                        ? "none"
-                        : "blur(calc(calc(1 - var(--factor-near)) * 16px))",
+                      boxShadow: (t) =>
+                        `0px 16px 32px ${alpha(
+                          t.palette.background.default,
+                          0.25
+                        )}`,
+                      aspectRatio: sm ? 10 / 16 : 16 / 10,
+                      width: "100%",
+                      borderRadius: 4,
+                      position: "relative",
+                      overflow: "hidden",
+                      backgroundColor: "#0a0c10",
+                      backgroundImage: `url(${url})`,
+                      backgroundSize: "cover",
+                      backgroundPosition:
+                        "calc(50% + calc(var(--factor) * +0.5px)) 50%",
+                      transform: lg
+                        ? `scale(calc(90% + calc(10% * var(--factor-near))))`
+                        : "none",
                     }}
                   >
-                    <Typography
-                      sx={{
-                        zIndex: 1,
-                        mb: -2,
-                        color: "primary.light",
-                        fontSize: "1rem",
-                        fontWeight: 500,
-                      }}
-                      variant="overline"
-                    >
-                      {tagline}
-                    </Typography>
-                    <Typography
-                      variant="h2"
-                      sx={{
-                        fontWeight: 400,
-                        color: "white",
-                      }}
-                    >
-                      {label}
-                    </Typography>
+                    {!lg ? (
+                      <Box
+                        sx={{
+                          position: "absolute",
+                          top: 0,
+                          left: 0,
+                          bottom: 0,
+                          right: 0,
+                          opacity: `var(--factor-near)`,
+                          backgroundColor: "#0a0c1099",
+                        }}
+                      ></Box>
+                    ) : (
+                      <Box
+                        sx={{
+                          position: "absolute",
+                          width: "100%",
+                          aspectRatio: 16 / 10,
+                          maxWidth: 720,
+                          opacity: `var(--factor-near)`,
+                          backgroundColor: "#0a0c10DD",
+                          borderRadius: 4,
+                          backdropFilter: "blur(8px)",
+                          transform: "translateX(calc(var(--factor) * 0.1px))",
+                          // filter:
+                          //   "blur(calc(calc(1 - var(--factor-near)) * 64px))",
+                        }}
+                      ></Box>
+                    )}
                     <Stack
-                      direction="row"
                       sx={{
-                        gap: 1,
+                        position: "absolute",
+                        textAlign: "center",
+                        gap: 2,
+                        px: 2,
+                        justifyContent: "center",
                         alignItems: "center",
+                        maxWidth: 720,
+                        opacity: "var(--factor-near)",
+                        filter: !lg
+                          ? "none"
+                          : "blur(calc(calc(1 - var(--factor-near)) * 16px))",
                       }}
                     >
-                      <Avatar sx={{ width: 24, height: 24 }} src={avatar} />
-                      <Typography variant="subtitle2" sx={{ color: "white" }}>
-                        {author ?? "Anonymous"}
+                      <Typography
+                        sx={{
+                          zIndex: 1,
+                          mb: -2,
+                          color: "primary.light",
+                          fontSize: "1rem",
+                          fontWeight: 500,
+                        }}
+                        variant="overline"
+                      >
+                        {tagline}
                       </Typography>
+                      <Typography
+                        variant="h2"
+                        sx={{
+                          fontWeight: 400,
+                          color: "white",
+                        }}
+                      >
+                        {label}
+                      </Typography>
+                      <Stack
+                        direction="row"
+                        sx={{
+                          gap: 1,
+                          alignItems: "center",
+                        }}
+                      >
+                        <Avatar sx={{ width: 24, height: 24 }} src={avatar} />
+                        <Typography variant="subtitle2" sx={{ color: "white" }}>
+                          {author ?? "Anonymous"}
+                        </Typography>
+                      </Stack>
+                      <Typography
+                        variant="body1"
+                        sx={{
+                          maxWidth: 420,
+                          color: "white",
+                        }}
+                      >
+                        {description}
+                      </Typography>
+                      <Button
+                        onClick={() =>
+                          open(
+                            `${l10n.appUrl}?workspace=${encodeURIComponent(
+                              resolve(location.href, workspace)
+                            )}`,
+                            "_blank"
+                          )
+                        }
+                        color="primary"
+                        sx={{
+                          mt: 2,
+                          mb: 2,
+                          py: 2,
+                          px: 4,
+                          borderRadius: 32,
+                          fontWeight: 500,
+                        }}
+                        variant="contained"
+                        startIcon={<WorkspacesOutlined />}
+                      >
+                        Open in Posthoc
+                      </Button>
                     </Stack>
-                    <Typography
-                      variant="body1"
-                      sx={{
-                        maxWidth: 420,
-                        color: "white",
-                      }}
-                    >
-                      {description}
-                    </Typography>
-                    <Button
-                      onClick={() =>
-                        open(
-                          `${l10n.appUrl}?workspace=${encodeURIComponent(
-                            resolve(location.href, workspace)
-                          )}`,
-                          "_blank"
-                        )
-                      }
-                      color="primary"
-                      sx={{
-                        mt: 2,
-                        mb: 2,
-                        py: 2,
-                        px: 4,
-                        borderRadius: 32,
-                        fontWeight: 500,
-                      }}
-                      variant="contained"
-                      startIcon={<WorkspacesOutlined />}
-                    >
-                      Open in Posthoc
-                    </Button>
-                  </Stack>
-                </ButtonBase>
-              </Box>
-            )
-          )}
-          {a(width)}
-          <Box sx={{ minWidth: `calc(50vw - ${width / 2}px)` }} />
-        </Stack>
+                  </ButtonBase>
+                </Box>
+              )
+            )}
+            {a(width)}
+            <Box sx={{ minWidth: `calc(50vw - ${width / 2}px)` }} />
+          </Stack>
+        </Fade>
       )}
     </ReactVirtualizedAutoSizer>
   );
