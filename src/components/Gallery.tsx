@@ -233,6 +233,7 @@ export function Gallery() {
                       <Box
                         sx={{
                           position: "absolute",
+                          zIndex: 1,
                           top: 0,
                           left: 0,
                           bottom: 0,
@@ -246,6 +247,7 @@ export function Gallery() {
                       <Box
                         sx={{
                           position: "absolute",
+                          zIndex: 1,
                           pointerEvents: "none",
                           width: "100%",
                           aspectRatio: 16 / 10,
@@ -262,6 +264,7 @@ export function Gallery() {
                     )}
                     <Stack
                       sx={{
+                        zIndex: 2,
                         position: "absolute",
                         textAlign: "center",
                         gap: 2,
@@ -277,7 +280,6 @@ export function Gallery() {
                     >
                       <Typography
                         sx={{
-                          zIndex: 1,
                           mb: -2,
                           color: "primary.light",
                           fontSize: "1rem",
