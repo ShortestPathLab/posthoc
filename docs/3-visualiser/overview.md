@@ -15,7 +15,7 @@ largest of problem instances.
 
 ### Posthoc Web
 
-You can use Posthoc directly in a browser.
+You can use Posthoc directly in a browser. We recommend Chrome or Firefox.
 
 [Open Posthoc](https://posthoc.pathfinding.ai)
 
@@ -27,4 +27,6 @@ Optionally, you can [install Posthoc as a web app](https://developer.mozilla.org
 
 ### Standalone builds
 
-Check the [releases](https://github.com/ShortestPathLab/posthoc-app/releases) page for a list of latest Windows and Linux releases. They work exactly the same as the web version, but you can get access to older versions of Posthoc.
+If Posthoc doesn't work correctly in your browser, you can get a standalone version.
+
+Check the [releases](https://github.com/ShortestPathLab/posthoc-app/releases) page for a list of latest Windows, MacOS, and Linux releases. They work should work the same as the web version.
