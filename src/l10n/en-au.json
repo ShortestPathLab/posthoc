@@ -38,7 +38,16 @@
       "workspace": "/content/apple.min.workspace",
       "author": "Mark Carlson",
       "avatar": null,
-      "description": "A simple encoding scheme for black and white video based on run-length encoding."
+      "description": "See how Mark leveraged Posthoc's expressiveness to visualise a compression scheme based on run-length encoding."
+    },
+    {
+      "tagline": "Explore",
+      "url": "/img/gallery/polyanya.png",
+      "label": "Polyanya",
+      "workspace": "/content/polyanya.workspace",
+      "author": "ShortestPathLab",
+      "avatar": "https://github.com/ShortestPathLab.png",
+      "description": "See this Euclidean path planning algorithm in action on a navigation mesh."
     },
     {
       "tagline": "Understand",
@@ -48,6 +57,15 @@
       "author": "ShortestPathLab",
       "avatar": "https://github.com/ShortestPathLab.png",
       "description": "Get to know Posthoc by taking apart and inspecting the classic A* algorithm on a small grid map."
+    },
+    {
+      "tagline": "Understand",
+      "url": "/img/gallery/network-bidirectional-a-star.png",
+      "label": "Network bidirectional A*",
+      "workspace": "/content/network-bidirectional-a-star.workspace",
+      "author": "ShortestPathLab",
+      "avatar": "https://github.com/ShortestPathLab.png",
+      "description": "By searching from both source and goal nodes, this A* variant converges to an optimal path noticeably faster."
     },
     {
       "tagline": "Explore",
