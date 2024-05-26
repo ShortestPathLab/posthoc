@@ -55,7 +55,7 @@ export function Hero() {
       <Stack direction="row" flexWrap="wrap" gap={2} sx={{ pt: sm ? 0 : 4 }}>
         <GetStartedButton />
         <Button
-          onClick={() => open(l10n.demoVideoUrl)}
+          href={l10n.demoVideoUrl}
           startIcon={<ShowVideoIcon />}
           sx={{
             mx: "auto",

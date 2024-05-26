@@ -1,10 +1,12 @@
-import { PlayArrowOutlined } from "@mui/icons-material";
+import { ArrowDownwardOutlined, PlayArrowOutlined } from "@mui/icons-material";
 import {
   Avatar,
   Box,
   Button,
   CssBaseline,
+  Divider,
   Stack,
+  Typography,
   useTheme,
 } from "@mui/material";
 import Root from "@theme/Root";
@@ -22,8 +24,8 @@ import { SectionTitle } from "../components/SectionTitle";
 import { grid } from "../components/grid";
 import { useSm } from "../components/useSm";
 import { useTitleBar } from "../components/useTitleBar";
-import "./index.module.css";
 import { l10n } from "../l10n";
+import "./index.module.css";
 
 function Content() {
   const sm = useSm();
@@ -95,31 +97,55 @@ function Content() {
                   {l10n.playVideo}
                 </Button>
               </Button>
-
+            </Box>
+            <Box sx={{ pb: 4 }}>
+              <SectionTitle title={l10n.endCallToActionTitle} />
+              <GetStartedButton />
+            </Box>
+            <Box sx={{ pb: 16 }}>
               <SectionTitle
                 anchor="team"
-                title={l10n.teamSectionTitle}
+                title={<ArrowDownwardOutlined />}
                 subtitle={l10n.teamSectionSubtitle}
               />
               <Stack gap={4} sx={grid(260)}>
                 {map(l10n.team, ({ avatar, name, title, github }) => (
-                  <Button
-                    sx={{ p: 0 }}
-                    onClick={() => !!github && open(github)}
-                  >
+                  <Button sx={{ p: 0 }} href={github}>
                     <Card
-                      sx={{ py: 6, width: "100%", color: "text.primary" }}
-                      image={<Avatar sx={{ mb: 4, width: 64, height: 64 }} />}
+                      sx={{
+                        py: 6,
+                        width: "100%",
+                        height: "100%",
+                        color: "text.primary",
+                      }}
+                      image={
+                        <Avatar
+                          src={avatar}
+                          sx={{ mb: 4, width: 64, height: 64 }}
+                        />
+                      }
                       title={name}
-                      subtitle={title}
+                      subtitle={
+                        <span style={{ whiteSpace: "pre" }}>{title}</span>
+                      }
                     />
                   </Button>
                 ))}
               </Stack>
-            </Box>
-            <Box sx={{ pb: 16 }}>
-              <SectionTitle anchor="team" title={l10n.endCallToActionTitle} />
-              <GetStartedButton />
+              <Typography
+                variant="subtitle2"
+                color="text.primary"
+                sx={{ py: 8 }}
+              >
+                {l10n.teamContributorTitle}
+              </Typography>
+              <Stack gap={4} sx={grid(200)}>
+                {map(l10n.contributors, (s) => (
+                  <Typography color="text.primary" variant="subtitle2">
+                    {s}
+                  </Typography>
+                ))}
+              </Stack>
             </Box>
           </Box>
           <Footer />

@@ -4,12 +4,14 @@ import { l10n } from "../l10n";
 import { Logo } from "./Logo";
 import { useSm } from "./useSm";
 import { space } from "./space";
+import { usePaper } from "./theme";
 
 export function Footer() {
   const sm = useSm();
+  const paper = usePaper();
   return (
     <>
-      <Box p={3}>
+      <Box p={3} sx={paper(1)}>
         <Stack
           gap={4}
           sx={{
@@ -34,6 +36,7 @@ export function Footer() {
                   </Typography>
                   {links.map(({ label, url }) => (
                     <Button
+                      href={url}
                       sx={{
                         width: "100%",
                         px: 2,
@@ -42,7 +45,6 @@ export function Footer() {
                         justifyContent: "flex-start",
                         textAlign: "left",
                       }}
-                      onClick={() => open(url)}
                     >
                       <Typography variant="subtitle2" color="text.primary">
                         {label}

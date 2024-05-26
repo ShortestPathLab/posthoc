@@ -205,9 +205,9 @@ export function Gallery() {
                     scrollSnapAlign: "center",
                   }}
                 >
-                  <ButtonBase
-                    disableRipple
-                    disableTouchRipple
+                  <Button
+                    // disableRipple
+                    // disableTouchRipple
                     sx={{
                       boxShadow: (t) =>
                         `0px 16px 32px ${alpha(
@@ -341,7 +341,7 @@ export function Gallery() {
                         Open in Posthoc
                       </Button>
                     </Stack>
-                  </ButtonBase>
+                  </Button>
                 </Box>
               )
             )}

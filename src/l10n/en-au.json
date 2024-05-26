@@ -174,22 +174,38 @@
   "team": [
     {
       "name": "Kevin Zheng",
-      "title": "Posthoc lead developer",
-      "avatar": null,
-      "github": "https://github.com/Spaaaacccee"
+      "title": "Dept. of Data Science & AI",
+      "avatar": "/img/kzheng.png",
+      "github": "https://github.com/spaaaacccee"
     },
     {
-      "name": "Dr Daniel Harabor",
-      "title": "Associate professor",
-      "avatar": null,
-      "github": "https://harabor.net/daniel"
+      "name": "Daniel Harabor",
+      "title": "Dept. of Data Science & AI",
+      "avatar": "https://research.monash.edu/files-asset/19414730/Screen_Shot_2016_12_13_at_9.08.09_AM.png?w=160&f=webp",
+      "github": "https://research.monash.edu/en/persons/daniel-harabor"
     },
     {
-      "name": "Dr Michael Wybrow",
-      "title": "Associate professor",
-      "avatar": null,
-      "github": "https://harabor.net/daniel"
+      "name": "Michael Wybrow",
+      "title": "Dept. of Human Centred Computing",
+      "avatar": "https://research.monash.edu/files-asset/248360374/profile+photo?w=160&f=webp",
+      "github": "https://research.monash.edu/en/persons/michael-wybrow"
     }
+  ],
+  "teamContributorTitle": "With unwavering support and generous contributions from",
+  "contributors": [
+    "Francis Anthony",
+    "Karan Batta",
+    "Jay Wingate",
+    "Leo Whitehead",
+    "Can Wang",
+    "Rory Tobin-Underwood",
+    "Mike Chen",
+    "Yue Zhang",
+    "Thomas Nobes",
+    "Ryan Hechenberger",
+    "Mark Carlson",
+    "Andy Li",
+    "(incomplete list)"
   ],
   "footerCopyright": "Copyright © 2024 Monash University"
 }

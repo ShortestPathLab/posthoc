@@ -14,10 +14,11 @@ export function GetStartedButton() {
         borderRadius: 32,
         // Light text rendering bias
         fontWeight: mode === "dark" ? 600 : 500,
+        "&:hover": { color: "secondary.contrastText" },
       }}
       variant="contained"
       endIcon={<ArrowForward />}
-      onClick={() => (location.href = l10n.heroCallToActionUrl)}
+      href={l10n.heroCallToActionUrl}
     >
       {l10n.heroCallToAction}
     </Button>

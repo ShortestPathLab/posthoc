@@ -1,7 +1,9 @@
 import { ArrowForwardOutlined } from "@mui/icons-material";
 import {
   Box,
+  Button,
   ButtonBase,
+  ButtonProps,
   Card,
   CardProps,
   Stack,
@@ -19,10 +21,12 @@ export default function ActionCard({
   primary,
   secondary,
   image,
+  href,
   ...props
-}: Props & CardProps) {
+}: Props & CardProps & ButtonProps) {
   return (
-    <ButtonBase
+    <Button
+      href={href}
       sx={{
         borderRadius: (t) => t.shape.borderRadius,
         p: 0,
@@ -60,6 +64,6 @@ export default function ActionCard({
           </Stack>
         </Box>
       </Card>
-    </ButtonBase>
+    </Button>
   );
 }
