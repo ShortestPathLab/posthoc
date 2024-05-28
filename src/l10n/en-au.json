@@ -182,7 +182,7 @@
       "name": "Daniel Harabor",
       "title": "Dept. of Data Science & AI",
       "avatar": "https://research.monash.edu/files-asset/19414730/Screen_Shot_2016_12_13_at_9.08.09_AM.png?w=160&f=webp",
-      "github": "https://research.monash.edu/en/persons/daniel-harabor"
+      "github": "https://harabor.net/daniel"
     },
     {
       "name": "Michael Wybrow",
@@ -191,21 +191,31 @@
       "github": "https://research.monash.edu/en/persons/michael-wybrow"
     }
   ],
-  "teamContributorTitle": "With unwavering support and generous contributions from",
+  "teamContributorTitle": "Posthoc was a multi-year project made possible by the hard work and dedication from many student contributors. We're grateful to the following individuals whose efforts contributed to early prototypes of the system:",
+  "teamSupporterTitle": "We also thank the following people for their many helpful suggestions, feedback, and support:",
   "contributors": [
-    "Francis Anthony",
-    "Karan Batta",
-    "Jay Wingate",
-    "Leo Whitehead",
     "Can Wang",
-    "Rory Tobin-Underwood",
+    "Francis Anthony",
+    "Jay Wingate",
+    "Karan Batta",
+    "Leo Whitehead",
+    "Rory Tobin-Underwood"
+  ],
+  "supporters": [
     "Mike Chen",
     "Yue Zhang",
     "Thomas Nobes",
     "Ryan Hechenberger",
     "Mark Carlson",
     "Andy Li",
-    "(incomplete list)"
+    "Jayden Filipi",
+    "Bojie Shen",
+    "Shizhe Zhao",
+    "Jason Nyugen",
+    "Jonathan Morag",
+    "Cole Peeters",
+    "Julian Lee",
+    "Tim Wang"
   ],
   "footerCopyright": "Copyright © 2024 Monash University"
 }

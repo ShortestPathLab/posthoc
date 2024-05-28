@@ -11,7 +11,7 @@ export function Footer() {
   const paper = usePaper();
   return (
     <>
-      <Box p={3} sx={paper(1)}>
+      <Box p={3} sx={{ ...paper(1), borderRadius: 0 }}>
         <Stack
           gap={4}
           sx={{
@@ -23,7 +23,7 @@ export function Footer() {
           }}
         >
           <Stack direction="row" gap={8}>
-            <Logo width={32} height={32} />
+            <Logo width={32} height={32} style={{ filter: "saturate(0%)" }} />
             <Stack sx={grid(180)} gap={8} flex={1}>
               {l10n.footerLinks.map(({ title, links }) => (
                 <Stack gap={1} sx={{ flex: 1 }}>

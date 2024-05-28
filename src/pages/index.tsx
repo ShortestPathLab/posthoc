@@ -21,7 +21,7 @@ import { GetStartedButton } from "../components/GetStartedButton";
 import { Hero } from "../components/Hero";
 import { useMode } from "../components/ModeContext";
 import { SectionTitle } from "../components/SectionTitle";
-import { grid } from "../components/grid";
+import { flex, grid } from "../components/grid";
 import { useSm } from "../components/useSm";
 import { useTitleBar } from "../components/useTitleBar";
 import { l10n } from "../l10n";
@@ -134,13 +134,27 @@ function Content() {
               </Stack>
               <Typography
                 variant="subtitle2"
-                color="text.primary"
-                sx={{ py: 8 }}
+                color="text.secondary"
+                sx={{ py: 8, maxWidth: 720, mx: "auto" }}
               >
                 {l10n.teamContributorTitle}
               </Typography>
-              <Stack gap={4} sx={grid(200)}>
+              <Stack gap={4} sx={flex(150)}>
                 {map(l10n.contributors, (s) => (
+                  <Typography color="text.primary" variant="subtitle2">
+                    {s}
+                  </Typography>
+                ))}
+              </Stack>
+              <Typography
+                variant="subtitle2"
+                color="text.secondary"
+                sx={{ py: 8, maxWidth: 720, mx: "auto" }}
+              >
+                {l10n.teamSupporterTitle}
+              </Typography>
+              <Stack gap={4} sx={flex(150)}>
+                {map(l10n.supporters, (s) => (
                   <Typography color="text.primary" variant="subtitle2">
                     {s}
                   </Typography>
