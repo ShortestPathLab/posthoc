@@ -19,6 +19,11 @@
       "key": "github",
       "label": "GitHub",
       "url": "https://github.com/shortestpathlab/posthoc-app"
+    },
+    {
+      "key": "discord",
+      "label": "Discord",
+      "url": "https://discord.gg/BHuPspePDK"
     }
   ],
   "gallery": [
