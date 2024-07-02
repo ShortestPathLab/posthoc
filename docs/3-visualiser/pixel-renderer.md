@@ -39,10 +39,11 @@ If you find that **Pixel** is starting to get laggy, here are some tips to impro
 | `height`     | `number` (px)                                                              | Required. Height of the rectangle.                                                                                                                                                  |
 | `fill`       | [`CSSColor`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value) | Required. Color of this rect.                                                                                                                                                       |
 | `alpha`      | `number` (0-1)                                                             | Opaqueness of this rect.                                                                                                                                                            |
-| `label`      | `string`                                                                   | Display a label on top of this element. By default, its baseline left-aligned to the top left corner of the rectangle. The color of the label is determined by the `fill` property. |
+| `label`      | `string`                                                                   | Display a label on top of this element. By default, its baseline left-aligned to the top left corner of the rectangle.  |
 | `label-x`    | `number` (px)                                                              | Offset the label by this amount horizontally.                                                                                                                                       |
 | `label-y`    | `number` (px)                                                              | Offset the label by this amount vertically.                                                                                                                                         |
 | `label-size` | `number` (px)                                                              | Required if a label is defined. The font size of the label. `1px` makes the label about `1px` tall.                                                                                 |
+| `label-color` | [`CSSColor`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)| Required if a label is defined. The color of the label.                                                                                 |
 
 #### `circle`
 
@@ -53,10 +54,11 @@ If you find that **Pixel** is starting to get laggy, here are some tips to impro
 | `radius`     | `number`                                                                   | Required. The radius of this circle.                                                                                                                                    |
 | `fill`       | [`CSSColor`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value) | Required. Color of this circle.                                                                                                                                         |
 | `alpha`      | `number` (0-1)                                                             | Opaqueness of this circle.                                                                                                                                              |
-| `label`      | `string`                                                                   | Display a label on top of this element. By default, its baseline left-aligned to the center of the circle. The color of the label is determined by the `fill` property. |
+| `label`      | `string`                                                                   | Display a label on top of this element. By default, its baseline left-aligned to the center of the circle. |
 | `label-x`    | `number` (px)                                                              | Offset the label by this amount horizontally.                                                                                                                           |
 | `label-y`    | `number` (px)                                                              | Offset the label by this amount vertically.                                                                                                                             |
 | `label-size` | `number` (px)                                                              | Required if a label is defined. The font size of the label. `1px` makes the label about `1px` tall.                                                                     |
+| `label-color` | [`CSSColor`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)| Required if a label is defined. The color of the label.                                                                                 |
 
 #### `path`
 
