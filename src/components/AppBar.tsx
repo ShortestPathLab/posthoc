@@ -47,7 +47,7 @@ function AppBarBody() {
   const sm = useSm();
   const paper = usePaper();
   const [top, setTop] = useState(true);
-  const scrolling = useScrollTrigger();
+  const scrolling = useScrollTrigger({ target: document.body });
   useEffect(() => {
     let cancelled = false;
     const f = () => {
