@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
-        <title>Posthoc - The Visualisation Framework for Search Blog</title>
+        <title>Posthoc - The visualisation framework for search Blog</title>
         <link>https://posthoc.pathfinding.ai/blog</link>
-        <description>Posthoc - The Visualisation Framework for Search Blog</description>
+        <description>Posthoc - The visualisation framework for search Blog</description>
         <lastBuildDate>Wed, 08 May 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
