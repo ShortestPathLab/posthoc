@@ -8,7 +8,7 @@
   "playVideo": "Play ICAPS24 demo",
   "backdropVideoUrl": "media/clip.webm",
   "backdropVideoMime": "video/webm",
-  "demoVideoUrl": "https://drive.google.com/file/d/1ve-GQbgj0MGcouCdE0gxQON-20rpxtW5/preview",
+  "demoVideoUrl": "https://youtu.be/Nz2_Z9hqrmM?si=rv0p8uk3JX1SzYsV",
   "demoVideoThumbnail": "/img/primer-thumbnail.png",
   "demoVideoMime": "video/webm",
   "appUrl": "https://posthoc-app.pathfinding.ai",
@@ -92,12 +92,12 @@
     }
   ],
   "galleryCallToAction": "See more examples in Posthoc",
-  "heroTitle": "Explore decision-making in search",
+  "heroTitle": "Intuitively explore decision-making in search",
   "heroSubtitle": "Posthoc is a way to create simple and effective visualisations from logs to help you understand search.",
   "heroCallToAction": "Get started",
   "heroCallToActionUrl": "./docs/get-started",
   "endCallToActionTitle": "Ready to try Posthoc?",
-  "demoSectionTitle": "Showcased @ ICAPS24",
+  "demoSectionTitle": "Best system demonstration at ICAPS 24",
   "demoSectionSubtitle": "We're excited to present Posthoc to the search and planning community",
   "featuresSectionTitle": "Features",
   "featuresSectionSubtitle": "featuresSectionSubtitle",
@@ -137,7 +137,7 @@
   ],
   "docsCallToAction": "See Posthoc docs for %os in %lang",
   "docsCallToActionGeneric": "See how Posthoc works for you",
-  "showVideo": "Watch ICAPS24 demo",
+  "showVideo": "Demo",
   "footerLinks": [
     {
       "title": "Posthoc",

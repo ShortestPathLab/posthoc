@@ -5,6 +5,7 @@ import { Logo } from "./Logo";
 import { useSm } from "./useSm";
 import { space } from "./space";
 import { usePaper } from "./theme";
+import { PAGE_WIDTH } from "../config";
 
 export function Footer() {
   const sm = useSm();
@@ -16,7 +17,7 @@ export function Footer() {
           gap={4}
           sx={{
             maxWidth: "100%",
-            width: 1000,
+            width: PAGE_WIDTH,
             px: sm ? 0 : 3,
             py: 4,
             m: "0 auto",

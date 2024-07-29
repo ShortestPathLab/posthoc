@@ -30,7 +30,7 @@ export const getShade = (
   return colors[color][shade ?? (mode === "dark" ? "A100" : "A700")];
 };
 
-const fontFamily = `"Inter", sans-serif`;
+const fontFamily = `"Inter Tight", sans-serif`;
 
 const headingFamily = `"Inter Tight", sans-serif`;
 
@@ -64,6 +64,7 @@ export const makeTheme = (mode: "light" | "dark", theme?: AccentColor) =>
     typography: {
       allVariants: {
         fontFamily,
+        fontWeight: mode === "dark" ? 500 : 550,
       },
       body1: {
         fontSize: 16,
@@ -72,18 +73,18 @@ export const makeTheme = (mode: "light" | "dark", theme?: AccentColor) =>
         fontSize: 15,
       },
       h1: {
-        fontSize: "max(36px, min(58px, min(6vw, 6vh)))",
-        fontWeight: mode === "dark" ? 400 : 500,
+        fontSize: "max(28px, min(46px, min(6vw, 6vh)))",
+        fontWeight: mode === "dark" ? 500 : 550,
         fontFamily: headingFamily,
       },
       h2: {
-        fontSize: "max(26px, min(32px, 4vw))",
-        fontWeight: mode === "dark" ? 400 : 500,
+        fontSize: "max(24px, min(32px, 4vw))",
+        fontWeight: mode === "dark" ? 500 : 500,
         fontFamily: headingFamily,
       },
       h3: {
         fontSize: "20px",
-        fontWeight: mode === "dark" ? 400 : 500,
+        fontWeight: mode === "dark" ? 500 : 500,
         fontFamily: headingFamily,
       },
       h4: {
@@ -97,7 +98,7 @@ export const makeTheme = (mode: "light" | "dark", theme?: AccentColor) =>
       },
       button: {
         textTransform: "none",
-        fontWeight: 500,
+        fontWeight: mode === "dark" ? 500 : 550,
         letterSpacing: 0,
         backgroundColor: "background.paper",
         fontFamily: headingFamily,
@@ -108,6 +109,7 @@ export const makeTheme = (mode: "light" | "dark", theme?: AccentColor) =>
       },
       subtitle1: {
         fontFamily: headingFamily,
+        lineHeight: 1.5,
       },
       subtitle2: {
         fontWeight: mode === "dark" ? 400 : 500,
@@ -172,9 +174,8 @@ export function useAcrylic(color?: string): SxProps<Theme> {
 export function usePaper(): (e?: number) => SxProps<Theme> {
   return (elevation: number = 1) => ({
     borderRadius: 4,
-    backdropFilter: "blur(32px)",
-    background: ({ palette }) =>
-      `url(/img/noise.png), ${alpha(palette.background.paper, 0.8)}`,
+    backdropFilter: "blur(8px)",
+    background: ({ palette }) => alpha(palette.background.default, 0.6),
     backgroundSize: "32px 32px",
   });
 }

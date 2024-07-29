@@ -7,7 +7,7 @@ import { get, set } from "../components/storage";
 // Default implementation, that you can customize
 export default function Root({ children }) {
   const [mode, setMode] = useState(get("theme") || "light");
-  const theme = useMemo(() => makeTheme(mode), [mode]);
+  const theme = useMemo(() => makeTheme(mode, "deepPurple"), [mode]);
   useEffect(() => {
     setMode(get("theme") || "light");
   }, []);

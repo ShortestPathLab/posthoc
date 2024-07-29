@@ -3,7 +3,7 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: "Posthoc - The Visualisation Framework for Search",
+  title: "Posthoc - The visualisation framework for search",
   tagline:
     "Posthoc is a way to create simple and effective visualisations from logs to help you understand search.",
   favicon: "img/favicon.ico",

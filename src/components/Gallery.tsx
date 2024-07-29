@@ -206,9 +206,9 @@ export function Gallery() {
                   }}
                 >
                   <Button
-                    // disableRipple
-                    // disableTouchRipple
+                    disableRipple
                     sx={{
+                      cursor: "default",
                       boxShadow: (t) =>
                         `0px 16px 32px ${alpha(
                           t.palette.background.default,
@@ -229,7 +229,24 @@ export function Gallery() {
                         : "none",
                     }}
                   >
-                    {!lg ? (
+                    {lg ? (
+                      <Box
+                        sx={{
+                          position: "absolute",
+                          zIndex: -1,
+                          bottom: 0,
+                          left: 0,
+                          right: 0,
+                          height: 500,
+                          pointerEvents: "none",
+                          width: "100%",
+                          opacity: `var(--factor-near)`,
+                          backgroundImage:
+                            "linear-gradient(to top, #0a0c10DD, transparent)",
+                          borderRadius: 4,
+                        }}
+                      />
+                    ) : (
                       <Box
                         sx={{
                           position: "absolute",
@@ -239,84 +256,73 @@ export function Gallery() {
                           bottom: 0,
                           right: 0,
                           opacity: `var(--factor-near)`,
-                          backgroundColor: "#0a0c1099",
+                          backgroundColor: "#0a0c10BB",
                           pointerEvents: "none",
                         }}
-                      ></Box>
-                    ) : (
-                      <Box
-                        sx={{
-                          position: "absolute",
-                          zIndex: -1,
-                          pointerEvents: "none",
-                          width: "100%",
-                          aspectRatio: 16 / 10,
-                          maxWidth: 720,
-                          opacity: `var(--factor-near)`,
-                          backgroundColor: "#0a0c10DD",
-                          borderRadius: 4,
-                          backdropFilter: "blur(8px)",
-                          transform: "translateX(calc(var(--factor) * 0.1px))",
-                        }}
-                      ></Box>
+                      />
                     )}
                     <Stack
                       sx={{
                         zIndex: 2,
                         position: "absolute",
-                        textAlign: "center",
+                        textAlign: "left",
                         gap: 2,
-                        px: 2,
-                        justifyContent: "center",
-                        alignItems: "center",
-                        maxWidth: 720,
+                        p: 4,
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                        justifyContent: lg ? "space-between" : "flex-start",
+                        alignItems: lg ? "flex-end" : "flex-start",
                         opacity: "var(--factor-near)",
-                        filter: !lg
-                          ? "none"
-                          : "blur(calc(calc(calc(1 - var(--factor-near)) * 16px) - 1px))",
+                        flexDirection: lg ? "row" : "column",
                       }}
                     >
-                      <Typography
-                        sx={{
-                          mb: -2,
-                          color: "primary.light",
-                          fontSize: "1rem",
-                          fontWeight: 500,
-                        }}
-                        variant="overline"
-                      >
-                        {tagline}
-                      </Typography>
-                      <Typography
-                        variant="h2"
-                        sx={{
-                          fontWeight: 400,
-                          color: "white",
-                        }}
-                      >
-                        {label}
-                      </Typography>
-                      <Stack
-                        direction="row"
-                        sx={{
-                          gap: 1,
-                          alignItems: "center",
-                        }}
-                      >
-                        <Avatar sx={{ width: 24, height: 24 }} src={avatar} />
-                        <Typography variant="subtitle2" sx={{ color: "white" }}>
-                          {author ?? "Anonymous"}
+                      <Stack sx={{ gap: 2 }}>
+                        <Typography
+                          sx={{
+                            mb: -2,
+                            color: "primary.light",
+                            fontSize: "1rem",
+                            fontWeight: 500,
+                          }}
+                          variant="overline"
+                        >
+                          {tagline}
+                        </Typography>
+                        <Typography
+                          variant="h2"
+                          sx={{
+                            fontWeight: 400,
+                            color: "white",
+                          }}
+                        >
+                          {label}
+                        </Typography>
+                        <Stack
+                          direction="row"
+                          sx={{
+                            gap: 1,
+                            alignItems: "center",
+                          }}
+                        >
+                          <Avatar sx={{ width: 24, height: 24 }} src={avatar} />
+                          <Typography
+                            variant="subtitle2"
+                            sx={{ color: "white" }}
+                          >
+                            {author ?? "Anonymous"}
+                          </Typography>
+                        </Stack>
+                        <Typography
+                          variant="body1"
+                          sx={{
+                            maxWidth: 420,
+                            color: "white",
+                          }}
+                        >
+                          {description}
                         </Typography>
                       </Stack>
-                      <Typography
-                        variant="body1"
-                        sx={{
-                          maxWidth: 420,
-                          color: "white",
-                        }}
-                      >
-                        {description}
-                      </Typography>
                       <Button
                         onClick={() =>
                           open(
@@ -329,14 +335,12 @@ export function Gallery() {
                         color="primary"
                         sx={{
                           mt: 2,
-                          mb: 2,
-                          py: 2,
-                          px: 4,
+                          py: 1.5,
+                          px: 3,
                           borderRadius: 32,
                           fontWeight: 500,
                         }}
                         variant="contained"
-                        startIcon={<WorkspacesOutlined />}
                       >
                         Open in Posthoc
                       </Button>
