@@ -237,7 +237,7 @@ export function Gallery() {
                           bottom: 0,
                           left: 0,
                           right: 0,
-                          height: 500,
+                          height: "80%",
                           pointerEvents: "none",
                           width: "100%",
                           opacity: `var(--factor-near)`,

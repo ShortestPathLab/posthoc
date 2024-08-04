@@ -28,9 +28,10 @@ Renderers are used by the **viewport** view to render visualisations. They're de
 
 ### Built-in renderers
 
-| Name  | URL                      | Connection Type | Description                                                                       |
-| ----- | ------------------------ | --------------- | --------------------------------------------------------------------------------- |
-| Pixel | `internal://d2-renderer` | Internal        | Comfortably performant 2D renderer. Provides `rect`, `circle`, `path`, `polygon`. |
+| Name                                               | URL                              | Connection Type | Description                                                                       |
+| -------------------------------------------------- | -------------------------------- | --------------- | --------------------------------------------------------------------------------- |
+| [Pixel](/docs/visualiser/pixel-renderer)           | `internal://d2-renderer`         | Internal        | Comfortably performant 2D renderer. Provides `rect`, `circle`, `path`, `polygon`. |
+| [Pixel Nano](/docs/visualiser/pixel-nano-renderer) | `internal://d2-minimal-renderer` | Internal        | Simple 2D renderer. Provides `rect`, `circle`, `path`, `polygon`.                 |
 
 ## Map support
 
