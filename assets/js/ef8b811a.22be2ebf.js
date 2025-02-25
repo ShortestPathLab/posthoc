@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_2=self.webpackChunkdocs_2||[]).push([[8947],{6600:e=>{e.exports=JSON.parse('{"authors":[{"name":"Kevin Zheng","title":"Posthoc lead developer","url":"https://github.com/spaaaacccee","imageURL":"https://github.com/spaaaacccee.png","key":"kzheng","page":null,"count":3}]}')}}]);
