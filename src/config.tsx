@@ -1,1 +1,1 @@
-export const PAGE_WIDTH = 960;
+export const PAGE_WIDTH = 1320;

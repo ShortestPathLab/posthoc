@@ -1,16 +1,15 @@
-import { LaunchOutlined, WorkspacesOutlined } from "@mui/icons-material";
+import { LaunchOutlined } from "@mui/icons-material";
 import {
   Avatar,
   Box,
   Button,
-  ButtonBase,
   Fade,
   Stack,
   Typography,
   alpha,
   useMediaQuery,
 } from "@mui/material";
-import { clamp, floor } from "lodash";
+import { clamp, find } from "lodash";
 import { useEffect, useState } from "react";
 import AutoSize from "react-virtualized-auto-sizer";
 import resolve from "resolve-url";
@@ -24,6 +23,61 @@ const center = (d: HTMLDivElement) => {
 };
 
 const SCROLL_FAC_NEAR = 3;
+
+/*
+ *
+ * Promised based scrollIntoView( { behavior: 'smooth' } )
+ * @param { Element } elem
+ **  ::An Element on which we'll call scrollIntoView
+ * @param { object } [options]
+ **  ::An optional scrollIntoViewOptions dictionary
+ * @return { Promise } (void)
+ **  ::Resolves when the scrolling ends
+ *
+ */
+function smoothScroll(elem: HTMLElement, options: ScrollIntoViewOptions) {
+  return new Promise<void>((res) => {
+    if (!(elem instanceof Element)) {
+      throw new TypeError("Argument 1 must be an Element");
+    }
+    let same = 0; // a counter
+    let lastPos = null; // last known Y position
+    // pass the user defined options along with our default
+    const scrollOptions = Object.assign({ behavior: "smooth" }, options);
+
+    // let's begin
+    elem.scrollIntoView(scrollOptions);
+    requestAnimationFrame(check);
+
+    // this function will be called every painting frame
+    // for the duration of the smooth scroll operation
+    function check() {
+      // check our current position
+      const newPos = elem.getBoundingClientRect().left;
+
+      if (newPos === lastPos) {
+        // same as previous
+        if (same++ > 2) {
+          // if it's more than two frames
+          /* @todo: verify it succeeded
+           * if(isAtCorrectPosition(elem, options) {
+           *   resolve();
+           * } else {
+           *   reject();
+           * }
+           * return;
+           */
+          return res(); // we've come to an halt
+        }
+      } else {
+        same = 0; // reset our counter
+        lastPos = newPos; // remember our current position
+      }
+      // check again next painting frame
+      requestAnimationFrame(check);
+    }
+  });
+}
 
 export function Gallery() {
   const paper = usePaper();
@@ -100,24 +154,54 @@ export function Gallery() {
       };
     }
   }, [ref, setReady]);
+
   useEffect(() => {
     if (ref) {
-      const midItem = ref.childNodes.item(
-        floor(ref.childNodes.length / 2)
-      ) as HTMLDivElement;
-      ref.scrollLeft =
-        midItem.offsetLeft - ref.offsetWidth / 2 + midItem.clientWidth / 2;
+      let initial = null;
+      let initialScroll = 0;
+      const controller = new AbortController();
+      ref.addEventListener(
+        "mousedown",
+        (e) => {
+          initial = e.clientX;
+          initialScroll = ref.scrollLeft;
+          ref.style.scrollSnapType = "none";
+        },
+        { signal: controller.signal }
+      );
+      ref.addEventListener(
+        "mousemove",
+        (e) => {
+          if (initial !== null) {
+            ref.scrollLeft = initialScroll - (e.clientX - initial);
+          }
+        },
+        { signal: controller.signal }
+      );
+      ref.addEventListener(
+        "mouseup",
+        async () => {
+          initial = null;
+          const firstLeft = find(ref.children, (n) => {
+            const rect = (n as HTMLElement).getBoundingClientRect();
+            return rect.left + rect.width / 2 > 0;
+          }) as HTMLElement | undefined;
+          if (firstLeft) {
+            await smoothScroll(firstLeft, {
+              block: "center",
+              inline: "center",
+            });
+            ref.style.scrollSnapType = "x mandatory";
+          }
+        },
+        { signal: controller.signal }
+      );
+      return () => controller.abort();
     }
   }, [ref]);
+
   const a = (width: number) => (
     <Box
-      onClick={(e) => {
-        (e.target as HTMLDivElement).scrollIntoView({
-          behavior: "smooth",
-          block: "nearest",
-          inline: "center",
-        });
-      }}
       sx={{
         p: lg ? 0 : width * 0.001,
         minWidth: width + (lg ? 0 : width * 0.001) * 8 * 2,
@@ -136,9 +220,9 @@ export function Gallery() {
           alignItems: "center",
           px: 4,
           borderRadius: 4,
-          transform: lg
-            ? `scale(calc(90% + calc(10% * var(--factor-near))))`
-            : "none",
+          // transform: lg
+          //   ? `scale(calc(90% + calc(10% * var(--factor-near))))`
+          //   : "none",
         }}
       >
         <Typography variant="h2" sx={{ color: "text.primary" }}>
@@ -181,10 +265,10 @@ export function Gallery() {
               overflowX: "scroll",
               scrollSnapType: "x mandatory",
               pb: 2,
+              gap: 2,
             }}
           >
             <Box sx={{ minWidth: `calc(50vw - ${width / 2}px)` }} />
-            {a(width)}
             {l10n.gallery.map(
               (
                 { label, url, description, workspace, author, tagline, avatar },
@@ -192,15 +276,7 @@ export function Gallery() {
               ) => (
                 <Box
                   data-index={i}
-                  onClick={(e) => {
-                    (e.target as HTMLDivElement).scrollIntoView({
-                      behavior: "smooth",
-                      block: "nearest",
-                      inline: "center",
-                    });
-                  }}
                   sx={{
-                    p: lg ? 0 : width * 0.001,
                     minWidth: width + (lg ? 0 : width * 0.001) * 8 * 2,
                     scrollSnapAlign: "center",
                   }}
@@ -216,6 +292,8 @@ export function Gallery() {
                         )}`,
                       aspectRatio: sm ? 10 / 16 : 16 / 10,
                       width: "100%",
+                      border: (t) =>
+                        `1px solid color-mix(in srgb, ${t.palette.background.default} 85%, ${t.palette.text.primary})`,
                       borderRadius: 4,
                       position: "relative",
                       overflow: "hidden",
@@ -223,17 +301,17 @@ export function Gallery() {
                       backgroundImage: `url(${url})`,
                       backgroundSize: "cover",
                       backgroundPosition:
-                        "calc(50% + calc(var(--factor) * +0.5px)) 50%",
-                      transform: lg
-                        ? `scale(calc(90% + calc(10% * var(--factor-near))))`
-                        : "none",
+                        "calc(50% + calc(var(--factor) * +0.25px)) 50%",
+                      // transform: lg
+                      //   ? `scale(calc(90% + calc(10% * var(--factor-near))))`
+                      //   : "none",
                     }}
                   >
                     {lg ? (
                       <Box
                         sx={{
                           position: "absolute",
-                          zIndex: -1,
+                          top: 0,
                           bottom: 0,
                           left: 0,
                           right: 0,
@@ -242,8 +320,9 @@ export function Gallery() {
                           width: "100%",
                           opacity: `var(--factor-near)`,
                           backgroundImage:
-                            "linear-gradient(to top, #0a0c10DD, transparent)",
+                            "linear-gradient(to bottom,rgba(10, 12, 16, 0.8), transparent)",
                           borderRadius: 4,
+                          zIndex: 1,
                         }}
                       />
                     ) : (
@@ -268,11 +347,11 @@ export function Gallery() {
                         textAlign: "left",
                         gap: 2,
                         p: 4,
-                        bottom: 0,
+                        top: 0,
                         left: 0,
                         right: 0,
                         justifyContent: lg ? "space-between" : "flex-start",
-                        alignItems: lg ? "flex-end" : "flex-start",
+                        alignItems: lg ? "flex-start" : "flex-start",
                         opacity: "var(--factor-near)",
                         flexDirection: lg ? "row" : "column",
                       }}

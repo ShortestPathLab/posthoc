@@ -392,6 +392,12 @@ b {
     border: 2px solid transparent;
     cursor: grab;
   }
+  *::-webkit-scrollbar-thumb:horizontal {
+    background-color: color-mix(in srgb, currentColor 0%, transparent);
+  }
+  *:hover::-webkit-scrollbar-thumb:horizontal {
+    background-color: color-mix(in srgb, currentColor 25%, transparent);
+  }
   *::-webkit-scrollbar-thumb:hover {
     /* color-mix support fallback */
     background-color: currentColor;

@@ -7,12 +7,16 @@ import { space } from "./space";
 import { usePaper } from "./theme";
 import { PAGE_WIDTH } from "../config";
 
+const bg = "#0a0c10";
+const fg = "#fff";
+const fg2 = "#ffffff99";
+
 export function Footer() {
   const sm = useSm();
   const paper = usePaper();
   return (
     <>
-      <Box p={3} sx={{ ...paper(1), borderRadius: 0 }}>
+      <Box p={3} sx={{ ...paper(1), borderRadius: 0, bgcolor: bg }}>
         <Stack
           gap={4}
           sx={{
@@ -31,7 +35,7 @@ export function Footer() {
                   <Typography
                     variant="subtitle2"
                     color="text.secondary"
-                    sx={{ pb: 2 }}
+                    sx={{ pb: 2, color: fg2 }}
                   >
                     {title}
                   </Typography>
@@ -47,7 +51,7 @@ export function Footer() {
                         textAlign: "left",
                       }}
                     >
-                      <Typography variant="subtitle2" color="text.primary">
+                      <Typography variant="subtitle2" sx={{ color: fg }}>
                         {label}
                       </Typography>
                     </Button>
@@ -58,11 +62,7 @@ export function Footer() {
           </Stack>
           {space()}
           <Divider sx={{ opacity: 0.25 }} />
-          <Typography
-            textAlign="right"
-            variant="subtitle2"
-            color="text.secondary"
-          >
+          <Typography textAlign="right" variant="subtitle2" sx={{ color: fg }}>
             {l10n.footerCopyright}
           </Typography>
         </Stack>

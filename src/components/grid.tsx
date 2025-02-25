@@ -7,6 +7,6 @@ export const flex = (size: number) => ({
   display: "flex",
   flexDirection: "row",
   flexWrap: "wrap",
-  justifyContent: "center",
+  // justifyContent: "center",
   "> *": { width: size },
 });

@@ -28,6 +28,15 @@
   ],
   "gallery": [
     {
+      "tagline": "Understand",
+      "url": "/img/gallery/astar.png",
+      "label": "A* search",
+      "workspace": "/content/astar.min.workspace",
+      "author": "ShortestPathLab",
+      "avatar": "https://github.com/ShortestPathLab.png",
+      "description": "Get to know Posthoc by taking apart and inspecting the classic A* algorithm on a small grid map."
+    },
+    {
       "tagline": "Analyse",
       "url": "/img/gallery/complex-view.png",
       "workspace": "/content/starcraft.min.workspace",
@@ -53,15 +62,6 @@
       "author": "ShortestPathLab",
       "avatar": "https://github.com/ShortestPathLab.png",
       "description": "See this Euclidean path planning algorithm in action on a navigation mesh."
-    },
-    {
-      "tagline": "Understand",
-      "url": "/img/gallery/astar.png",
-      "label": "A* search",
-      "workspace": "/content/astar.min.workspace",
-      "author": "ShortestPathLab",
-      "avatar": "https://github.com/ShortestPathLab.png",
-      "description": "Get to know Posthoc by taking apart and inspecting the classic A* algorithm on a small grid map."
     },
     {
       "tagline": "Understand",
@@ -92,8 +92,8 @@
     }
   ],
   "galleryCallToAction": "See more examples in Posthoc",
-  "heroTitle": "Intuitively explore decision-making in search",
-  "heroSubtitle": "Posthoc is a way to create simple and effective visualisations from logs to help you understand search.",
+  "heroTitle": "Understand decision-making in search",
+  "heroSubtitle": "Posthoc is a way to create simple and effective visualisations from logs to help you understand intuitively explore sequential decision-making processes.",
   "heroCallToAction": "Get started",
   "heroCallToActionUrl": "./docs/get-started",
   "endCallToActionTitle": "Ready to try Posthoc?",

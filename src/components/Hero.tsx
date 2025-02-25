@@ -2,7 +2,7 @@ import {
   PlayArrowOutlined,
   FilterTiltShiftOutlined as ShowVideoIcon,
 } from "@mui/icons-material";
-import { Button, Link, Stack, Typography } from "@mui/material";
+import { alpha, Button, Link, Stack, Typography } from "@mui/material";
 import { l10n } from "../l10n";
 import { space } from "./space";
 import { GetStartedButton } from "./GetStartedButton";
@@ -16,12 +16,13 @@ export function Hero() {
       justifyContent="center"
       alignItems="flex-start"
       sx={{
+        px: sm ? 0 : 4,
         textAlign: "left",
         maxWidth: "100dvw",
         height: "60svh",
-        minHeight: 520,
-        pt: 24,
-        pb: 16,
+        minHeight: 420,
+        pt: 18,
+        pb: 12,
       }}
     >
       {space()}
@@ -44,16 +45,16 @@ export function Hero() {
         / {l10n.name}
       </Typography>
       <Typography
-        sx={{ zIndex: 1, maxWidth: 720 }}
+        sx={{ zIndex: 1, maxWidth: 900 }}
         variant="h1"
         color="text.primary"
       >
         {l10n.heroTitle}
       </Typography>
       <Typography
-        sx={{ zIndex: 1, maxWidth: 480 }}
+        sx={{ zIndex: 1, maxWidth: 600 }}
         variant={sm ? "body1" : "subtitle1"}
-        color="text.primary"
+        color="text.secondary"
       >
         {l10n.heroSubtitle}
       </Typography>
@@ -63,7 +64,8 @@ export function Hero() {
           href={l10n.demoVideoUrl}
           startIcon={<PlayArrowOutlined />}
           sx={{
-            color: "text.primary",
+            bgcolor: (t) => alpha(t.palette.primary.main, 0.075),
+            color: "primary.main",
             py: 1.5,
             px: 3,
             borderRadius: 32,
