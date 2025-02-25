@@ -196,15 +196,17 @@
       "github": "https://research.monash.edu/en/persons/michael-wybrow"
     }
   ],
-  "teamContributorTitle": "Posthoc was a multi-year project made possible by the hard work and dedication from many student contributors. We're grateful to the following individuals whose efforts contributed to early prototypes of the system:",
-  "teamSupporterTitle": "We also thank the following people for their many helpful suggestions, feedback, and support:",
+  "teamContributorTitle": "Posthoc was a multi-year project made possible by the hard work and dedication from many student contributors.",
+  "teamSupporterTitle": "We also thank the following people for their many helpful suggestions, feedback, and support.",
   "contributors": [
-    "Can Wang",
     "Francis Anthony",
-    "Jay Wingate",
     "Karan Batta",
+    "Evelyn Huang",
+    "Bennett Madavana",
+    "Rory Tobin-Underwood",
+    "Jay Wingate",
     "Leo Whitehead",
-    "Rory Tobin-Underwood"
+    "Can Wang"
   ],
   "supporters": [
     "Mike Chen",
