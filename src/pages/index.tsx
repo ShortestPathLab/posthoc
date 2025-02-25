@@ -187,9 +187,13 @@ function Content() {
             >
               {l10n.teamContributorTitle}
             </Typography>
-            <Stack gap={4} sx={flex(150)}>
+            <Stack gap={4} sx={flex(140)}>
               {map(l10n.contributors, (s) => (
-                <Typography color="text.primary" variant="subtitle2">
+                <Typography
+                  sx={{ minWidth: "max-content" }}
+                  color="text.primary"
+                  variant="subtitle2"
+                >
                   {s}
                 </Typography>
               ))}
@@ -201,9 +205,13 @@ function Content() {
             >
               {l10n.teamSupporterTitle}
             </Typography>
-            <Stack gap={4} sx={flex(150)}>
+            <Stack gap={4} sx={flex(140)}>
               {map(l10n.supporters, (s) => (
-                <Typography color="text.primary" variant="subtitle2">
+                <Typography
+                  sx={{ minWidth: "max-content" }}
+                  color="text.primary"
+                  variant="subtitle2"
+                >
                   {s}
                 </Typography>
               ))}
