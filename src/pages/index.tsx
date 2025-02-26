@@ -1,5 +1,6 @@
 import { ArrowDownwardOutlined, PlayArrowOutlined } from "@mui/icons-material";
 import {
+  alpha,
   Avatar,
   Box,
   Button,
@@ -67,18 +68,40 @@ function Content() {
                       flexDirection: "row",
                       pt: 16,
                       pb: 16,
-                      gap: 4,
+                      gap: 8,
                       justifyContent: "space-between",
                     }
               }
             >
               <Box sx={{ maxWidth: 420 }}>
-                {" "}
                 <SectionTitle
                   noPadding
                   title={l10n.demoSectionTitle}
-                  subtitle={l10n.demoSectionSubtitle}
+                  subtitle={
+                    <Box sx={{ whiteSpace: "pre-line", mt: 1 }}>
+                      {l10n.demoSectionSubtitle}
+                    </Box>
+                  }
                 />
+                <Button
+                  onClick={() => open(l10n.demoVideoUrl)}
+                  color="primary"
+                  sx={{
+                    mt: 4,
+                    mx: "auto",
+                    py: 2,
+                    px: 4,
+                    borderRadius: 32,
+                    // Light text rendering bias
+                    fontWeight: mode === "dark" ? 600 : 500,
+                    bgcolor: (t) => alpha(t.palette.primary.main, 0.075),
+                    color: "primary.main",
+                  }}
+                  startIcon={<PlayArrowOutlined />}
+                  variant="contained"
+                >
+                  {l10n.playVideo}
+                </Button>
               </Box>
               <Button
                 onClick={() => open(l10n.demoVideoUrl)}
@@ -94,35 +117,18 @@ function Content() {
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
-              >
-                <Button
-                  color="primary"
-                  sx={{
-                    mx: "auto",
-                    py: 2,
-                    px: 4,
-                    borderRadius: 32,
-                    // Light text rendering bias
-                    fontWeight: mode === "dark" ? 600 : 500,
-                    pointerEvents: "none",
-                  }}
-                  startIcon={<PlayArrowOutlined />}
-                  variant="contained"
-                >
-                  {l10n.playVideo}
-                </Button>
-              </Button>
+              />
             </Stack>
           </Box>
           <Stack
             sx={{
               px: sm ? 0 : 4,
-              flexDirection: { sm: "column", md: "row" },
-              alignItems: { sm: "stretch", md: "center" },
+              flexDirection: sm ? "column" : "row",
+              alignItems: sm ? "stretch" : "center",
               pb: 4,
               gap: 4,
               textAlign: sm ? "center" : "left",
-              justifyContent: { sm: "center", md: "space-between" },
+              justifyContent: sm ? "center" : "space-between",
             }}
           >
             <Typography variant="h3" color="text.primary">

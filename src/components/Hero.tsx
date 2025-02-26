@@ -17,6 +17,7 @@ export function Hero() {
       alignItems="flex-start"
       sx={{
         px: sm ? 0 : 4,
+        mr: sm ? 0 : 8,
         textAlign: "left",
         maxWidth: "100dvw",
         height: "60svh",

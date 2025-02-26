@@ -91,7 +91,7 @@ function AppBarBody() {
         width: "100%",
         transition: (t) =>
           t.transitions.create(["box-shadow", "padding-top", "transform"]),
-        ...(top
+        ...(false
           ? { paddingTop: sm ? 0 : 2 }
           : {
               ...paper(1),
@@ -109,14 +109,21 @@ function AppBarBody() {
         direction="row"
         sx={{
           p: 2,
-          px: 1.5,
-          mx: "auto",
-          width: PAGE_WIDTH + 8 * 4,
-          maxWidth: "100%",
+          px: 1,
+          // mx: "auto",
+          // width: PAGE_WIDTH + 8 * 4,
+          // maxWidth: "100%",
           height: 72,
         }}
       >
-        <Box sx={{ pr: 2, pl: 0.5, height: 28, minWidth: 28 }}>
+        <Box
+          sx={{
+            px: 2,
+            filter: "hue-rotate(35deg)",
+            height: 28,
+            minWidth: 28,
+          }}
+        >
           <Logo />
         </Box>
         {sm ? (

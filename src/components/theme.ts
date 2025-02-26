@@ -39,6 +39,16 @@ const accentDark = "#7C7EFF";
 
 export const makeTheme = (mode: "light" | "dark", theme?: AccentColor) =>
   createTheme({
+    breakpoints: {
+      keys: ["xs", "sm", "md", "lg", "xl"],
+      values: {
+        xs: 0,
+        sm: 720,
+        md: 900,
+        lg: 1200,
+        xl: 1536,
+      },
+    },
     palette: {
       primary: {
         main: theme
@@ -167,7 +177,7 @@ export const makeTheme = (mode: "light" | "dark", theme?: AccentColor) =>
 export function useAcrylic(color?: string): SxProps<Theme> {
   return {
     backdropFilter: "blur(32px)",
-    background: ({ palette }) => alpha(color ?? palette.background.paper, 0.75),
+    background: ({ palette }) => alpha(color ?? palette.background.paper, 0.8),
   };
 }
 
@@ -175,7 +185,7 @@ export function usePaper(): (e?: number) => SxProps<Theme> {
   return (elevation: number = 1) => ({
     borderRadius: 4,
     backdropFilter: "blur(8px)",
-    background: ({ palette }) => alpha(palette.background.default, 0.6),
+    background: ({ palette }) => alpha(palette.background.default, 0.8),
     backgroundSize: "32px 32px",
   });
 }

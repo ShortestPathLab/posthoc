@@ -388,15 +388,8 @@ b {
     background-color: color-mix(in srgb, currentColor 45%, transparent);
     padding: 2px;
     background-clip: padding-box;
-    border-radius: 6px;
     border: 2px solid transparent;
     cursor: grab;
-  }
-  *::-webkit-scrollbar-thumb:horizontal {
-    background-color: color-mix(in srgb, currentColor 0%, transparent);
-  }
-  *:hover::-webkit-scrollbar-thumb:horizontal {
-    background-color: color-mix(in srgb, currentColor 25%, transparent);
   }
   *::-webkit-scrollbar-thumb:hover {
     /* color-mix support fallback */
@@ -408,5 +401,11 @@ b {
     background-color: currentColor;
     background-color: color-mix(in srgb, currentColor 75%, transparent);
     cursor: grabbing;
+  }
+  *::-webkit-scrollbar-thumb:horizontal {
+    background-color: color-mix(in srgb, currentColor 0%, transparent);
+  }
+  *:hover::-webkit-scrollbar-thumb:horizontal {
+    background-color: color-mix(in srgb, currentColor 25%, transparent);
   }
 }

@@ -184,7 +184,10 @@ export function Gallery() {
           initial = null;
           const firstLeft = find(ref.children, (n) => {
             const rect = (n as HTMLElement).getBoundingClientRect();
-            return rect.left + rect.width / 2 > 0;
+            return (
+              (rect.left > 0 && rect.left < innerWidth / 2) ||
+              (rect.right < innerWidth && rect.right > innerWidth / 2)
+            );
           }) as HTMLElement | undefined;
           if (firstLeft) {
             await smoothScroll(firstLeft, {
@@ -284,7 +287,8 @@ export function Gallery() {
                   <Button
                     disableRipple
                     sx={{
-                      cursor: "default",
+                      cursor: "grab",
+                      "&:active": { cursor: "grabbing" },
                       boxShadow: (t) =>
                         `0px 16px 32px ${alpha(
                           t.palette.background.default,
