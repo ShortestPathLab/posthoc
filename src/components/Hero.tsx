@@ -21,8 +21,8 @@ export function Hero() {
         textAlign: "left",
         maxWidth: "100dvw",
         height: "60svh",
-        minHeight: 420,
-        pt: 18,
+        minHeight: 480,
+        pt: 20,
         pb: 12,
       }}
     >
